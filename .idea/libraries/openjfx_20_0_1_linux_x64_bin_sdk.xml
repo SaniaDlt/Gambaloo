@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="openjfx-20.0.1_linux-x64_bin-sdk">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Documents/openjfx-20.0.1_linux-x64_bin-sdk.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
