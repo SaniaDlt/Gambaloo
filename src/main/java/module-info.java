@@ -8,4 +8,6 @@ module ir.gambaloo {
             
     opens ir.gambaloo to javafx.fxml;
     exports ir.gambaloo;
+    exports ir.gambaloo.controller;
+    opens ir.gambaloo.controller to javafx.fxml;
 }

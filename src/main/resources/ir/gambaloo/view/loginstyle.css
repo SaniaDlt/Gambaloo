@@ -1,0 +1,14 @@
+.field:hover{
+    -fx-border:0px;
+    -fx-border-color: rgb(249, 212, 5);
+}
+.button{
+    -fx-background-color:#fce158;
+    -fx-background-radius: 60px;
+}
+.button:hover{
+    -fx-background-color: rgb(255, 208, 0);
+}
+#signup:hover{
+    -fx-text-fill:rgb(255, 191, 0)
+}

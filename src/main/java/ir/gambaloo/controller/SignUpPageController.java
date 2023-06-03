@@ -1,4 +1,4 @@
-package ir.gambaloo;
+package ir.gambaloo.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

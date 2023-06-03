@@ -1,4 +1,4 @@
-package ir.gambaloo;
+package ir.gambaloo.module;
 
 enum FoodType {
     APPETIZER,MAINFOOD,DESERT,DRINKS;
