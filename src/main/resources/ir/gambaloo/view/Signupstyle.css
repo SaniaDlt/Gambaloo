@@ -1,0 +1,16 @@
+#image:hover{ 
+   -fx-background-color: linear-gradient(rgb(241, 217, 30),rgb(231, 210, 90),rgb(235, 224, 161));
+   -fx-border-radius: 60px;
+}
+.button{
+   -fx-background-color:#fce158 ;
+   -fx-background-radius: 60px;
+}
+.button:hover{
+   -fx-background-color: rgb(255, 208, 0);
+}
+.field:hover{
+   -fx-border: 0px;
+   -fx-border-color: rgb(249, 212, 5);
+
+}
