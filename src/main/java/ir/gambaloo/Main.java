@@ -23,6 +23,7 @@ public class Main extends Application {
         stage.setScene(new Scene(fxmlLoader.getRoot()));
         stage.show();
         stage.setResizable(false);
+        Main.socket = new Socket("localhost",8382);
 
     }
 

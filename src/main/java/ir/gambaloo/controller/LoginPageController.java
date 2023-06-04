@@ -13,18 +13,13 @@ import javafx.scene.input.MouseEvent;
 import java.io.*;
 import java.net.Socket;
 import java.net.SocketException;
+import java.util.Scanner;
 
 public class LoginPageController{
 
     @FXML
     void initialize() {
-        try {
-            Main.socket = new Socket("localhost",8382);
-        } catch (SocketException e){
-            error.setText("Server not found");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+
 
     }
 
@@ -45,15 +40,18 @@ public class LoginPageController{
         String username=usernameFLD.getText();
         String password=passwordFLD.getText();
         try(
-        BufferedReader reciver=new BufferedReader(new InputStreamReader(Main.socket.getInputStream()));
-        PrintWriter printWriter=new PrintWriter(Main.socket.getOutputStream(),true);) {
+                Scanner reciver=new Scanner(Main.socket.getInputStream());
+                PrintWriter printWriter=new PrintWriter(Main.socket.getOutputStream(),true);) {
             printWriter.println(2);
+            printWriter.flush();
             printWriter.println(username);
-            if(reciver.read()==-1){
+            printWriter.flush();
+            if(reciver.nextInt()==-1){
                 error.setText("Username not found");
             }else{
                 printWriter.println(password);
-                if(reciver.read()==0){
+                printWriter.flush();
+                if(reciver.nextInt()==0){
                     ObjectInputStream recive = new ObjectInputStream(Main.socket.getInputStream());
                     Main.client=(User) recive.readObject();
                     //Fxml loader Mainpage load mishe
