@@ -15,6 +15,7 @@ public class User implements Serializable {
         this.username = username;
         this.password = password;
         this.phoneNumber = phoneNumber;
+        cart=new Cart();
     }
 
     public double getBalance() {

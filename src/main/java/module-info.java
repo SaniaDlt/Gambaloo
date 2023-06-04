@@ -10,4 +10,6 @@ module ir.gambaloo {
     exports ir.gambaloo;
     exports ir.gambaloo.controller;
     opens ir.gambaloo.controller to javafx.fxml;
+    exports ir.gambaloo.server;
+    opens ir.gambaloo.server to javafx.fxml;
 }

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="800.0" stylesheets="@Signupstyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SignUpController">
+   <children>
+      <VBox id="image" prefHeight="200.0" prefWidth="286.0" styleClass="image" stylesheets="@Signupstyle.css">
+         <children>
+            <ImageView id="image" fitHeight="550.0" fitWidth="380.0" pickOnBounds="true" preserveRatio="true" styleClass="image">
+               <image>
+                  <Image url="@../Pictures/IMG_1685822324600.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <ImageView fitHeight="550.0" fitWidth="420.0" layoutX="380.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Pictures/IMG_1685817323830.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="412.0" layoutY="140.0" prefHeight="397.0" prefWidth="365.0" stylesheets="@Signupstyle.css">
+         <children>
+            <HBox fx:id="usernameFLD" alignment="CENTER_LEFT" prefHeight="51.0" prefWidth="365.0" spacing="10.0">
+               <children>
+                  <Label text="Username :">
+                     <font>
+                        <Font name="Sahadeva" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField prefHeight="30.0" prefWidth="200.0" promptText="Enter your uesrname" styleClass="field" stylesheets="@Signupstyle.css" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="58.0" prefWidth="365.0" spacing="10.0">
+               <children>
+                  <Label text="Phonenumber:">
+                     <font>
+                        <Font name="Sahadeva" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="phonenumberFLD" prefHeight="30.0" prefWidth="200.0" promptText="Enter your phonenumber" styleClass="field" stylesheets="@Signupstyle.css" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="365.0" spacing="10.0">
+               <children>
+                  <Label text="Email :">
+                     <font>
+                        <Font name="Sahadeva" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="emailFLD" prefHeight="30.0" prefWidth="200.0" promptText="Enter your email" styleClass="field" stylesheets="@Signupstyle.css" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="49.0" prefWidth="365.0" spacing="10.0">
+               <children>
+                  <Label text="Password :">
+                     <font>
+                        <Font name="Sahadeva" size="20.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="passwordFLD" prefHeight="30.0" prefWidth="200.0" promptText="Enter your password" styleClass="field" stylesheets="@Signupstyle.css" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="365.0" spacing="10.0">
+               <children>
+                  <Label text="Address :">
+                     <font>
+                        <Font name="Sahadeva" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="addressFLD" prefHeight="30.0" prefWidth="200.0" promptText="Enter your address" styleClass="field" stylesheets="@Signupstyle.css" />
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#signUPBTN" stylesheets="@Signupstyle.css" text="Signup" textFill="#0a0a0a">
+               <font>
+                  <Font name="Rasa Medium" size="26.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="130.0" top="40.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
