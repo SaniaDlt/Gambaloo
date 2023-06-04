@@ -36,12 +36,12 @@ public class LoginPageController{
     private TextField usernameFLD;
 
     @FXML
-    void login(ActionEvent event) {
+    void login(ActionEvent event) throws IOException {
         String username=usernameFLD.getText();
         String password=passwordFLD.getText();
-        try(
-                Scanner reciver=new Scanner(Main.socket.getInputStream());
-                PrintWriter printWriter=new PrintWriter(Main.socket.getOutputStream(),true);) {
+        Scanner reciver=new Scanner(Main.socket.getInputStream());
+        PrintWriter printWriter=new PrintWriter(Main.socket.getOutputStream(),true);
+        try{
             printWriter.println(2);
             printWriter.flush();
             printWriter.println(username);

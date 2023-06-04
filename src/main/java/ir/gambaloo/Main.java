@@ -23,11 +23,12 @@ public class Main extends Application {
         stage.setScene(new Scene(fxmlLoader.getRoot()));
         stage.show();
         stage.setResizable(false);
-        Main.socket = new Socket("localhost",8382);
+
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        Main.socket = new Socket("localhost",8382);
         launch();
     }
 }
