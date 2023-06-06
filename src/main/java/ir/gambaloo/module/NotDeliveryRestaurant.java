@@ -1,7 +1,7 @@
 package ir.gambaloo.module;
 
 public class NotDeliveryRestaurant extends Restaurant{
-    private RestaurantType type=RestaurantType.NOTDELIVERY;
+    private final RestaurantType type=RestaurantType.NOTDELIVERY;
     private int chairs=0;
     public NotDeliveryRestaurant(int startHour, int endHour, String address,int chairs) {
         super(startHour, endHour, address);

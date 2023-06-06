@@ -48,21 +48,19 @@ public class LoginPageController{
             error.setText ( "Fill in the blanks." );
         }
         else {
-            Scanner reciver = new Scanner ( Main.socket.getInputStream ( ) );
-            PrintWriter printWriter = new PrintWriter ( Main.socket.getOutputStream ( ) , true );
-
-            printWriter.println ( 2 );
-            printWriter.flush ( );
-            printWriter.println ( username );
-            printWriter.flush ( );
-            if ( reciver.nextInt ( ) == - 1 ) {
+            Main.printWriter.println ( 2 );
+            Main.printWriter.flush ( );
+            Main.printWriter.println ( username );
+            Main.printWriter.flush ( );
+            if ( Main.reciver.nextInt ( ) == - 1 ) {
                 error.setText ( "Username not found" );
             } else {
-                printWriter.println ( password );
-                printWriter.flush ( );
-                if ( reciver.nextInt ( ) == 0 ) {
+                Main.printWriter.println ( password );
+                Main.printWriter.flush ( );
+                if (Main.reciver.nextInt ( ) == 0 ) {
                     ObjectInputStream recive = new ObjectInputStream ( Main.socket.getInputStream ( ) );
                     Main.client = ( User ) recive.readObject ( );
+                    error.setText ( "Login anghezi" );
                     //Fxml loader Mainpage load mishe
                 } else {
                     error.setText ( "Password is wrong" );

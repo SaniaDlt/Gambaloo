@@ -7,12 +7,16 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.SocketException;
+import java.util.Scanner;
 
 public class Main extends Application {
     public static Socket socket;
     public static User client;
+    public static Scanner reciver;
+    public static PrintWriter printWriter;
 
 
     @Override
@@ -27,6 +31,8 @@ public class Main extends Application {
 
     public static void main(String[] args) throws IOException {
         Main.socket = new Socket("localhost",9090);
+        Main.reciver=new Scanner ( Main.socket.getInputStream ( ) );
+        Main.printWriter= new PrintWriter ( Main.socket.getOutputStream ( ) , true );
         launch();
     }
 }

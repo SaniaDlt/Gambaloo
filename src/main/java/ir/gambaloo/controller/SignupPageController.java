@@ -5,11 +5,9 @@ import ir.gambaloo.Main;
 import ir.gambaloo.module.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -38,65 +36,54 @@ public class SignupPageController {
     private TextField usernameFLD;
 
     @FXML
-    void signUPBTN(ActionEvent event) throws IOException {
-        String username = usernameFLD.getText();
-        String phonenumber = phonenumberFLD.getText();
-        String email = emailFLD.getText();
-        String password = passwordFLD.getText();
-        String address=addressFLD.getText();
-        if (username.length() < 3 && username.contains(" ")) {
-            errorLBL.setText("Invalid username");
-        }
-        else if (phonenumber.length()==11) {
-            errorLBL.setText("Invalid phonenumber");
-        }
-        else if (!email.contains("@")) {
-            errorLBL.setText("Your email must contains @. ");
-        }
-        else if (password.length() < 8 || password.contains(" ")) {
+    void signUPBTN ( ActionEvent event ) throws IOException {
+        String username = usernameFLD.getText ( );
+        String phonenumber = phonenumberFLD.getText ( );
+        String email = emailFLD.getText ( );
+        String password = passwordFLD.getText ( );
+        String address = addressFLD.getText ( );
+        if ( username.length ( ) < 3 || username.contains ( " " )) {
+            errorLBL.setText ( "Invalid username" );
+        } else if ( phonenumber.length ( ) == 10 ) {
+            errorLBL.setText ( "Invalid phonenumber" );
+        } else if ( ! email.contains ( "@" ) ) {
+            errorLBL.setText ( "Your email must contains @. " );
+        } else if ( password.length ( ) < 8 || password.contains ( " " ) ) {
             errorLBL.setText ( "Invalid password" );
-        }
-        else if(address.equals ( "" )){
+        } else if ( address.equals ( "" ) ) {
             errorLBL.setText ( "Fill in the blanks." );
-        }else{
-        Scanner reciver = new Scanner(Main.socket.getInputStream());
-        PrintWriter printwriter = new PrintWriter(Main.socket.getOutputStream(), true);
-        printwriter.println(-2);
-        printwriter.flush();
-        printwriter.println(username);
-        printwriter.flush();
-        if (reciver.nextInt() == -1) {
-            errorLBL.setText("This username is already exist.");
         } else {
-            printwriter.println(phonenumber);
-            printwriter.flush();
-            if (reciver.nextInt() == -1) {
-                errorLBL.setText("This phonenumber is already exist.");
+            Main.printWriter.println ( - 2 );
+            Main.printWriter.flush ( );
+            Main.printWriter.println ( username );
+            Main.printWriter.flush ( );
+            if ( Main.reciver.nextInt ( ) == - 1 ) {
+                errorLBL.setText ( "This username is already exist." );
             } else {
-                printwriter.println ( email );
-                printwriter.flush ( );
-                if ( reciver.nextInt ( ) == - 1 ) {
-                    errorLBL.setText ( "This email is already exist." );
+                Main.printWriter.println ( phonenumber );
+                Main.printWriter.flush ( );
+                if ( Main.reciver.nextInt ( ) == - 1 ) {
+                    errorLBL.setText ( "This phonenumber is already exist." );
                 } else {
+                    Main.printWriter.println ( email );
+                    Main.printWriter.flush ( );
+                    if ( Main.reciver.nextInt ( ) == - 1 ) {
+                        errorLBL.setText ( "This email is already exist." );
+                    } else {
 
-                    User user = new User ( email , username , password , phonenumber , address );
-                    ObjectOutputStream objectOutputStream = new ObjectOutputStream ( Main.socket.getOutputStream ( ) );
-                    objectOutputStream.writeObject ( user );
-                    objectOutputStream.flush ( );
-                    errorLBL.setText ( "Signup successfully" );
-                    //Node source= (Node) event.getSource();
-                    //source.getScene().getWindow().hide();
-
-
-                }
-            }
-
-
+                        User user = new User ( email , username , password , phonenumber , address );
+                        ObjectOutputStream objectOutputStream = new ObjectOutputStream ( Main.socket.getOutputStream ( ) );
+                        objectOutputStream.writeObject ( user );
+                        objectOutputStream.flush ( );
+                        errorLBL.setText ( "Signup successfully" );
+                        //Node source= (Node) event.getSource();
+                        //source.getScene().getWindow().hide();
                     }
-
                 }
             }
         }
+    }
+}
 
 
 

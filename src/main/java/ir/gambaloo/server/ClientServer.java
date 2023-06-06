@@ -28,7 +28,7 @@ public class ClientServer extends Thread {
                 if ( reciver.hasNext ( ) ) {
                     int code = reciver.nextInt ( );
                     if ( code == 2 ) {
-                        String username = reciver.next( );
+                        String username = reciver.next ( );
                         int i = 0;
                         for ( i = 0; i < Server.users.size ( ) ; i++ ) {
                             if ( Server.users.get ( i ).getUsername ( ).equals ( username ) ) {

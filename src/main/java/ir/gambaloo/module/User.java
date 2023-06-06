@@ -7,9 +7,9 @@ public class User implements Serializable {
     private String username;
     private String password;
     private String phoneNumber;
-    private String address;
+    private final String address;
     private double balance;
-    private Cart cart;
+    private final Cart cart;
 
     public User(String emailAddress, String username, String password, String phoneNumber,String address) {
         this.emailAddress = emailAddress;
