@@ -10,6 +10,7 @@ public abstract class Restaurant implements Serializable {
     protected Menu menu=new Menu();
     protected String address;
     protected Country country;
+    protected String name;
 
     public int getStartHour() {
         return startHour;
@@ -27,11 +28,12 @@ public abstract class Restaurant implements Serializable {
         return address;
     }
 
-    public Restaurant(int startHour, int endHour, String address,Country country) {
+    public Restaurant(int startHour, int endHour, String address,Country country,String name) {
         this.startHour = startHour;
         this.endHour = endHour;
         this.address = address;
         this.country=country;
+        this.name=name;
     }
     public String workHour(){
         return "From "+startHour+"To "+endHour;
