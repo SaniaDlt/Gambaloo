@@ -14,8 +14,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.*;
-import java.net.Socket;
-import java.net.SocketException;
 import java.util.Scanner;
 
 public class LoginPageController{

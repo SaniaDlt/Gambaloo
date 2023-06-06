@@ -1,0 +1,14 @@
+.button{
+    -fx-background-color: #fce158;
+    -fx-background-radius: 60px;
+}
+.button:hover{
+    -fx-background-color: rgb(255,208,0);
+}
+
+.textField:hover{
+    -fx-border-color: #fce158;
+}
+.root{
+    -fx-background:#ffffff;
+}

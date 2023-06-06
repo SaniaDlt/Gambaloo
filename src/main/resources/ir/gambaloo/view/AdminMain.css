@@ -1,0 +1,10 @@
+.button{
+    -fx-background-color: #fce158;
+    -fx-background-radius: 60px;
+}
+.button:hover{
+    -fx-background-color: rgb(255,208,0);
+}
+.vBox{
+    -fx-background-color: #ffffff;
+}
