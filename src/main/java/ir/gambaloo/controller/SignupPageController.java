@@ -5,6 +5,7 @@ import ir.gambaloo.Main;
 import ir.gambaloo.module.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -76,8 +77,8 @@ public class SignupPageController {
                         objectOutputStream.writeObject ( user );
                         objectOutputStream.flush ( );
                         errorLBL.setText ( "Signup successfully" );
-                        //Node source= (Node) event.getSource();
-                        //source.getScene().getWindow().hide();
+                        Node source= (Node) event.getSource();
+                        source.getScene().getWindow().hide();
                     }
                 }
             }

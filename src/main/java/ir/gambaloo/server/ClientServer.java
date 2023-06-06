@@ -44,7 +44,7 @@ public class ClientServer extends Thread {
                             printWriter.flush ( );
                             String password = reciver.next ( );
                             if ( Server.users.get ( i ).getPassword ( ).equals ( password ) ) {
-                                if(username.equals("admin")&&password.equals("admin")){
+                                if(username.equals("admin")){
                                     printWriter.println(3);
                                     printWriter.flush();
                                     isAdmin=true;
@@ -118,7 +118,7 @@ public class ClientServer extends Thread {
                 }
             }
             if(isAdmin){
-                int code=reciver.nextInt();
+
             }
         } catch ( IOException e ) {
             System.out.println ( e );

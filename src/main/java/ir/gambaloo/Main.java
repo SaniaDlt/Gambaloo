@@ -43,4 +43,10 @@ public class Main extends Application {
 
         launch();
     }
+
+    @Override
+    public void stop() throws Exception {
+        super.stop();
+
+    }
 }
