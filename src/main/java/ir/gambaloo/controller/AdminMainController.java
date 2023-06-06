@@ -1,5 +1,6 @@
 package ir.gambaloo.controller;
 
+import ir.gambaloo.Main;
 import ir.gambaloo.module.Country;
 import ir.gambaloo.module.Restaurant;
 import ir.gambaloo.module.RestaurantType;
@@ -24,6 +25,7 @@ public class AdminMainController {
 
     @FXML
     void add(ActionEvent event) {
+
 
     }
 

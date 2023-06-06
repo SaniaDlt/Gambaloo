@@ -1,5 +1,7 @@
 package ir.gambaloo.server;
 
+import ir.gambaloo.module.DeliveryRestaurant;
+import ir.gambaloo.module.NotDeliveryRestaurant;
 import ir.gambaloo.module.User;
 
 import java.io.*;
@@ -11,6 +13,8 @@ import java.util.Scanner;
 
 public class Server {
     protected static ArrayList<User> users=new ArrayList<>();
+    protected static ArrayList<DeliveryRestaurant> deliveryRestaurants=new ArrayList<>();
+    protected static ArrayList<NotDeliveryRestaurant>notDeliveryRestaurants=new ArrayList<>();
 
     public void addUser(User user){
         users.add(user);

@@ -1,6 +1,9 @@
 package ir.gambaloo.controller;
 
 import ir.gambaloo.Main;
+import ir.gambaloo.module.DeliveryRestaurant;
+import ir.gambaloo.module.NotDeliveryRestaurant;
+import ir.gambaloo.module.Restaurant;
 import ir.gambaloo.module.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +18,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class LoginPageController{
@@ -66,6 +70,9 @@ public class LoginPageController{
                 } else if(code==-1) {
                     error.setText ( "Password is wrong" );
                 }else{
+                    ObjectInputStream recive=new ObjectInputStream(Main.socket.getInputStream());
+                    Main.adminRestaurantsD=(ArrayList<DeliveryRestaurant> ) recive.readObject();
+                    Main.adminRestaurantsND=(ArrayList<NotDeliveryRestaurant>) recive.readObject();
                     FXMLLoader adminPage=new FXMLLoader(Main.class.getResource("view/AdminMain.fxml"));
                     adminPage.load();
                     Stage stage =new Stage();

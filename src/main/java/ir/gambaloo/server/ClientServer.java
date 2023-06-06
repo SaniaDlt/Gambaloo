@@ -23,6 +23,7 @@ public class ClientServer extends Thread {
 
     @Override
     public void run ( ) {
+        boolean isAdmin=false;
         try {
             while ( true ) {
                 if ( reciver.hasNext ( ) ) {
@@ -46,6 +47,12 @@ public class ClientServer extends Thread {
                                 if(username.equals("admin")&&password.equals("admin")){
                                     printWriter.println(3);
                                     printWriter.flush();
+                                    isAdmin=true;
+                                    ObjectOutputStream objectOutputStream=new ObjectOutputStream(socket.getOutputStream());
+                                    objectOutputStream.writeObject(Server.deliveryRestaurants);
+                                    objectOutputStream.flush();
+                                    objectOutputStream.writeObject(Server.notDeliveryRestaurants);
+                                    objectOutputStream.flush();
                                     break;
                                 }else{
                                 printWriter.println ( 0 );
@@ -109,6 +116,9 @@ public class ClientServer extends Thread {
 
                     }
                 }
+            }
+            if(isAdmin){
+                int code=reciver.nextInt();
             }
         } catch ( IOException e ) {
             System.out.println ( e );

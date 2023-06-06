@@ -14,13 +14,13 @@
       <HBox alignment="CENTER" prefHeight="24.0" prefWidth="612.0" spacing="10.0">
          <children>
             <Label text="Name" />
-            <TextField styleClass="textField" />
+            <TextField prefHeight="30.0" prefWidth="200.0" styleClass="textField" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="22.0" prefWidth="612.0" spacing="10.0">
          <children>
             <Label text="Price" />
-            <TextField fx:id="PriceFld" styleClass="textField" />
+            <TextField fx:id="PriceFld" prefHeight="30.0" prefWidth="200.0" styleClass="textField" />
          </children>
          <padding>
             <Insets left="6.0" />
@@ -29,7 +29,7 @@
       <HBox alignment="CENTER" prefHeight="25.0" prefWidth="612.0" spacing="10.0">
          <children>
             <Label text="Image Address" />
-            <TextField fx:id="imgFLDs" styleClass="textField" />
+            <TextField fx:id="imgFLDs" prefHeight="30.0" prefWidth="200.0" styleClass="textField" />
          </children>
          <padding>
             <Insets right="60.0" />

@@ -1,5 +1,8 @@
 package ir.gambaloo;
 
+import ir.gambaloo.module.DeliveryRestaurant;
+import ir.gambaloo.module.NotDeliveryRestaurant;
+import ir.gambaloo.module.Restaurant;
 import ir.gambaloo.module.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +13,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.SocketException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main extends Application {
@@ -17,6 +21,8 @@ public class Main extends Application {
     public static User client;
     public static Scanner reciver;
     public static PrintWriter printWriter;
+    public static ArrayList<DeliveryRestaurant> adminRestaurantsD;
+    public static ArrayList<NotDeliveryRestaurant>adminRestaurantsND;
 
 
     @Override
