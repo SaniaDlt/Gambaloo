@@ -30,7 +30,7 @@
          <children>
             <ImageView fitHeight="43.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Downloads/avatar.png" />
+                  <Image url="@pics/avatar(1).png" />
                </image>
             </ImageView>
             <Label alignment="CENTER" prefHeight="46.0" prefWidth="130.0" text="Usesrname :" textFill="#1b1714">
@@ -58,7 +58,7 @@
          <children>
             <ImageView fitHeight="46.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Downloads/padlock.png" />
+                  <Image url="@pics/padlock.png" />
                </image>
             </ImageView>
             <Label alignment="CENTER" prefHeight="46.0" prefWidth="130.0" text="Password :" textFill="#1b1714">
@@ -75,7 +75,17 @@
             <Insets top="20.0" />
          </padding>
       </HBox>
-      <HBox alignment="BOTTOM_CENTER" prefHeight="73.0" prefWidth="468.0">
+      <HBox prefHeight="16.0" prefWidth="468.0">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </HBox>
+      <Label fx:id="error" alignment="CENTER" prefHeight="50.0" prefWidth="427.0" text=" ">
+         <font>
+            <Font name="Sahadeva" size="20.0" />
+         </font>
+      </Label>
+      <HBox alignment="TOP_CENTER" prefHeight="73.0" prefWidth="468.0">
          <children>
             <Button fx:id="loginBTn" alignment="CENTER" mnemonicParsing="false" onAction="#login" prefHeight="47.0" prefWidth="130.0" stylesheets="@loginstyle.css" text="Login" textAlignment="CENTER" textFill="#171716">
                <font>
@@ -85,11 +95,6 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="39.0" prefWidth="468.0">
-         <children>
-            <Label fx:id="error" prefHeight="16.0" prefWidth="63.0" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="98.0" prefWidth="468.0" spacing="5.0">
