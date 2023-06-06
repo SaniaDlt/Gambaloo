@@ -17,7 +17,7 @@ public class Server {
     }
 
     public static void main(String[] args) throws IOException {
-        ServerSocket server=new ServerSocket(9090);
+        ServerSocket server=new ServerSocket(8283);
         User user=new User("Mamad@gmail.com","admin","admin","0902","asde");
         users.add(user);
         while (true){

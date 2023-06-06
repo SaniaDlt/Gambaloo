@@ -1,3 +1,8 @@
+package ir.gambaloo.controller;
+
+import ir.gambaloo.module.Country;
+import ir.gambaloo.module.Restaurant;
+import ir.gambaloo.module.RestaurantType;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
@@ -6,16 +11,16 @@ import javafx.scene.control.TableView;
 public class AdminMainController {
 
     @FXML
-    private TableColumn<?, ?> country;
+    private TableColumn<Restaurant, Country> country;
 
     @FXML
-    private TableColumn<?, ?> restaurant;
+    private TableColumn<Restaurant, String> restaurant;
 
     @FXML
-    private TableView<?> tabel;
+    private TableView<Restaurant> tabel;
 
     @FXML
-    private TableColumn<?, ?> type;
+    private TableColumn<Restaurant,RestaurantType> type;
 
     @FXML
     void add(ActionEvent event) {

@@ -26,7 +26,7 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws IOException {
-        Main.socket = new Socket("localhost",9090);
+        Main.socket = new Socket("localhost",8283);
         launch();
     }
 }

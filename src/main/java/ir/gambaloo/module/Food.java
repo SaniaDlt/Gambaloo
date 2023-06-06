@@ -2,9 +2,6 @@ package ir.gambaloo.module;
 
 import java.io.Serializable;
 
-enum FoodType {
-    APPETIZER,MAINFOOD,DESERT,DRINKS;
-}
 public abstract class  Food implements Serializable {
     protected String name;
     protected double price;

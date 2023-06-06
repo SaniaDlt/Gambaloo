@@ -1,3 +1,6 @@
+package ir.gambaloo.controller;
+
+import ir.gambaloo.module.FoodType;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
@@ -16,7 +19,7 @@ public class AddFoodController {
     private TextField imgFLDs;
 
     @FXML
-    private ChoiceBox<?> typeFld;
+    private ChoiceBox<FoodType> typeFld;
 
     @FXML
     void add(ActionEvent event) {

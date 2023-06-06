@@ -1,3 +1,9 @@
+package ir.gambaloo.controller;
+
+import ir.gambaloo.module.Appetizer;
+import ir.gambaloo.module.Desert;
+import ir.gambaloo.module.Drink;
+import ir.gambaloo.module.MainFood;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -6,16 +12,16 @@ import javafx.scene.control.TableColumn;
 public class AdminFoodController {
 
     @FXML
-    private TableColumn<?, ?> appetizer;
+    private TableColumn<Appetizer,String> appetizer;
 
     @FXML
-    private TableColumn<?, ?> desert;
+    private TableColumn<Desert, String> desert;
 
     @FXML
-    private TableColumn<?, ?> drinks;
+    private TableColumn<Drink, String> drinks;
 
     @FXML
-    private TableColumn<?, ?> mainFood;
+    private TableColumn<MainFood, String> mainFood;
 
     @FXML
     private Label restaurantName;
