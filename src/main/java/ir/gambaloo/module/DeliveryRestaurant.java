@@ -4,8 +4,8 @@ public class DeliveryRestaurant extends Restaurant{
     private final RestaurantType type=RestaurantType.DELIVERY;
     private final int deliverys;
 
-    public DeliveryRestaurant(int startHour, int endHour, String address,int delivery) {
-        super(startHour, endHour, address);
+    public DeliveryRestaurant(int startHour, int endHour, String address,int delivery,Country country) {
+        super(startHour, endHour, address,country);
         deliverys=delivery;
     }
 

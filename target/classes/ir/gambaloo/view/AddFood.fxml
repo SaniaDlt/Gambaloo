@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="436.0" prefWidth="612.0" spacing="20.0" stylesheets="@AddFood.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.gambaloo.controller.AddFoodController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="24.0" prefWidth="612.0" spacing="10.0">
+         <children>
+            <Label text="Name" />
+            <TextField styleClass="textField" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="22.0" prefWidth="612.0" spacing="10.0">
+         <children>
+            <Label text="Price" />
+            <TextField fx:id="PriceFld" styleClass="textField" />
+         </children>
+         <padding>
+            <Insets left="6.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="25.0" prefWidth="612.0" spacing="10.0">
+         <children>
+            <Label text="Image Address" />
+            <TextField fx:id="imgFLDs" styleClass="textField" />
+         </children>
+         <padding>
+            <Insets right="60.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="55.0" prefWidth="612.0" spacing="10.0">
+         <children>
+            <Label text="Describtion " />
+            <TextArea fx:id="DescribFLD" prefHeight="66.0" prefWidth="200.0" styleClass="textField" />
+         </children>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="24.0" prefWidth="612.0" spacing="10.0">
+         <children>
+            <Label text="Type" />
+            <ChoiceBox fx:id="typeFld" prefWidth="150.0" styleClass="textField" />
+         </children></HBox>
+      <Button mnemonicParsing="false" onAction="#add" prefHeight="37.0" prefWidth="88.0" text="Add" />
+   </children>
+</VBox>

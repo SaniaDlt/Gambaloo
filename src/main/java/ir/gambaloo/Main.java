@@ -30,13 +30,11 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws IOException {
-<<<<<<< HEAD
-        Main.socket = new Socket("localhost",9090);
+        Main.socket = new Socket("localhost",8283);
         Main.reciver=new Scanner ( Main.socket.getInputStream ( ) );
         Main.printWriter= new PrintWriter ( Main.socket.getOutputStream ( ) , true );
-=======
-        Main.socket = new Socket("localhost",8283);
->>>>>>> 1bae914d4a55b1acddb541f791f9fe3fd0b6ebac
+
+
         launch();
     }
 }

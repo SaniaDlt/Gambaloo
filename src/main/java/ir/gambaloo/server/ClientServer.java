@@ -43,12 +43,19 @@ public class ClientServer extends Thread {
                             printWriter.flush ( );
                             String password = reciver.next ( );
                             if ( Server.users.get ( i ).getPassword ( ).equals ( password ) ) {
+                                if(username.equals("admin")&&password.equals("admin")){
+                                    printWriter.println(3);
+                                    printWriter.flush();
+                                    break;
+                                }else{
                                 printWriter.println ( 0 );
                                 printWriter.flush ( );
                                 ObjectOutputStream objectOutputStream = new ObjectOutputStream ( socket.getOutputStream ( ) );
                                 objectOutputStream.writeObject ( Server.users.get ( i ) );
                                 objectOutputStream.flush ( );
                                 objectOutputStream.close ( );
+                                break;
+                                }
                             } else {
                                 printWriter.println ( - 1 );
                                 printWriter.flush ( );
