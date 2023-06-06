@@ -1,64 +1,115 @@
 package ir.gambaloo.server;
 
-import java.io.*;
+import ir.gambaloo.Main;
+import ir.gambaloo.module.User;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.net.Socket;
-import java.util.Formatter;
 import java.util.Scanner;
 
 public class ClientServer extends Thread {
-    private Socket socket;
-    private Scanner reciver;
-    private PrintWriter printWriter;
-    public  ClientServer(Socket socket) throws IOException {
-        this.socket=socket;
-        reciver=new Scanner(socket.getInputStream());
-        printWriter=new PrintWriter(socket.getOutputStream(),true);
+    private final Socket socket;
+    private final Scanner reciver;
+    private final PrintWriter printWriter;
+
+    public ClientServer ( Socket socket ) throws IOException {
+        this.socket = socket;
+        reciver = new Scanner ( socket.getInputStream ( ) );
+        printWriter = new PrintWriter ( socket.getOutputStream ( ) , true );
     }
 
     @Override
-    public void run() {
+    public void run ( ) {
         try {
-            while (true) {
-
-                int code = reciver.nextInt();
-                if (code == 2) {
-                    String username = reciver.next();
-                    int i = 0;
-                    for (i = 0; i < Server.users.size(); i++) {
-                        if (Server.users.get(i).getUsername().equals(username)) {
-                            break;
+            while ( true ) {
+                if ( reciver.hasNext ( ) ) {
+                    int code = reciver.nextInt ( );
+                    if ( code == 2 ) {
+                        String username = reciver.next( );
+                        int i = 0;
+                        for ( i = 0; i < Server.users.size ( ) ; i++ ) {
+                            if ( Server.users.get ( i ).getUsername ( ).equals ( username ) ) {
+                                break;
+                            }
                         }
-                    }
-                    if (i == Server.users.size()) {
-                        printWriter.println(-1);//Username doesnot exist
-                        printWriter.flush();
-                    } else {
-                        printWriter.println(1);
-                        printWriter.flush();
-                        String password = reciver.next();
-                        if (Server.users.get(i).getPassword().equals(password)) {
-                            printWriter.println(0);
-                            printWriter.flush();
-                            ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
-                            objectOutputStream.writeObject(Server.users.get(i));
-                            objectOutputStream.flush();
-                            objectOutputStream.close();
-                            break;
+                        if ( i == Server.users.size ( ) ) {
+                            printWriter.println ( - 1 );//Username doesnot exist
+                            printWriter.flush ( );
                         } else {
-                            printWriter.println(-1);
-                            printWriter.flush();
+                            printWriter.println ( 1 );
+                            printWriter.flush ( );
+                            String password = reciver.next ( );
+                            if ( Server.users.get ( i ).getPassword ( ).equals ( password ) ) {
+                                printWriter.println ( 0 );
+                                printWriter.flush ( );
+                                ObjectOutputStream objectOutputStream = new ObjectOutputStream ( socket.getOutputStream ( ) );
+                                objectOutputStream.writeObject ( Server.users.get ( i ) );
+                                objectOutputStream.flush ( );
+                                objectOutputStream.close ( );
+                            } else {
+                                printWriter.println ( - 1 );
+                                printWriter.flush ( );
+                            }
                         }
+                    } else if ( code == - 2 ) {
+                        String username = reciver.next ( );
+                        int i = 0;
+                        for ( i = 0; i < Server.users.size ( ) ; i++ ) {
+                            if ( Server.users.get ( i ).getUsername ( ).equals ( username ) ) {
+                                printWriter.println ( - 1 );
+                                printWriter.flush ( );
+                                break;
+                            }
+                        }
+                        if ( i == Server.users.size ( ) ) {
+                            printWriter.println ( 1 );
+                            printWriter.flush ( );
+                            String phonenumber = reciver.next ( );
+                            for ( i = 0; i < Server.users.size ( ) ; i++ ) {
+                                if ( Server.users.get ( i ).getPhoneNumber ( ).equals ( phonenumber ) ) {
+                                    printWriter.println ( - 1 );
+                                    printWriter.flush ( );
+                                    break;
+                                }
+                            }
+                            if ( i == Server.users.size ( ) ) {
+                                printWriter.println ( 1 );
+                                printWriter.flush ( );
+                                String email = reciver.next ( );
+                                for ( i = 0; i < Server.users.size ( ) ; i++ ) {
+                                    if ( Server.users.get ( i ).getEmailAddress ( ).equals ( email ) ) {
+                                        printWriter.println ( - 1 );
+                                        printWriter.flush ( );
+                                        break;
+                                    }
+                                }
+                                if ( i == Server.users.size ( ) ) {
+                                    printWriter.println ( 0 );
+                                    printWriter.flush ( );
+                                    ObjectInputStream objectInputStream = new ObjectInputStream ( socket.getInputStream ( ) );
+                                    Server.users.add ( ( User ) objectInputStream.readObject ( ) );
+                                }
+
+
+                            }
+
+
+                        }
+
+
                     }
-
-                } else {
-
                 }
-
-
             }
-        }catch(IOException e){
-            System.out.println(e);
+        } catch ( IOException e ) {
+            System.out.println ( e );
+        } catch ( ClassNotFoundException e ) {
+            throw new RuntimeException ( e );
         }
     }
 }
+
+
 

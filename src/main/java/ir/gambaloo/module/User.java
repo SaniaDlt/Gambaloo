@@ -7,14 +7,16 @@ public class User implements Serializable {
     private String username;
     private String password;
     private String phoneNumber;
+    private String address;
     private double balance;
     private Cart cart;
 
-    public User(String emailAddress, String username, String password, String phoneNumber) {
+    public User(String emailAddress, String username, String password, String phoneNumber,String address) {
         this.emailAddress = emailAddress;
         this.username = username;
         this.password = password;
         this.phoneNumber = phoneNumber;
+        this.address=address;
         cart=new Cart();
     }
 
@@ -57,4 +59,6 @@ public class User implements Serializable {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+    public String getAddress() { return address;}
+
 }

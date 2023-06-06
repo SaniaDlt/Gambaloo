@@ -1,6 +1,5 @@
-#image:hover{ 
-   -fx-background-color: linear-gradient(rgb(241, 217, 30),rgb(231, 210, 90),rgb(235, 224, 161));
-   -fx-border-radius: 60px;
+.image{ 
+   -fx-background-color: linear-gradient(rgb(241, 217, 30),rgb(245, 227, 85),rgb(231, 210, 90),rgb(235, 224, 161),rgb(237, 232, 197));
 }
 .button{
    -fx-background-color:#fce158 ;

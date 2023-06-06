@@ -4,11 +4,14 @@ import ir.gambaloo.Main;
 import ir.gambaloo.module.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.Socket;
@@ -35,42 +38,50 @@ public class LoginPageController{
     @FXML
     private TextField usernameFLD;
 
+
+
     @FXML
-    void login(ActionEvent event) throws IOException {
+    void login(ActionEvent event) throws IOException, ClassNotFoundException {
         String username=usernameFLD.getText();
         String password=passwordFLD.getText();
-        Scanner reciver=new Scanner(Main.socket.getInputStream());
-        PrintWriter printWriter=new PrintWriter(Main.socket.getOutputStream(),true);
-        try{
-            printWriter.println(2);
-            printWriter.flush();
-            printWriter.println(username);
-            printWriter.flush();
-            if(reciver.nextInt()==-1){
-                error.setText("Username not found");
-            }else{
-                printWriter.println(password);
-                printWriter.flush();
-                if(reciver.nextInt()==0){
-                    ObjectInputStream recive = new ObjectInputStream(Main.socket.getInputStream());
-                    Main.client=(User) recive.readObject();
+        if( username.equals ("")&&password.equals ( "" )){
+            error.setText ( "Fill in the blanks." );
+        }
+        else {
+            Scanner reciver = new Scanner ( Main.socket.getInputStream ( ) );
+            PrintWriter printWriter = new PrintWriter ( Main.socket.getOutputStream ( ) , true );
+
+            printWriter.println ( 2 );
+            printWriter.flush ( );
+            printWriter.println ( username );
+            printWriter.flush ( );
+            if ( reciver.nextInt ( ) == - 1 ) {
+                error.setText ( "Username not found" );
+            } else {
+                printWriter.println ( password );
+                printWriter.flush ( );
+                if ( reciver.nextInt ( ) == 0 ) {
+                    ObjectInputStream recive = new ObjectInputStream ( Main.socket.getInputStream ( ) );
+                    Main.client = ( User ) recive.readObject ( );
                     //Fxml loader Mainpage load mishe
-                }else{
-                    error.setText("Password is wrong");
+                } else {
+                    error.setText ( "Password is wrong" );
                 }
             }
-
-        }catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
         }
+
 
     }
 
     @FXML
-    void signup(MouseEvent event) {
-
+    void signup(MouseEvent event) throws IOException {
+        FXMLLoader signUpPage = new FXMLLoader(Main.class.getResource("view/SignupPage.fxml"));
+        signUpPage.load();
+        Stage stage=new Stage();
+        stage.setTitle("Signup page");
+        stage.setScene(new Scene(signUpPage.getRoot()));
+        stage.show();
+        stage.setResizable(false);
     }
 
 }
