@@ -4,10 +4,15 @@ import ir.gambaloo.Main;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -16,6 +21,7 @@ public class AdminMainController implements Initializable {
     @FXML
     private TableColumn<Restaurant, String> address;
     protected static int chosen=-1;
+    protected static String addressS=null;
 
     @FXML
     private TableColumn<Restaurant, String> restaurant;
@@ -59,8 +65,17 @@ public class AdminMainController implements Initializable {
     }
 
     @FXML
-    void edit(ActionEvent event) {
-
+    void edit(ActionEvent event) throws IOException {
+        chosen=tabel.getSelectionModel().getSelectedIndex();
+        if(chosen>=0) {
+            addressS=address.getCellData(chosen);
+            FXMLLoader foodPage = new FXMLLoader(Main.class.getResource("view/AdminFood.fxml"));
+            foodPage.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(foodPage.getRoot()));
+            stage.setTitle("AdminFood");
+            stage.show();
+        }
     }
 
     @Override
