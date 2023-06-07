@@ -11,6 +11,19 @@ public abstract class Restaurant implements Serializable {
     protected String address;
     protected Country country;
     protected String name;
+    protected RestaurantType type;
+
+    public String getCountry() {
+        return ""+country;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getType() {
+        return ""+type;
+    }
 
     public int getStartHour() {
         return startHour;

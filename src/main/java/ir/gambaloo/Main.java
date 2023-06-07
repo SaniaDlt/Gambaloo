@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.SocketException;
@@ -23,6 +24,7 @@ public class Main extends Application {
     public static PrintWriter printWriter;
     public static ArrayList<DeliveryRestaurant> adminRestaurantsD;
     public static ArrayList<NotDeliveryRestaurant>adminRestaurantsND;
+    public static boolean isAdmin=false;
 
 
     @Override
@@ -47,6 +49,14 @@ public class Main extends Application {
     @Override
     public void stop() throws Exception {
         super.stop();
-
+        if(Main.isAdmin) {
+            Main.printWriter.println(0);
+            Main.printWriter.flush();
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
+            objectOutputStream.writeObject(Main.adminRestaurantsD);
+            objectOutputStream.flush();
+            objectOutputStream.writeObject(Main.adminRestaurantsND);
+            objectOutputStream.flush();
+        }
     }
 }

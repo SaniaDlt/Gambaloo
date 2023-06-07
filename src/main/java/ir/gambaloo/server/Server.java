@@ -1,5 +1,6 @@
 package ir.gambaloo.server;
 
+import ir.gambaloo.module.Country;
 import ir.gambaloo.module.DeliveryRestaurant;
 import ir.gambaloo.module.NotDeliveryRestaurant;
 import ir.gambaloo.module.User;
@@ -22,6 +23,7 @@ public class Server {
 
     public static void main(String[] args) throws IOException {
         ServerSocket server=new ServerSocket(8283);
+        deliveryRestaurants.add(new DeliveryRestaurant(2,3,"ASDAS",12, Country.IRAN,"SaniaKasif"));
         User user=new User("ali@sania.noob","admin","admin","0902","Paradise");
         users.add(user);
         while (true){

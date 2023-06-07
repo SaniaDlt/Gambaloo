@@ -75,6 +75,7 @@ public class LoginPageController{
                     Main.adminRestaurantsND=(ArrayList<NotDeliveryRestaurant>) recive.readObject();
                     FXMLLoader adminPage=new FXMLLoader(Main.class.getResource("view/AdminMain.fxml"));
                     adminPage.load();
+                    Main.isAdmin=true;
                     Stage stage =new Stage();
                     stage.setScene(new Scene(adminPage.getRoot()));
                     Node source= (Node) event.getSource();

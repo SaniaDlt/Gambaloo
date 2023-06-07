@@ -1,6 +1,8 @@
 package ir.gambaloo.server;
 
 import ir.gambaloo.Main;
+import ir.gambaloo.module.DeliveryRestaurant;
+import ir.gambaloo.module.NotDeliveryRestaurant;
 import ir.gambaloo.module.User;
 
 import java.io.IOException;
@@ -8,6 +10,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ClientServer extends Thread {
@@ -118,7 +121,12 @@ public class ClientServer extends Thread {
                 }
             }
             if(isAdmin){
-
+                int end=reciver.nextInt();
+                if(end==0){
+                    ObjectInputStream objectInputStream=new ObjectInputStream(socket.getInputStream());
+                    Server.deliveryRestaurants=(ArrayList<DeliveryRestaurant>) objectInputStream.readObject();
+                    Server.notDeliveryRestaurants=(ArrayList<NotDeliveryRestaurant>) objectInputStream.readObject();
+                }
             }
         } catch ( IOException e ) {
             System.out.println ( e );
