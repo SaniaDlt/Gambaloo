@@ -13,7 +13,7 @@
         <columns>
           <TableColumn fx:id="restaurant" prefWidth="128.0" sortable="false" text="Restaurant" />
           <TableColumn fx:id="type" prefWidth="138.0" sortable="false" text="Type" />
-            <TableColumn fx:id="country" prefWidth="154.0" sortable="false" text="Country" />
+            <TableColumn fx:id="address" prefWidth="154.0" sortable="false" text="Address" />
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

@@ -1,25 +1,21 @@
 package ir.gambaloo.controller;
 import ir.gambaloo.module.Restaurant;
 import ir.gambaloo.Main;
-import ir.gambaloo.module.Country;
-import ir.gambaloo.module.Restaurant;
-import ir.gambaloo.module.RestaurantType;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AdminMainController implements Initializable {
 
     @FXML
-    private TableColumn<Restaurant, String> country;
+    private TableColumn<Restaurant, String> address;
+    protected static int chosen=-1;
 
     @FXML
     private TableColumn<Restaurant, String> restaurant;
@@ -39,15 +35,24 @@ public class AdminMainController implements Initializable {
 
     @FXML
     void delete(ActionEvent event) {
-    int i=  tabel.getSelectionModel().getSelectedIndex();
-    if(i>=0){
-        tabel.getItems().remove(i);
 
-        if(Main.adminRestaurantsD.size()<i){
-            Main.adminRestaurantsND.remove(i);
-        }else{
-            Main.adminRestaurantsD.remove(i);
+    chosen=  tabel.getSelectionModel().getSelectedIndex();
+    if(chosen>=0) {
+        String addressCellData=address.getCellData(chosen);
+        tabel.getItems().remove(chosen);
+        for(int i=0;i<Main.adminRestaurantsD.size();i++){
+            if(addressCellData.equals(Main.adminRestaurantsD.get(i).getAddress())){
+                Main.adminRestaurantsD.remove(i);
+                return;
+            }
         }
+        for(int i=0;i<Main.adminRestaurantsND.size();i++){
+            if(addressCellData.equals(Main.adminRestaurantsND.get(i).getAddress())){
+                Main.adminRestaurantsND.remove(i);
+                return;
+            }
+        }
+
     }
 
 
@@ -62,8 +67,9 @@ public class AdminMainController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         type.setCellValueFactory(cellData->new SimpleStringProperty(cellData.getValue().getType()));
         restaurant.setCellValueFactory(cellData->new SimpleStringProperty(cellData.getValue().getName()));
-        country.setCellValueFactory(cellData->new SimpleStringProperty(cellData.getValue().getCountry()));
+        address.setCellValueFactory(cellData->new SimpleStringProperty(cellData.getValue().getAddress()));
         add();
+        tabel.setPlaceholder(new Label("No restaurant"));
 
     }
     public void add(){

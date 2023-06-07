@@ -21,6 +21,7 @@ public class Server {
         users.add(user);
     }
 
+
     public static void main(String[] args) throws IOException {
         ServerSocket server=new ServerSocket(8283);
         deliveryRestaurants.add(new DeliveryRestaurant(2,3,"ASDAS",12, Country.IRAN,"SaniaKasif"));
