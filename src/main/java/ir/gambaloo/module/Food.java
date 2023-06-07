@@ -6,10 +6,14 @@ public abstract class  Food implements Serializable {
     protected double price;
     protected FoodType foodType;
     //image2B
+    protected String imageAdress;
+    protected String describ;
 
-    public Food(String name, double price) {
+    public Food(String name, double price,String describ,String imageAdress) {
         this.name = name;
         this.price = price;
+        this.describ=describ;
+        this.imageAdress=imageAdress;
     }
 
     public String getName() {

@@ -1,21 +1,24 @@
 package ir.gambaloo.controller;
 
 
-import ir.gambaloo.module.Appetizer;
-import ir.gambaloo.module.Desert;
-import ir.gambaloo.module.Drink;
-import ir.gambaloo.module.MainFood;
+import ir.gambaloo.Main;
+import ir.gambaloo.module.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AdminFoodController implements Initializable {
+    private Restaurant chosen;
 
     @FXML
     private TableView<Appetizer> appetizerTBL;
@@ -45,8 +48,19 @@ public class AdminFoodController implements Initializable {
     private Label restaurantName;
 
     @FXML
-    void addFood(ActionEvent event) {
-
+    void addFood(ActionEvent event) throws IOException {
+        FXMLLoader addFood=new FXMLLoader(Main.class.getResource("view/AddFood.fxml"));
+        addFood.load();
+        AddFoodController addFoodController=addFood.getController();
+        addFoodController.setChosen(chosen);
+        addFoodController.setMainFoodTBL(mainfoodTBL);
+        addFoodController.setAppetizerTBL(appetizerTBL);
+        addFoodController.setDesertTBL(desertsTBL);
+        addFoodController.setDrinksTBL(drinksTBL);
+        Stage stage=new Stage();
+        stage.setScene(new Scene(addFood.getRoot()));
+        stage.setTitle("Add a food YUMMY!");
+        stage.show();
     }
 
     @FXML
