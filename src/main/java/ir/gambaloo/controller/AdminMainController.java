@@ -72,8 +72,9 @@ public class AdminMainController implements Initializable {
             Restaurant restaurant=detect(addressS);
             FXMLLoader foodPage = new FXMLLoader(Main.class.getResource("view/AdminFood.fxml"));
             foodPage.load();
-            AddFoodController addFoodController=foodPage.getController();
-            addFoodController.setChosen(restaurant);
+            AdminFoodController adminFoodController=foodPage.getController();
+            adminFoodController.setChosen(restaurant);
+            adminFoodController.add();
             Stage stage = new Stage();
             stage.setScene(new Scene(foodPage.getRoot()));
             stage.setTitle("AdminFood");

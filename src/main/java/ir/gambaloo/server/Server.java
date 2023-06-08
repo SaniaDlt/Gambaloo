@@ -23,15 +23,20 @@ public class Server {
 
 
     public static void main(String[] args) throws IOException {
-        ServerSocket server=new ServerSocket(8283);
-        deliveryRestaurants.add(new DeliveryRestaurant(2,3,"ASDAS",12, Country.IRAN,"SaniaKasif"));
-        User user=new User("ali@sania.noob","admin","admin","0902","Paradise");
-        users.add(user);
-        while (true){
-        Socket socket = server.accept();
-        new ClientServer(socket).start();
-        }
+        try {
+            ServerSocket server = new ServerSocket(8283);
+            deliveryRestaurants.add(new DeliveryRestaurant(2, 3, "ASDAS", 12, Country.IRAN, "SaniaKasif"));
+            User user = new User("ali@sania.noob", "admin", "admin", "0902", "Paradise");
+            users.add(user);
+            while (true) {
+                Socket socket = server.accept();
+                new ClientServer(socket).start();
+            }
+        }catch (IOException E){
+            System.err.println(E);
+        }finally {
 
+        }
     }
 
 

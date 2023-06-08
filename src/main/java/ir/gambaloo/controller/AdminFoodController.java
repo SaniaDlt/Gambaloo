@@ -148,7 +148,7 @@ public class AdminFoodController implements Initializable {
         mainFoodTV.setCellValueFactory(cellData->new SimpleStringProperty (cellData.getValue().getName()));
         desertTV.setCellValueFactory(cellData->new SimpleStringProperty (cellData.getValue().getName()));
         drinksTV.setCellValueFactory(cellData->new SimpleStringProperty (cellData.getValue().getName()));
-        add();
+
         appetizerTBL.setPlaceholder ( new Label ( "No food" ) );
         mainfoodTBL.setPlaceholder ( new Label ( "No food" ) );
         desertsTBL.setPlaceholder ( new Label ( "No food" ) );
