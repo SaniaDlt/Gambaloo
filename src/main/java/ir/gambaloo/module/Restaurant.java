@@ -70,7 +70,7 @@ public class Restaurant implements Serializable {
         this.address = address;
         this.country=country;
         this.name=name;
-        page=new FXMLLoader(Main.class.getResource("view/RestaurantPage.fxml"));
+        page=new FXMLLoader(Main.class.getResource("view/Restaurant.fxml"));
         try {
             page.load();
         } catch (IOException e) {

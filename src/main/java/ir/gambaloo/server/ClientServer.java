@@ -14,9 +14,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ClientServer extends Thread {
-    private final Socket socket;
-    private final Scanner reciver;
-    private final PrintWriter printWriter;
+    private  Socket socket;
+    private  Scanner reciver;
+    private  PrintWriter printWriter;
 
     public ClientServer ( Socket socket ) throws IOException {
         this.socket = socket;

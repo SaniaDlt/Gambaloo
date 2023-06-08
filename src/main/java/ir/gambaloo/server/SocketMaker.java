@@ -15,7 +15,8 @@ public class SocketMaker extends Thread {
 
     @Override
     public void run ( ) {
-        while(true){
+        boolean run=true;
+        while(run){
             try {
                 Socket socket =serverSocket.accept();
                 new ClientServer(socket).start ();
@@ -23,6 +24,7 @@ public class SocketMaker extends Thread {
             } catch ( SocketException socketException ){
                 if(serverSocket.isClosed ()){
                     System.out.println ("Server went offline");
+                    run=false;
                 }
 
             } catch ( IOException e ) {
