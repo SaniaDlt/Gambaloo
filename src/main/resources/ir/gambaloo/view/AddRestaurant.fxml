@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.gambaloo.controller.AddFoodController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.gambaloo.controller.AddRestaurantController">
    <children>
       <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" spacing="10.0">
          <children>
@@ -61,6 +60,26 @@
                </font>
             </Label>
             <ChoiceBox fx:id="countryCHCB" prefWidth="150.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" spacing="10.0">
+         <children>
+            <Label text="Type :">
+               <font>
+                  <Font name="Sahadeva" size="20.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="typeCHCB" prefWidth="150.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" spacing="10.0">
+         <children>
+            <Label text="Number of tables or deliveries :">
+               <font>
+                  <Font name="Sahadeva" size="20.0" />
+               </font>
+            </Label>
+            <TextField id="field" fx:id="tableOrDeliveryFLD" prefHeight="30.0" prefWidth="200.0" styleClass="field" stylesheets="@AddRestaurant.css" />
          </children>
       </HBox>
       <Button id="button" mnemonicParsing="false" onAction="#addBTN" prefHeight="32.0" prefWidth="94.0" stylesheets="@AddRestaurant.css" text="ADD">

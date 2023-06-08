@@ -1,11 +1,11 @@
 package ir.gambaloo.module;
 
 
-import javafx.scene.image.Image;
+import javafx.scene.control.ChoiceBox;
 
 import java.io.Serializable;
 
-public abstract class Restaurant implements Serializable {
+public class Restaurant implements Serializable {
     protected int startHour,endHour;
     protected Menu menu=new Menu();
     protected String address;
@@ -41,7 +41,7 @@ public abstract class Restaurant implements Serializable {
         return address;
     }
 
-    public Restaurant(int startHour, int endHour, String address,Country country,String name) {
+    public Restaurant( int startHour, int endHour, String address, Country country, String name) {
         this.startHour = startHour;
         this.endHour = endHour;
         this.address = address;

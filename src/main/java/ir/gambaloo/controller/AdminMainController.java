@@ -34,8 +34,15 @@ public class AdminMainController implements Initializable {
 
 
     @FXML
-    void add(ActionEvent event) {
-
+    void add(ActionEvent event) throws IOException {
+    FXMLLoader addRestaurant=new FXMLLoader(Main.class.getResource ( "view/AddRestaurant.fxml" ));
+    addRestaurant.load ();
+   AddRestaurantController addRestaurantController=addRestaurant.getController ();
+   addRestaurantController.setTable (tabel );
+    Stage stage=new Stage ();
+    stage.setTitle ( "Add restaurant" );
+    stage.setScene ( new Scene ( addRestaurant.getRoot () ) );
+    stage.show ();
 
     }
 

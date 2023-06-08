@@ -14,7 +14,7 @@
       <HBox alignment="CENTER" prefHeight="24.0" prefWidth="612.0" spacing="10.0">
          <children>
             <Label text="Name" />
-            <TextField prefHeight="30.0" prefWidth="200.0" styleClass="textField" />
+            <TextField fx:id="nameFLD" prefHeight="30.0" prefWidth="200.0" styleClass="textField" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="22.0" prefWidth="612.0" spacing="10.0">
@@ -49,6 +49,11 @@
             <Label text="Type" />
             <ChoiceBox fx:id="typeFld" prefWidth="150.0" styleClass="textField" />
          </children></HBox>
+      <HBox alignment="CENTER" prefHeight="23.0" prefWidth="612.0">
+         <children>
+            <Label fx:id="errorLBL" alignment="CENTER" prefHeight="16.0" prefWidth="245.0" />
+         </children>
+      </HBox>
       <Button mnemonicParsing="false" onAction="#add" prefHeight="37.0" prefWidth="88.0" text="Add" />
    </children>
 </VBox>

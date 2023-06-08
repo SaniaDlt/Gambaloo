@@ -107,10 +107,7 @@ public class AddFoodController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        typeFld.getItems().add(FoodType.APPETIZER);
-        typeFld.getItems().add(FoodType.MAINFOOD);
-        typeFld.getItems().add(FoodType.DESERT);
-        typeFld.getItems().add(FoodType.DRINKS);
+        typeFld.getItems().setAll ( FoodType.values () );
 
     }
     private boolean exist(String name){
