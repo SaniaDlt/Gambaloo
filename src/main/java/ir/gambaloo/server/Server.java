@@ -38,7 +38,7 @@ public class Server {
             object.close ();
             file.close ();
             Scanner scan=new Scanner (System.in);
-            new SocketMaker(server);
+            new SocketMaker(server).start();
             while (!scan.next ().equals ("Exit"));
             server.close ();
         }catch (IOException E){

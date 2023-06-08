@@ -13,7 +13,7 @@
             <Image url="@pics/page_1_copy_y_a_p_a_b_a_w_copy_2.png" />
          </image>
       </ImageView>
-      <Label layoutX="152.0" layoutY="39.0" onMouseClicked="#mexicoCllick" prefHeight="304.0" prefWidth="217.0">
+      <Label layoutX="152.0" layoutY="39.0" onMouseClicked="#mexicoClick" prefHeight="304.0" prefWidth="217.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -43,7 +43,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Label>
-      <Label layoutX="782.0" layoutY="373.0" onMouseClicked="#lebenon" prefHeight="304.0" prefWidth="217.0">
+      <Label layoutX="782.0" layoutY="373.0" onMouseClicked="#lebenonClick" prefHeight="304.0" prefWidth="217.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

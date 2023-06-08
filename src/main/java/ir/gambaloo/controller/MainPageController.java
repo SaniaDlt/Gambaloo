@@ -26,12 +26,12 @@ package ir.gambaloo.controller;
         }
 
         @FXML
-        void lebenon(MouseEvent event) {
+        void lebenonClick(MouseEvent event) {
 
         }
 
         @FXML
-        void mexicoCllick(MouseEvent event) {
+        void mexicoClick(MouseEvent event) {
 
         }
 

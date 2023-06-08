@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RestaurantPageController">
+   <top>
+      <HBox prefHeight="215.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="image" fitHeight="203.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets left="20.0" top="5.0" />
+               </HBox.margin>
+            </ImageView>
+            <VBox prefHeight="215.0" prefWidth="584.0">
+               <children>
+                  <Label fx:id="nameLBL" alignment="CENTER" prefHeight="215.0" prefWidth="606.0" text="Name ">
+                     <font>
+                        <Font name="Sahadeva" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox prefHeight="215.0" prefWidth="413.0">
+               <children>
+                  <HBox prefHeight="54.0" prefWidth="409.0">
+                     <children>
+                        <Label prefHeight="49.0" prefWidth="94.0" text="Start hour" />
+                        <Label fx:id="startHLBL" prefHeight="48.0" prefWidth="184.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="54.0" prefWidth="409.0">
+                     <children>
+                        <Label prefHeight="49.0" prefWidth="94.0" text="End hour" />
+                        <Label fx:id="endHLBL" prefHeight="48.0" prefWidth="184.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="54.0" prefWidth="409.0">
+                     <children>
+                        <Label prefHeight="49.0" prefWidth="94.0" text="Address" />
+                        <Label fx:id="adressLBL" prefHeight="48.0" prefWidth="307.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox prefHeight="205.0" prefWidth="1265.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="appetizerRoot" prefHeight="43.0" prefWidth="1265.0">
+               <children>
+                  <Label alignment="TOP_LEFT" prefHeight="62.0" prefWidth="78.0" text="Appetizer" underline="true" />
+               </children>
+            </VBox>
+            <VBox fx:id="mainFoodRoot" prefHeight="43.0" prefWidth="1265.0">
+               <children>
+                  <Label alignment="TOP_LEFT" prefHeight="55.0" prefWidth="88.0" text="Main food" underline="true" />
+               </children>
+            </VBox>
+            <VBox fx:id="desertRoot" prefHeight="43.0" prefWidth="1265.0">
+               <children>
+                  <Label alignment="TOP_LEFT" prefHeight="44.0" prefWidth="78.0" text="Desert" underline="true" />
+               </children>
+            </VBox>
+            <VBox fx:id="drinksRoot" prefHeight="43.0" prefWidth="1265.0">
+               <children>
+                  <Label alignment="TOP_LEFT" prefHeight="56.0" prefWidth="79.0" text="Drinks" underline="true" />
+               </children>
+            </VBox>
+         </children></VBox>
+   </center>
+   <right>
+      <ScrollBar orientation="VERTICAL" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>
