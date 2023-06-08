@@ -53,18 +53,11 @@ public class AdminMainController implements Initializable {
     if(chosen>=0) {
         String addressCellData=address.getCellData(chosen);
         tabel.getItems().remove(chosen);
-        for(int i=0;i<Main.adminRestaurantsD.size();i++){
-            if(addressCellData.equals(Main.adminRestaurantsD.get(i).getAddress())){
-                Main.adminRestaurantsD.remove(i);
-                return;
-            }
+        Restaurant restaurant=detect(addressCellData);
+        if(!Main.adminRestaurantsD.remove(restaurant)){
+            Main.adminRestaurantsND.remove(restaurant);
         }
-        for(int i=0;i<Main.adminRestaurantsND.size();i++){
-            if(addressCellData.equals(Main.adminRestaurantsND.get(i).getAddress())){
-                Main.adminRestaurantsND.remove(i);
-                return;
-            }
-        }
+
 
     }
 
@@ -76,8 +69,11 @@ public class AdminMainController implements Initializable {
         chosen=tabel.getSelectionModel().getSelectedIndex();
         if(chosen>=0) {
             addressS=address.getCellData(chosen);
+            Restaurant restaurant=detect(addressS);
             FXMLLoader foodPage = new FXMLLoader(Main.class.getResource("view/AdminFood.fxml"));
             foodPage.load();
+            AddFoodController addFoodController=foodPage.getController();
+            addFoodController.setChosen(restaurant);
             Stage stage = new Stage();
             stage.setScene(new Scene(foodPage.getRoot()));
             stage.setTitle("AdminFood");
@@ -100,5 +96,19 @@ public class AdminMainController implements Initializable {
         for(int i=0;i<Main.adminRestaurantsND.size();i++)
             tabel.getItems().add(Main.adminRestaurantsND.get(i));
 
+    }
+    public Restaurant detect(String addressS){
+        for(int i=0;i<Main.adminRestaurantsD.size();i++){
+            if(addressS.equals(Main.adminRestaurantsD.get(i).getAddress())){
+                return Main.adminRestaurantsD.get(i);
+            }
+        }
+        for(int i=0;i<Main.adminRestaurantsND.size();i++){
+            if(addressS.equals(Main.adminRestaurantsND.get(i).getAddress())){
+
+                return Main.adminRestaurantsND.get(i);
+            }
+        }
+        return null;
     }
 }

@@ -20,6 +20,15 @@ import java.util.ResourceBundle;
 
 public class AdminFoodController implements Initializable {
     private Restaurant chosen;
+
+    public Restaurant getChosen() {
+        return chosen;
+    }
+
+    public void setChosen(Restaurant chosen) {
+        this.chosen = chosen;
+    }
+
     protected static int appetizerChosen=-1;
     protected static int mainFoodChosen=-1;
     protected static int desertChosen=-1;
