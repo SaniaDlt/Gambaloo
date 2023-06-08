@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.gambaloo.controller.MainPageController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1398.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pics/page_1_copy_y_a_p_a_b_a_w_copy_2.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="152.0" layoutY="39.0" onMouseClicked="#mexicoCllick" prefHeight="304.0" prefWidth="217.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label layoutX="405.0" layoutY="39.0" onMouseClicked="#USAClick" prefHeight="304.0" prefWidth="217.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label layoutX="655.0" layoutY="37.0" onMouseClicked="#iranClick" prefHeight="304.0" prefWidth="217.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label layoutX="912.0" layoutY="39.0" onMouseClicked="#japanClick" prefHeight="304.0" prefWidth="217.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label layoutX="278.0" layoutY="370.0" onMouseClicked="#turkeyClick" prefHeight="304.0" prefWidth="217.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label layoutX="530.0" layoutY="371.0" onMouseClicked="#italyClick" prefHeight="304.0" prefWidth="217.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <Label layoutX="782.0" layoutY="373.0" onMouseClicked="#lebenon" prefHeight="304.0" prefWidth="217.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+   </children>
+</AnchorPane>

@@ -65,6 +65,14 @@ public class LoginPageController{
                     ObjectInputStream recive = new ObjectInputStream ( Main.socket.getInputStream ( ) );
                     Main.client = ( User ) recive.readObject ( );
                     error.setText ( "Login anghezi" );
+                    FXMLLoader mainPage=new FXMLLoader(Main.class.getResource ( "view/MainPage.fxml" ));
+                    mainPage.load ();
+                    Stage stage=new Stage ();
+                    stage.setTitle ("Main Page");
+                    stage.setScene ( new Scene ( mainPage.getRoot ()));
+                    stage.show();
+                    Node source= (Node) event.getSource();
+                    source.getScene().getWindow().hide();
                     //Fxml loader Mainpage load mishe
 
                 } else if(code==-1) {

@@ -14,7 +14,7 @@ public class Restaurant implements Serializable {
     protected RestaurantType type;
 
     public String getCountry() {
-        return ""+country;
+        return String.valueOf ( country );
     }
 
     public String getName() {
@@ -22,7 +22,7 @@ public class Restaurant implements Serializable {
     }
 
     public String getType() {
-        return ""+type;
+        return String.valueOf ( type );
     }
 
     public int getStartHour() {
