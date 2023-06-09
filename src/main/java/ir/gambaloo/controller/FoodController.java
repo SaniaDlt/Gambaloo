@@ -5,7 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
-public class FoodController {
+import java.io.Serializable;
+
+public class FoodController implements Serializable {
 
     @FXML
     private Label Descript;

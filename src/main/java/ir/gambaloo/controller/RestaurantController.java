@@ -5,7 +5,9 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
-public class RestaurantController {
+import java.io.Serializable;
+
+public class RestaurantController implements Serializable {
 
     public ImageView getImage() {
         return image;
