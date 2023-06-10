@@ -23,13 +23,13 @@ public class RestaurantController implements Serializable {
     }
 
     @FXML
-    private ImageView image;
+    private transient ImageView image;
 
     @FXML
-    private Label name;
+    private transient Label name;
 
     @FXML
-    private AnchorPane root;
+    private transient AnchorPane root;
     @FXML
     void restaurantAdd( MouseEvent event) {
 

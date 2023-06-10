@@ -21,7 +21,7 @@ public class MainPageController {
         void USAClick(MouseEvent event) throws IOException, ClassNotFoundException {
             Main.printWriter.println (9);
             Main.printWriter.flush ();
-            Main.printWriter.close ();
+
             ObjectInputStream USARestaurant=new ObjectInputStream ( Main.socket.getInputStream () );
             restaurant= ( ArrayList<Restaurant> ) USARestaurant.readObject();
             addRoot (restaurant);
@@ -34,7 +34,6 @@ public class MainPageController {
         void iranClick(MouseEvent event) throws IOException, ClassNotFoundException {
             Main.printWriter.println (7);
             Main.printWriter.flush ();
-            Main.printWriter.close ();
             ObjectInputStream iranRestaurant=new ObjectInputStream ( Main.socket.getInputStream () );
             restaurant= ( ArrayList<Restaurant> ) iranRestaurant.readObject();
             addRoot (restaurant);
@@ -45,7 +44,6 @@ public class MainPageController {
         void italyClick(MouseEvent event) throws IOException, ClassNotFoundException {
             Main.printWriter.println (5);
             Main.printWriter.flush ();
-            Main.printWriter.close ();
             ObjectInputStream italyRestaurant=new ObjectInputStream ( Main.socket.getInputStream () );
             restaurant= ( ArrayList<Restaurant> ) italyRestaurant.readObject();
             addRoot (restaurant);
@@ -56,7 +54,6 @@ public class MainPageController {
         void japanClick(MouseEvent event) throws IOException, ClassNotFoundException {
             Main.printWriter.println (4);
             Main.printWriter.flush ();
-            Main.printWriter.close ();
             ObjectInputStream japanRestaurant=new ObjectInputStream ( Main.socket.getInputStream () );
             restaurant= ( ArrayList<Restaurant> ) japanRestaurant.readObject();
             addRoot (restaurant);
@@ -68,7 +65,6 @@ public class MainPageController {
         void lebenonClick(MouseEvent event) throws IOException, ClassNotFoundException {
             Main.printWriter.println (6);
             Main.printWriter.flush ();
-            Main.printWriter.close ();
             ObjectInputStream lebenonRestaurant=new ObjectInputStream ( Main.socket.getInputStream () );
             restaurant= ( ArrayList<Restaurant> ) lebenonRestaurant.readObject();
             addRoot (restaurant);
@@ -79,7 +75,6 @@ public class MainPageController {
         void mexicoClick(MouseEvent event) throws IOException, ClassNotFoundException {
             Main.printWriter.println (8);
             Main.printWriter.flush ();
-            Main.printWriter.close ();
             ObjectInputStream mexicoRestaurant=new ObjectInputStream ( Main.socket.getInputStream () );
             restaurant= ( ArrayList<Restaurant> ) mexicoRestaurant.readObject();
             addRoot (restaurant);
@@ -90,7 +85,6 @@ public class MainPageController {
         void turkeyClick(MouseEvent event) throws IOException, ClassNotFoundException {
             Main.printWriter.println (10);
             Main.printWriter.flush ();
-            Main.printWriter.close ();
             ObjectInputStream turkeyRestaurant=new ObjectInputStream ( Main.socket.getInputStream () );
             restaurant= ( ArrayList<Restaurant> ) turkeyRestaurant.readObject();
             addRoot (restaurant);
@@ -103,6 +97,7 @@ public class MainPageController {
             restaurantList.load ();
             RestaurantListController restaurantListController=restaurantList.getController ();
             for(int i=0;i<restaurant.size ();i++){
+                restaurant.get(i).load();
                 restaurantListController.getRoot ().getChildren ().add (restaurant.get (i).getPage ().getRoot ());
             }
             Stage stage=new Stage ();
