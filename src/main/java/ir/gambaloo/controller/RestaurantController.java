@@ -3,6 +3,7 @@ package ir.gambaloo.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.Serializable;
@@ -29,5 +30,9 @@ public class RestaurantController implements Serializable {
 
     @FXML
     private AnchorPane root;
+    @FXML
+    void restaurantAdd( MouseEvent event) {
+
+    }
 
 }

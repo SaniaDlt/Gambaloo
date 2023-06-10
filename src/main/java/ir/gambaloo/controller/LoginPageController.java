@@ -71,6 +71,7 @@ public class LoginPageController{
                     stage.setTitle ("Main Page");
                     stage.setScene ( new Scene ( mainPage.getRoot ()));
                     stage.show();
+                    stage.setResizable (false);
                     Node source= (Node) event.getSource();
                     source.getScene().getWindow().hide();
                     //Fxml loader Mainpage load mishe
