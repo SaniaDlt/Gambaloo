@@ -6,10 +6,7 @@ import ir.gambaloo.module.NotDeliveryRestaurant;
 import ir.gambaloo.module.Restaurant;
 import ir.gambaloo.module.User;
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -28,6 +25,7 @@ public class ClientServer extends Thread {
     @Override
     public void run ( ) {
         boolean isAdmin=false;
+        boolean isClient=false;
         try {
             while ( true ) {
                 if ( reciver.hasNext ( ) ) {
@@ -58,12 +56,13 @@ public class ClientServer extends Thread {
                                     objectOutputStream.writeObject(Server.notDeliveryRestaurants);
                                     objectOutputStream.flush();
                                 }else{
+                                    isClient=true;
                                 printWriter.println ( 0 );
                                 printWriter.flush ( );
                                 ObjectOutputStream objectOutputStream = new ObjectOutputStream ( socket.getOutputStream ( ) );
                                 objectOutputStream.writeObject ( Server.users.get ( i ) );
                                 objectOutputStream.flush ( );
-                                objectOutputStream.close ( );
+                                //objectOutputStream.close ( );
                                 }
                                 break;
                             } else {
@@ -119,6 +118,8 @@ public class ClientServer extends Thread {
 
                     }
                 }
+
+
             }
             if(isAdmin){
                 int end=reciver.nextInt();
@@ -127,29 +128,38 @@ public class ClientServer extends Thread {
                     Server.deliveryRestaurants=(ArrayList<DeliveryRestaurant>) objectInputStream.readObject();
                     Server.notDeliveryRestaurants=(ArrayList<NotDeliveryRestaurant>) objectInputStream.readObject();
                 }
-            }else{//Client
+            }if(isClient){//Client
                 while (true) {
-                    if(reciver.hasNext()) {
-                        int code = reciver.nextInt();
-                        if (code >= 4 && code <= 10) {
-                            ObjectOutputStream write = new ObjectOutputStream(socket.getOutputStream());
-                            if (code == 4) {//japan
-                                write.writeObject(seprator("JAPAN"));
-                            } else if (code == 5) {//Italy
-                                write.writeObject(seprator("ITALY"));
-                            } else if (code == 6) {//Lebnan
-                                write.writeObject(seprator("LEBENON"));
-                            } else if (code == 7) {//Iran
-                                write.writeObject(seprator("IRAN"));
-                            } else if (code == 8) {//Mexico
-                                write.writeObject(seprator("MEXICO"));
-                            } else if (code == 9) {//America
-                                write.writeObject(seprator("AMERICA"));
-                            } else {//Turkey
-                                write.writeObject(seprator("TURKEY"));
+                    boolean i=socket.isClosed ();
+                    int code;
+                    try {
+                        if(!i) {
+                            if ( reciver.hasNext ( ) ) {
+                                code = reciver.nextInt ( );
+                                System.out.println ( code );
+                                if ( code >= 4 && code <= 10 ) {
+                                    ObjectOutputStream write = new ObjectOutputStream ( socket.getOutputStream ( ) );
+                                    if ( code == 4 ) {//japan
+                                        write.writeObject ( seprator ( "JAPAN" ) );
+                                    } else if ( code == 5 ) {//Italy
+                                        write.writeObject ( seprator ( "ITALY" ) );
+                                    } else if ( code == 6 ) {//Lebnan
+                                        write.writeObject ( seprator ( "LEBENON" ) );
+                                    } else if ( code == 7 ) {//Iran
+                                        write.writeObject ( seprator ( "IRAN" ) );
+                                    } else if ( code == 8 ) {//Mexico
+                                        write.writeObject ( seprator ( "MEXICO" ) );
+                                    } else if ( code == 9 ) {//America
+                                        write.writeObject ( seprator ( "AMERICA" ) );
+                                    } else {//Turkey
+                                        write.writeObject ( seprator ( "TURKEY" ) );
+                                    }
+                                    write.flush ( );
+                                }
                             }
-                            write.flush();
                         }
+                    }catch ( EOFException e ){
+                        System.out.println ("Dali darling");
                     }
                 }
             }

@@ -21,7 +21,6 @@ public class MainPageController {
         void USAClick(MouseEvent event) throws IOException, ClassNotFoundException {
             Main.printWriter.println (9);
             Main.printWriter.flush ();
-
             ObjectInputStream USARestaurant=new ObjectInputStream ( Main.socket.getInputStream () );
             restaurant= ( ArrayList<Restaurant> ) USARestaurant.readObject();
             addRoot (restaurant);
