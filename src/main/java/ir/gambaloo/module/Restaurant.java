@@ -17,24 +17,6 @@ public class Restaurant implements Serializable {
     protected Country country;
     protected String name;
     protected RestaurantType type;
-    protected transient FXMLLoader page;
-    protected  RestaurantController controller;
-
-    public FXMLLoader getPage() {
-        return page;
-    }
-
-    public void setPage(FXMLLoader page) {
-        this.page = page;
-    }
-
-    public RestaurantController getController() {
-        return controller;
-    }
-
-    public void setController(RestaurantController controller) {
-        this.controller = controller;
-    }
 
     public String getCountry() {
         return String.valueOf ( country );
@@ -74,16 +56,6 @@ public class Restaurant implements Serializable {
     }
     public String workHour(){
         return "From "+startHour+"To "+endHour;
-    }
-    public void load(){
-        page=new FXMLLoader(Main.class.getResource("view/Restaurant.fxml"));
-        try {
-            page.load();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        controller =page.getController();
-        controller.getName().setText(name);
     }
 
 }
