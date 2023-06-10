@@ -97,8 +97,11 @@ public class MainPageController {
             restaurantList.load ();
             RestaurantListController restaurantListController=restaurantList.getController ();
             for(int i=0;i<restaurant.size ();i++){
-                restaurant.get(i).load();
-                restaurantListController.getRoot ().getChildren ().add (restaurant.get (i).getPage ().getRoot ());
+                FXMLLoader fxmlLoader=new FXMLLoader(Main.class.getResource("view/Restaurant.fxml"));
+                fxmlLoader.load();
+                RestaurantController restaurantController=fxmlLoader.getController();
+                restaurantController.load();
+                restaurantListController.getRoot().getChildren().add(fxmlLoader.getRoot());
             }
             Stage stage=new Stage ();
             stage.setTitle ("Restaurant list");
