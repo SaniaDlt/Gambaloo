@@ -24,7 +24,7 @@ public class MainPageController {
             ObjectInputStream USARestaurant=new ObjectInputStream ( Main.socket.getInputStream () );
             restaurant= ( ArrayList<Restaurant> ) USARestaurant.readObject();
             addRoot (restaurant);
-            USARestaurant.close ();
+
 
 
         }
@@ -36,7 +36,7 @@ public class MainPageController {
             ObjectInputStream iranRestaurant=new ObjectInputStream ( Main.socket.getInputStream () );
             restaurant= ( ArrayList<Restaurant> ) iranRestaurant.readObject();
             addRoot (restaurant);
-            iranRestaurant.close ();
+
         }
 
         @FXML
@@ -46,7 +46,7 @@ public class MainPageController {
             ObjectInputStream italyRestaurant=new ObjectInputStream ( Main.socket.getInputStream () );
             restaurant= ( ArrayList<Restaurant> ) italyRestaurant.readObject();
             addRoot (restaurant);
-            italyRestaurant.close ();
+
         }
 
         @FXML
@@ -56,7 +56,7 @@ public class MainPageController {
             ObjectInputStream japanRestaurant=new ObjectInputStream ( Main.socket.getInputStream () );
             restaurant= ( ArrayList<Restaurant> ) japanRestaurant.readObject();
             addRoot (restaurant);
-            japanRestaurant.close ();
+
 
         }
 
@@ -67,7 +67,7 @@ public class MainPageController {
             ObjectInputStream lebenonRestaurant=new ObjectInputStream ( Main.socket.getInputStream () );
             restaurant= ( ArrayList<Restaurant> ) lebenonRestaurant.readObject();
             addRoot (restaurant);
-            lebenonRestaurant.close ();
+
         }
 
         @FXML
@@ -77,7 +77,7 @@ public class MainPageController {
             ObjectInputStream mexicoRestaurant=new ObjectInputStream ( Main.socket.getInputStream () );
             restaurant= ( ArrayList<Restaurant> ) mexicoRestaurant.readObject();
             addRoot (restaurant);
-            mexicoRestaurant.close ();
+
         }
 
         @FXML
@@ -87,7 +87,7 @@ public class MainPageController {
             ObjectInputStream turkeyRestaurant=new ObjectInputStream ( Main.socket.getInputStream () );
             restaurant= ( ArrayList<Restaurant> ) turkeyRestaurant.readObject();
             addRoot (restaurant);
-            turkeyRestaurant.close ();
+
 
         }
 
@@ -99,6 +99,7 @@ public class MainPageController {
                 FXMLLoader fxmlLoader=new FXMLLoader(Main.class.getResource("view/Restaurant.fxml"));
                 fxmlLoader.load();
                 RestaurantController restaurantController=fxmlLoader.getController();
+                restaurantController.setRestaurant(restaurant.get(i));
                 restaurantController.load();
                 restaurantListController.getRoot().getChildren().add(fxmlLoader.getRoot());
             }

@@ -62,7 +62,7 @@ public class ClientServer extends Thread {
                                 ObjectOutputStream objectOutputStream = new ObjectOutputStream ( socket.getOutputStream ( ) );
                                 objectOutputStream.writeObject ( Server.users.get ( i ) );
                                 objectOutputStream.flush ( );
-                                //objectOutputStream.close ( );
+
                                 }
                                 break;
                             } else {
@@ -130,10 +130,9 @@ public class ClientServer extends Thread {
                 }
             }if(isClient){//Client
                 while (true) {
-                    boolean i=socket.isClosed ();
+
                     int code;
                     try {
-                        if(!i) {
                             if ( reciver.hasNext ( ) ) {
                                 code = reciver.nextInt ( );
                                 System.out.println ( code );
@@ -157,7 +156,7 @@ public class ClientServer extends Thread {
                                     write.flush ( );
                                 }
                             }
-                        }
+
                     }catch ( EOFException e ){
                         System.out.println ("Dali darling");
                     }
