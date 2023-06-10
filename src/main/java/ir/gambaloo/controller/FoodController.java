@@ -1,16 +1,20 @@
 package ir.gambaloo.controller;
 
+import ir.gambaloo.module.Food;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
 import java.io.Serializable;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class FoodController implements Serializable {
+public class FoodController implements Initializable {
 
     @FXML
-    private Label Descript;
+    private Label descript;
 
     @FXML
     private ImageView image;
@@ -21,12 +25,22 @@ public class FoodController implements Serializable {
     @FXML
     private Label price;
 
+    private Food food;
+
+    public Food getFood() {
+        return food;
+    }
+
+    public void setFood(Food food) {
+        this.food = food;
+    }
+
     public Label getDescript() {
-        return Descript;
+        return descript;
     }
 
     public void setDescript(Label descript) {
-        Descript = descript;
+        this.descript = descript;
     }
 
     public ImageView getImage() {
@@ -58,4 +72,13 @@ public class FoodController implements Serializable {
 
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
+    public void load(){
+        name.setText(food.getName());
+        price.setText(""+food.getPrice());
+        descript.setText(food.getDescrib());
+    }
 }

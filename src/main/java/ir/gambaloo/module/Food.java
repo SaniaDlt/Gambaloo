@@ -13,8 +13,6 @@ public abstract class  Food implements Serializable {
     //image2B
     protected String imageAdress;
     protected String describ;
-    protected FXMLLoader scene;
-    protected FoodController controller;
 
 
     public Food(String name, double price,String describ,String imageAdress) {
@@ -22,16 +20,19 @@ public abstract class  Food implements Serializable {
         this.price = price;
         this.describ=describ;
         this.imageAdress=imageAdress;
-        scene = new FXMLLoader(Main.class.getResource("view/FoodScene.fxml"));
-        try {
-            scene.load();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        controller=scene.getController();
-        controller.getName().setText(name);
-        controller.getDescript().setText(describ);
-        controller.getPrice().setText(""+price);
+
+    }
+
+    public FoodType getFoodType() {
+        return foodType;
+    }
+
+    public String getImageAdress() {
+        return imageAdress;
+    }
+
+    public String getDescrib() {
+        return describ;
     }
 
     public String getName() {
