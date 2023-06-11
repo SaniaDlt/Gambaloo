@@ -54,7 +54,7 @@ public class RestaurantController implements Initializable {
         FXMLLoader restaurantPage =new FXMLLoader ( Main.class.getResource ("view/RestaurantPage.fxml") );
         restaurantPage.load ();
         Stage stage=new Stage ();
-        stage.setScene (new Scene (getRoot ()));
+        stage.setScene (new Scene (restaurantPage.getRoot() ));
         stage.show();
         RestaurantPageController restaurantPageController=restaurantPage.getController ();
         restaurantPageController.setRestaurant (restaurant);

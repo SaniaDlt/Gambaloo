@@ -56,16 +56,52 @@ public class RestaurantPageController implements Initializable {
         startHLBL.setText (restaurant.getStartHour ()+"" );
         endHLBL.setText ( restaurant.getEndHour ()+"" );
         for(int i=0;i<restaurant.getMenu().getAppetizers().size();i++){
-            sceneMaker(restaurant.getMenu().getAppetizers().get(i));
+            FXMLLoader fxmlLoader=new FXMLLoader(Main.class.getResource("view/FoodScene.fxml"));
+            try {
+                fxmlLoader.load();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            FoodController foodController=fxmlLoader.getController();
+            foodController.setFood(restaurant.getMenu().getAppetizers().get(i));
+            foodController.load();
+            appetizer.getChildren().add(fxmlLoader.getRoot());
         }
         for (int i=0;i<restaurant.getMenu().getMainFoods().size();i++){
-            sceneMaker(restaurant.getMenu().getMainFoods().get(i));
+            FXMLLoader fxmlLoader=new FXMLLoader(Main.class.getResource("view/FoodScene.fxml"));
+            try {
+                fxmlLoader.load();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            FoodController foodController=fxmlLoader.getController();
+            foodController.setFood(restaurant.getMenu().getMainFoods().get(i));
+            foodController.load();
+            mainFood.getChildren().add(fxmlLoader.getRoot());
         }
         for (int i=0;i<restaurant.getMenu().getDeserts().size();i++){
-            sceneMaker(restaurant.getMenu().getDeserts().get(i));
+            FXMLLoader fxmlLoader=new FXMLLoader(Main.class.getResource("view/FoodScene.fxml"));
+            try {
+                fxmlLoader.load();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            FoodController foodController=fxmlLoader.getController();
+            foodController.setFood(restaurant.getMenu().getDeserts().get(i));
+            foodController.load();
+            desert.getChildren().add(fxmlLoader.getRoot());
         }
         for (int i=0;i<restaurant.getMenu().getDrinks().size();i++){
-            sceneMaker(restaurant.getMenu().getDrinks().get(i));
+            FXMLLoader fxmlLoader=new FXMLLoader(Main.class.getResource("view/FoodScene.fxml"));
+            try {
+                fxmlLoader.load();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            FoodController foodController=fxmlLoader.getController();
+            foodController.setFood(restaurant.getMenu().getDrinks().get(i));
+            foodController.load();
+            drinks.getChildren().add(fxmlLoader.getRoot());
         }
     }
 
@@ -91,15 +127,6 @@ public class RestaurantPageController implements Initializable {
 
     }
     private void sceneMaker(Food food){
-            FXMLLoader fxmlLoader=new FXMLLoader(Main.class.getResource("view/FoodScene.fxml"));
-            try {
-                fxmlLoader.load();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            FoodController foodController=fxmlLoader.getController();
-            foodController.setFood(food);
-            foodController.load();
-            vBox.getChildren().add(fxmlLoader.getRoot());
+
     }
 }

@@ -79,6 +79,7 @@ public class FoodController implements Initializable {
     public void load(){
         name.setText(food.getName());
         price.setText(""+food.getPrice());
+        System.out.println(food.getDescrib());
         descript.setText(food.getDescrib());
     }
 }
