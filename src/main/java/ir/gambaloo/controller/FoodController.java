@@ -1,9 +1,11 @@
 package ir.gambaloo.controller;
 
+import ir.gambaloo.module.ButtonSkin;
 import ir.gambaloo.module.Food;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
@@ -68,13 +70,16 @@ public class FoodController implements Initializable {
     }
 
     @FXML
+    private Button orderBTN;
+
+    @FXML
     void orderBTN(ActionEvent event) {
 
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        orderBTN.setSkin(new ButtonSkin(orderBTN));
     }
     public void load(){
         name.setText(food.getName());

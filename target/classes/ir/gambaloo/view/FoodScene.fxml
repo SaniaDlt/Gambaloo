@@ -29,7 +29,7 @@
                   <Label fx:id="price" prefHeight="31.0" prefWidth="88.0" />
                </children>
             </HBox>
-            <Button id="button" alignment="CENTER" mnemonicParsing="false" onAction="#orderBTN" prefHeight="49.0" prefWidth="124.0" stylesheets="@FoodMenuPage.css" text="Order me :)">
+            <Button id="button" fx:id="orderBTN" alignment="CENTER" mnemonicParsing="false" onAction="#orderBTN" prefHeight="49.0" prefWidth="124.0" stylesheets="@FoodMenuPage.css" text="Order me :)">
                <VBox.margin>
                   <Insets bottom="20.0" />
                </VBox.margin>
