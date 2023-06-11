@@ -1,13 +1,18 @@
 package ir.gambaloo.controller;
 
+import ir.gambaloo.Main;
 import ir.gambaloo.module.Restaurant;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -45,8 +50,15 @@ public class RestaurantController implements Initializable {
 
     private Restaurant restaurant;
     @FXML
-    void restaurantAdd( MouseEvent event) {
-
+    void restaurantAdd( MouseEvent event) throws IOException {
+        FXMLLoader restaurantPage =new FXMLLoader ( Main.class.getResource ("view/RestaurantPage.fxml") );
+        restaurantPage.load ();
+        Stage stage=new Stage ();
+        stage.setScene (new Scene (getRoot ()));
+        stage.show();
+        RestaurantPageController restaurantPageController=restaurantPage.getController ();
+        restaurantPageController.setRestaurant (restaurant);
+        restaurantPageController.load ();
     }
     public void load(){
         name.setText ( restaurant.getName ( ) );
