@@ -101,7 +101,7 @@ public class MainPageController {
                 RestaurantController restaurantController=fxmlLoader.getController();
                 restaurantController.setRestaurant(restaurant.get(i));
                 restaurantController.load();
-                restaurantListController.getRoot().getChildren().add(fxmlLoader.getRoot());
+                restaurantListController.getvBox().getChildren().add(fxmlLoader.getRoot());
             }
             Stage stage=new Stage ();
             stage.setTitle ("Restaurant list");

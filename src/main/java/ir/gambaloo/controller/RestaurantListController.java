@@ -13,13 +13,25 @@ public class RestaurantListController implements Initializable {
 
     @FXML
     private ScrollPane scrollPane;
-
+    private VBox vBox;
     public ScrollPane getScrollPane() {
         return scrollPane;
     }
 
+    public VBox getvBox() {
+        return vBox;
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        vBox=new VBox();
+        vBox.setStyle("-fx-background-color :  #5A28C8");
+        scrollPane.setContent(vBox);
+        scrollPane.pannableProperty().set(true);
+        scrollPane.fitToWidthProperty().set(true);
+        scrollPane.fitToHeightProperty().set(true);
+        vBox.setAlignment(Pos.CENTER);
+        vBox.setSpacing(10);
 
     }
 }

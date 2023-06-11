@@ -130,12 +130,11 @@ public class ClientServer extends Thread {
                 }
             }if(isClient){//Client
                 while (true) {
-
                     int code;
                     try {
                             if ( reciver.hasNext ( ) ) {
                                 code = reciver.nextInt ( );
-                                System.out.println ( code );
+
                                 if ( code >= 4 && code <= 10 ) {
                                     ObjectOutputStream write = new ObjectOutputStream ( socket.getOutputStream ( ) );
                                     if ( code == 4 ) {//japan
