@@ -126,7 +126,5 @@ public class RestaurantPageController implements Initializable {
         vBox.getChildren().addAll(appetizer,mainFood,desert,drinks);
 
     }
-    private void sceneMaker(Food food){
 
-    }
 }
