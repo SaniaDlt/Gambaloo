@@ -110,7 +110,7 @@ public class RestaurantPageController implements Initializable {
 
     @FXML
     void Cart( MouseEvent event) throws IOException {
-        FXMLLoader cart=new FXMLLoader (Main.class.getResource ("view/CartController.fxml"));
+        FXMLLoader cart=new FXMLLoader (Main.class.getResource ("view/Cart.fxml"));
         cart.load ();
         Stage stage=new Stage ();
         stage.setTitle ("Cart");
