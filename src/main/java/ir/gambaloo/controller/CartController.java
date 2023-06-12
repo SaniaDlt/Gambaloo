@@ -64,8 +64,13 @@ public class CartController implements Initializable {
             FoodCartController controller=fxmlLoader.getController();
             controller.setFood(Main.client.getCart().getItems().get(i));
             controller.load();
+            controller.setCart(this);
             root.getChildren().add(fxmlLoader.getRoot());
         }
+        balanceLBL.setText(Main.client.getBalance()+"");
+        priceLBL.setText(Main.client.getCart().getCost()+"");
+    }
+    public void refresh(){
         balanceLBL.setText(Main.client.getBalance()+"");
         priceLBL.setText(Main.client.getCart().getCost()+"");
     }
