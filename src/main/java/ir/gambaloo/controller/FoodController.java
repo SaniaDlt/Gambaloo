@@ -13,6 +13,8 @@ import java.io.Serializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import static ir.gambaloo.Main.client;
+
 public class FoodController implements Initializable {
 
     @FXML
@@ -74,8 +76,7 @@ public class FoodController implements Initializable {
 
     @FXML
     void orderBTN(ActionEvent event) {
-
-
+        client.getCart().addToCart (getFood ());
     }
 
     @Override

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -46,6 +48,24 @@
                         <Label prefHeight="49.0" prefWidth="94.0" text="Address" />
                         <Label fx:id="adressLBL" prefHeight="48.0" prefWidth="307.0" />
                      </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_RIGHT" prefHeight="47.0" prefWidth="407.0">
+                     <children>
+                        <ImageView fitHeight="47.0" fitWidth="65.0" onMouseClicked="#Cart" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@pics/428-4287684_background-shopping-cart-transparent-transparent-background-shopping-cart.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                     <VBox.margin>
+                        <Insets right="30.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
                   </HBox>
                </children>
             </VBox>

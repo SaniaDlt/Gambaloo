@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.gambaloo.controller.FoodCartController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="200.0" prefWidth="290.0" spacing="10.0">
+         <children>
+            <Label prefHeight="39.0" prefWidth="162.0" text="Name :" />
+            <Label fx:id="nameLBL" prefHeight="39.0" prefWidth="182.0" />
+         </children>
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="200.0" prefWidth="290.0" spacing="10.0">
+         <children>
+            <Label prefHeight="39.0" prefWidth="162.0" text="Price :" />
+            <Label fx:id="priceLBL" prefHeight="39.0" prefWidth="182.0" />
+         </children>
+      </HBox>
+   </children>
+</HBox>

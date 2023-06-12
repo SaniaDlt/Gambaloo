@@ -6,10 +6,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -103,6 +106,18 @@ public class RestaurantPageController implements Initializable {
             foodController.load();
             drinks.getChildren().add(fxmlLoader.getRoot());
         }
+    }
+
+    @FXML
+    void Cart( MouseEvent event) throws IOException {
+        FXMLLoader cart=new FXMLLoader (Main.class.getResource ("view/CartController.fxml"));
+        cart.load ();
+        Stage stage=new Stage ();
+        stage.setTitle ("Cart");
+        stage.setResizable (false);
+        stage.setScene ( new Scene ( cart.getRoot () ) );
+        stage.show ();
+
     }
 
 

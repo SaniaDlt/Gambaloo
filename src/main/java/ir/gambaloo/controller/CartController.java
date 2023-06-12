@@ -1,14 +1,22 @@
 package ir.gambaloo.controller;
 
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import ir.gambaloo.module.Food;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 
 public class CartController {
+
+    public Food getFood ( ) {
+        return food;
+    }
+
+    public void setFood ( Food food ) {
+        this.food = food;
+    }
+
+    private Food food;
 
     @FXML
     private Label balanceLBL;
