@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Cart implements Serializable {
-    private final ArrayList<Food> items=new ArrayList<>();
+    private ArrayList<Food> items=new ArrayList<>();
     private double cost=0;
     public void addToCart(Food food){
         items.add(food);
@@ -13,5 +13,13 @@ public class Cart implements Serializable {
     public void removeFromCart(Food food){
         items.remove(food);
         cost-=food.getPrice();
+    }
+
+    public ArrayList<Food> getItems() {
+        return items;
+    }
+
+    public double getCost() {
+        return cost;
     }
 }
