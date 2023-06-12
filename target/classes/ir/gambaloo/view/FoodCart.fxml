@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 
 <HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.gambaloo.controller.FoodCartController">
    <children>
       <HBox alignment="CENTER" prefHeight="200.0" prefWidth="290.0" spacing="10.0">
          <children>
-            <Label prefHeight="39.0" prefWidth="162.0" text="Name :" />
+            <Label prefHeight="39.0" prefWidth="88.0" text="Name :" />
             <Label fx:id="nameLBL" prefHeight="39.0" prefWidth="182.0" />
          </children>
          <HBox.margin>
@@ -21,5 +24,13 @@
             <Label fx:id="priceLBL" prefHeight="39.0" prefWidth="182.0" />
          </children>
       </HBox>
+      <ImageView fitHeight="53.0" fitWidth="78.0" onMouseClicked="#remove" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pics/Cross.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
    </children>
 </HBox>
