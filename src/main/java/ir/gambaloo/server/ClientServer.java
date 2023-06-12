@@ -153,6 +153,17 @@ public class ClientServer extends Thread {
                                         write.writeObject ( seprator ( "TURKEY" ) );
                                     }
                                     write.flush ( );
+                                }else if(code==-1){
+                                    ObjectInputStream objectInputStream=new ObjectInputStream (socket.getInputStream ());
+                                    User user=(User)objectInputStream.readObject ();
+                                    for(int i=0;i<Server.users.size ();i++){
+                                        if(Server.users.get (i ).getUsername ().equals (user.getUsername ())){
+                                            Server.users.get (i).setBalance (user.getBalance ());
+                                            Server.users.get(i).setCart (user.getCart ());
+                                        }
+
+                                    }
+
                                 }
                             }
 

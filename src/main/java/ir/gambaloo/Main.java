@@ -58,6 +58,12 @@ public class Main extends Application {
             objectOutputStream.writeObject(Main.adminRestaurantsND);
             objectOutputStream.flush();
 
+        }else{
+            Main.printWriter.println (-1);
+            printWriter.flush ();
+            ObjectOutputStream objectOutputStream=new ObjectOutputStream (socket.getOutputStream ());
+            objectOutputStream.writeObject (Main.client);
+            objectOutputStream.flush ();
         }
         Main.socket.close();
         System.out.println("Closing connection");

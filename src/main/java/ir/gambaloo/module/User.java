@@ -9,9 +9,18 @@ public class User implements Serializable {
     private String phoneNumber;
     private final String address;
     private double balance;
-    private final Cart cart;
 
-    public User(String emailAddress, String username, String password, String phoneNumber,String address) {
+    public void setCart ( Cart cart ) {
+        this.cart = cart;
+    }
+
+    private  Cart cart;
+
+    public void setBalance ( double balance ) {
+        this.balance = balance;
+    }
+
+    public User( String emailAddress, String username, String password, String phoneNumber, String address) {
         this.emailAddress = emailAddress;
         this.username = username;
         this.password = password;
