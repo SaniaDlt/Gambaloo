@@ -1,5 +1,6 @@
 package ir.gambaloo.controller;
 
+import ir.gambaloo.Main;
 import ir.gambaloo.module.ButtonSkin;
 import ir.gambaloo.module.Food;
 import javafx.event.ActionEvent;
@@ -86,7 +87,6 @@ public class FoodController implements Initializable {
     public void load(){
         name.setText(food.getName());
         price.setText(""+food.getPrice());
-        System.out.println(food.getDescrib());
         descript.setText(food.getDescrib());
     }
 }

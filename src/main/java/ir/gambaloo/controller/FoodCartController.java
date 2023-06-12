@@ -41,8 +41,7 @@ public class FoodCartController  {
     void remove(MouseEvent event) {
         Main.client.getCart().removeFromCart(food);
         cart.refresh();
-        Node source= (Node) event.getSource();
-        source.getScene().getWindow().hide();
+        cart.getRoot().getChildren().remove(root);
     }
     public void load(){
         nameLBL.setText(food.getName());

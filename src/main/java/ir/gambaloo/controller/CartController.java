@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 
 import javafx.event.ActionEvent;
@@ -36,6 +37,10 @@ public class CartController implements Initializable {
     private ScrollPane scrollPane;
     private VBox root;
 
+    public VBox getRoot() {
+        return root;
+    }
+
     @FXML
     void gateway1BTN(ActionEvent event) {
 
@@ -49,7 +54,7 @@ public class CartController implements Initializable {
     @FXML
     void orderBTN(ActionEvent event) {
         if(Main.client.getBalance()<Main.client.getCart().getCost()){
-            errorLBL.setText("Not enough , Please use gateways");
+            errorLBL.setText("Not enough balance");
         }
 
     }
@@ -58,6 +63,7 @@ public class CartController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         root=new VBox();
         scrollPane.setContent(root);
+        root.setAlignment(Pos.CENTER);
         for(int i =0;i< Main.client.getCart().getItems().size();i++){
             FXMLLoader fxmlLoader=new FXMLLoader(Main.class.getResource("view/FoodCart.fxml"));
             try {
