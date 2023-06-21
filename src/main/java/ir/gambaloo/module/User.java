@@ -69,5 +69,7 @@ public class User implements Serializable {
         this.phoneNumber = phoneNumber;
     }
     public String getAddress() { return address;}
-
+    public void addBalance(double money){
+        balance+=money;
+    }
 }

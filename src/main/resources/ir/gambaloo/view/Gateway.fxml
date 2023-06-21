@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="614.0" stylesheets="@pics/Gateway.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.gambaloo.controller.GatewayController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="614.0" stylesheets="@pics/Gateway.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.gambaloo.controller.GatewayController">
    <children>
-      <HBox alignment="CENTER" prefHeight="134.0" prefWidth="614.0">
+      <HBox alignment="CENTER" prefHeight="115.0" prefWidth="614.0">
          <children>
             <Label fx:id="nameLbl" alignment="CENTER" prefHeight="90.0" prefWidth="454.0">
                <font>
@@ -41,6 +41,11 @@
          <children>
             <Label prefHeight="17.0" prefWidth="37.0" text="Price:" />
             <Label fx:id="price" alignment="CENTER" prefHeight="17.0" prefWidth="63.0" text="0" textFill="#059a00" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="30.0" prefWidth="614.0">
+         <children>
+            <Label fx:id="errorLbl" prefHeight="16.0" prefWidth="118.0" textFill="RED" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="75.0" prefWidth="614.0">
