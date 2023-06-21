@@ -17,11 +17,27 @@ public class GatewayController {
     @FXML
     private Label code;
 
+    public void setNameLbl ( Label nameLbl ) {
+        this.nameLbl = nameLbl;
+    }
+
+    public Label getNameLbl ( ) {
+        return nameLbl;
+    }
+
     @FXML
     private Label nameLbl;
 
     @FXML
     private PasswordField passwordFLD;
+
+    public void setPrice ( Label price ) {
+        this.price = price;
+    }
+
+    public Label getPrice ( ) {
+        return price;
+    }
 
     @FXML
     private Label price;
@@ -29,6 +45,6 @@ public class GatewayController {
     void payBTN( ActionEvent event) {
 
     }
-
+    
 }
 
