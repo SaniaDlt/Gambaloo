@@ -54,6 +54,7 @@ public class CartController implements Initializable {
         gateWay1.load();
         GatewayController gatewayController=gateWay1.getController ();
         gatewayController.getPrice ().setText (Gateway.getPrice ()+"");
+        gatewayController.setCartController(this);
         Stage stage=new Stage ();
         stage.setScene(new Scene (gateWay1.getRoot()));
         stage.setTitle("Tax Gateway");
@@ -85,6 +86,12 @@ public class CartController implements Initializable {
     void orderBTN(ActionEvent event) {
         if(Main.client.getBalance()<Main.client.getCart().getCost()){
             errorLBL.setText("Not enough balance");
+        }else{
+            Main.client.setBalance(Main.client.getBalance()-Main.client.getCart().getCost());
+            Main.client.getCart().setCost(0);
+            Main.client.getCart().getItems().clear();
+            Node source= (Node) event.getSource();
+            source.getScene().getWindow().hide();
         }
 
     }

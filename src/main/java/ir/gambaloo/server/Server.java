@@ -26,17 +26,15 @@ public class Server {
     public static void main(String[] args) throws IOException {
         try {
             ServerSocket server = new ServerSocket(8283);
-            /*deliveryRestaurants.add(new DeliveryRestaurant(2, 3, "ASDAS", 12, Country.IRAN, "SaniaKasif"));
-            User user = new User("ali@sania.noob", "admin", "admin", "0902", "Paradise");
-            users.add(user);*/
             FileInputStream file=new FileInputStream (saveFile);
             ObjectInputStream object=new ObjectInputStream (file);
             users= (ArrayList<User>)object.readObject();
             deliveryRestaurants= (ArrayList<DeliveryRestaurant>)object.readObject();
             notDeliveryRestaurants= (ArrayList<NotDeliveryRestaurant>)object.readObject();
-            System.out.println ( users.get ( 0 ).getUsername () );
             object.close ();
             file.close ();
+            User user = new User("ali@sania.noob", "admin", "admin", "0902", "Paradise");
+            users.add(user);
             Scanner scan=new Scanner (System.in);
             new SocketMaker(server).start();
             while (!scan.next ().equals ("Exit"));

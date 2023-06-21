@@ -191,6 +191,23 @@ public class ClientServer extends Thread {
             }
         return restaurants;
     }
+    public void imagesender(String address) throws FileNotFoundException {
+        int i;
+        FileInputStream fis = null;
+        try {
+            fis = new FileInputStream(address);
+        } catch (FileNotFoundException e) {
+            fis=null;
+        }
+        if(fis==null){
+            fis=new FileInputStream("/pics/default.png");
+        }
+        DataOutputStream os = new DataOutputStream(socket.getOutputStream());
+        while ((i = fis.read()) > -1)
+            os.write(i);
+
+        fis.close();
+    }
 }
 
 

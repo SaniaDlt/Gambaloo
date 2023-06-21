@@ -52,6 +52,12 @@ public class GatewayController implements Initializable {
     @FXML
     private Label errorLbl;
     private int captchaCode;
+    private CartController cartController;
+
+    public void setCartController(CartController cartController) {
+        this.cartController = cartController;
+    }
+
     @FXML
     void payBTN( ActionEvent event) {
         String cardnumber = cardNumberFLD.getText().replaceAll("[^0-9]", "");
@@ -70,6 +76,7 @@ public class GatewayController implements Initializable {
             }else{
                 Main.client.addBalance(Double.parseDouble((price.getText())));
             }
+            cartController.refresh();
         }
 
     }

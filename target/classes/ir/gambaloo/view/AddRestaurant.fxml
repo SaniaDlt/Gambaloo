@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.gambaloo.controller.AddRestaurantController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" stylesheets="@AddRestaurant.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.gambaloo.controller.AddRestaurantController">
    <children>
       <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" spacing="10.0">
          <children>
@@ -19,7 +19,7 @@
                   <Font name="Sahadeva" size="20.0" />
                </font>
             </Label>
-            <TextField id="field" fx:id="nameFLD" prefHeight="30.0" prefWidth="200.0" styleClass="field" stylesheets="@../Gambaloo%20project/Gambaloo/src/main/resources/ir/gambaloo/view/AddRestaurant.css" />
+            <TextField id="field" fx:id="nameFLD" prefHeight="30.0" prefWidth="200.0" styleClass="field" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" spacing="10.0">
@@ -29,7 +29,7 @@
                   <Font name="Sahadeva" size="20.0" />
                </font>
             </Label>
-            <TextField id="field" fx:id="ImageAddressFLD" prefHeight="30.0" prefWidth="200.0" styleClass="field" stylesheets="@../Gambaloo%20project/Gambaloo/src/main/resources/ir/gambaloo/view/AddRestaurant.css" />
+            <TextField id="field" fx:id="ImageAddressFLD" prefHeight="30.0" prefWidth="200.0" styleClass="field" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" spacing="10.0">
@@ -39,7 +39,7 @@
                   <Font name="Sahadeva" size="20.0" />
                </font>
             </Label>
-            <TextField id="field" fx:id="startHourFLD" prefHeight="30.0" prefWidth="200.0" styleClass="field" stylesheets="@../Gambaloo%20project/Gambaloo/src/main/resources/ir/gambaloo/view/AddRestaurant.css" />
+            <TextField id="field" fx:id="startHourFLD" prefHeight="30.0" prefWidth="200.0" styleClass="field" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" spacing="10.0">
@@ -49,7 +49,7 @@
                   <Font name="Sahadeva" size="20.0" />
                </font>
             </Label>
-            <TextField id="field" fx:id="endHourFLD" prefHeight="30.0" prefWidth="200.0" styleClass="field" stylesheets="@../Gambaloo%20project/Gambaloo/src/main/resources/ir/gambaloo/view/AddRestaurant.css" />
+            <TextField id="field" fx:id="endHourFLD" prefHeight="30.0" prefWidth="200.0" styleClass="field" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" spacing="10.0">
@@ -59,7 +59,7 @@
                   <Font name="Sahadeva" size="20.0" />
                </font>
             </Label>
-            <TextField id="field" fx:id="addressFLD" prefHeight="30.0" prefWidth="200.0" styleClass="field" stylesheets="@../Gambaloo%20project/Gambaloo/src/main/resources/ir/gambaloo/view/AddRestaurant.css" />
+            <TextField id="field" fx:id="addressFLD" prefHeight="30.0" prefWidth="200.0" styleClass="field" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" spacing="10.0">
@@ -89,10 +89,10 @@
                   <Font name="Sahadeva" size="20.0" />
                </font>
             </Label>
-            <TextField id="field" fx:id="tableOrDeliveryFLD" prefHeight="30.0" prefWidth="200.0" styleClass="field" stylesheets="@../Gambaloo%20project/Gambaloo/src/main/resources/ir/gambaloo/view/AddRestaurant.css" />
+            <TextField id="field" fx:id="tableOrDeliveryFLD" prefHeight="30.0" prefWidth="200.0" styleClass="field" />
          </children>
       </HBox>
-      <Button id="button" mnemonicParsing="false" onAction="#addBTN" prefHeight="32.0" prefWidth="94.0" stylesheets="@../Gambaloo%20project/Gambaloo/src/main/resources/ir/gambaloo/view/AddRestaurant.css" text="ADD">
+      <Button id="button" mnemonicParsing="false" onAction="#addBTN" prefHeight="32.0" prefWidth="94.0" stylesheets="@AddRestaurant.css" text="ADD">
          <font>
             <Font name="Sahadeva" size="20.0" />
          </font>
