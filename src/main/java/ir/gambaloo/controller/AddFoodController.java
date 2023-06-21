@@ -75,7 +75,7 @@ public class AddFoodController implements Initializable {
 
     @FXML
     void add(ActionEvent event) {
-        int price=Integer.parseInt(PriceFld.getText());
+        double price=Double.parseDouble(PriceFld.getText());
         String name=nameFLD.getText();
         String imgAdress=imgFLDs.getText();
         FoodType foodType=typeFld.getValue();

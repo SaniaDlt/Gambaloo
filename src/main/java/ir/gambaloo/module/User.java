@@ -7,7 +7,7 @@ public class User implements Serializable {
     private String username;
     private String password;
     private String phoneNumber;
-    private final String address;
+    private  String address;
     private double balance;
 
     public void setCart ( Cart cart ) {

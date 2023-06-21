@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="614.0" stylesheets="@pics/Gateway.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.gambaloo.controller.GatewayController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="134.0" prefWidth="614.0">
+         <children>
+            <Label fx:id="nameLbl" alignment="CENTER" prefHeight="76.0" prefWidth="176.0" text="Name" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="74.0" prefWidth="614.0" spacing="10.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="24.0" prefWidth="59.0" text="CardNum:" />
+            <TextField fx:id="cardNumberFLD" alignment="CENTER" prefHeight="25.0" prefWidth="309.0" styleClass="field" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="68.0" prefWidth="614.0" spacing="10.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="60.0" text="Password:" />
+            <PasswordField fx:id="passwordFLD" prefHeight="25.0" prefWidth="80.0" styleClass="field" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="67.0" prefWidth="614.0" spacing="10.0">
+         <children>
+            <Label fx:id="code" alignment="CENTER" prefHeight="17.0" prefWidth="56.0" text="Captcha:" />
+            <TextField fx:id="captcha" prefHeight="25.0" prefWidth="78.0" styleClass="field" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="52.0" prefWidth="614.0">
+         <children>
+            <Label prefHeight="17.0" prefWidth="37.0" text="Price:" />
+            <Label fx:id="price" alignment="CENTER" prefHeight="17.0" prefWidth="63.0" text="2" textFill="#059a00" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="75.0" prefWidth="614.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="85.0" text="Pay">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
