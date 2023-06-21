@@ -6,9 +6,11 @@ package ir.gambaloo.controller;
     import javafx.fxml.FXMLLoader;
     import javafx.scene.Node;
     import javafx.scene.Scene;
+    import javafx.scene.image.Image;
     import javafx.scene.input.MouseEvent;
     import javafx.stage.Stage;
 
+    import java.io.FileInputStream;
     import java.io.IOException;
     import java.io.ObjectInputStream;
     import java.io.ObjectOutputStream;
@@ -87,8 +89,6 @@ public class MainPageController {
             ObjectInputStream turkeyRestaurant=new ObjectInputStream ( Main.socket.getInputStream () );
             restaurant= ( ArrayList<Restaurant> ) turkeyRestaurant.readObject();
             addRoot (restaurant);
-
-
         }
 
         public void addRoot(ArrayList<Restaurant> restaurant) throws IOException {
@@ -100,9 +100,10 @@ public class MainPageController {
                 fxmlLoader.load();
                 Main.printWriter.println(11);
                 Main.printWriter.println(restaurant.get(i).getImageAddress());
-                //getImage
                 RestaurantController restaurantController=fxmlLoader.getController();
                 restaurantController.setRestaurant(restaurant.get(i));
+                Main.getImage (restaurant.get (i).getImageAddress ());
+                restaurantController.getImage ().setImage (new Image (new FileInputStream (restaurant.get (i).getImageAddress ())));
                 restaurantController.load();
                 restaurantListController.getvBox().getChildren().add(fxmlLoader.getRoot());
             }

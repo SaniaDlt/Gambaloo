@@ -2,16 +2,15 @@ package ir.gambaloo;
 
 import ir.gambaloo.module.DeliveryRestaurant;
 import ir.gambaloo.module.NotDeliveryRestaurant;
-import ir.gambaloo.module.Restaurant;
 import ir.gambaloo.module.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.Socket;
-import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -66,17 +65,15 @@ public class Main extends Application {
         Main.socket.close();
         System.out.println("Closing connection");
     }
-    public void getImage(String address) throws IOException {
+    public static void getImage( String address) throws IOException {
         while (true) {
             DataInputStream dis = new DataInputStream(socket.getInputStream());
-            FileOutputStream fout = new FileOutputStream (address);
+            FileOutputStream fout = new FileOutputStream ("avatar.png");
             int i;
             while ( (i = dis.read()) > -1) {
                 fout.write(i);
             }
             fout.flush();
-            fout.close();
-            dis.close();
         }
     }
 
