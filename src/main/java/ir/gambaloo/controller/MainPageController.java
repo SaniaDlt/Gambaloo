@@ -98,6 +98,9 @@ public class MainPageController {
             for(int i=0;i<restaurant.size ();i++){
                 FXMLLoader fxmlLoader=new FXMLLoader(Main.class.getResource("view/Restaurant.fxml"));
                 fxmlLoader.load();
+                Main.printWriter.println(11);
+                Main.printWriter.println(restaurant.get(i).getImageAddress());
+                //getImage
                 RestaurantController restaurantController=fxmlLoader.getController();
                 restaurantController.setRestaurant(restaurant.get(i));
                 restaurantController.load();

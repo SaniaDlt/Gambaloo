@@ -164,6 +164,9 @@ public class ClientServer extends Thread {
 
                                     }
 
+                                }else if(code==11){
+                                    String image=reciver.next();
+                                    imagesender(image);
                                 }
                             }
 

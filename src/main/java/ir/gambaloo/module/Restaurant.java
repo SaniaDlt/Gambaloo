@@ -17,6 +17,11 @@ public class Restaurant implements Serializable {
     protected Country country;
     protected String name;
     protected RestaurantType type;
+    protected String imageAddress;
+
+    public String getImageAddress() {
+        return imageAddress;
+    }
 
     public String getCountry() {
         return String.valueOf ( country );
