@@ -48,6 +48,9 @@ public class AddRestaurantController implements Initializable {
     private ChoiceBox<RestaurantType> typeCHCB;
 
     @FXML
+    private TextField ImageAddressFLD;
+
+    @FXML
     void addBTN(ActionEvent event) throws IOException {
         String name=nameFLD.getText ();
         int startHour=Integer.parseInt(startHourFLD.getText ());
@@ -55,6 +58,7 @@ public class AddRestaurantController implements Initializable {
         String address=addressFLD.getText ();
         Country country=countryCHCB.getValue ();
         RestaurantType type=typeCHCB.getValue ();
+        String imageAdress=ImageAddressFLD.getText();
         if(type==RestaurantType.DELIVERY){
             int delivery=Integer.parseInt ( tableOrDeliveryFLD.getText () );
             DeliveryRestaurant deliveryRestaurant=new DeliveryRestaurant ( startHour,endHour,address,delivery,country,name );

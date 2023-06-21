@@ -164,6 +164,9 @@ public class ClientServer extends Thread {
 
                                     }
 
+                                }else if(code==11){
+                                    String image=reciver.next();
+                                    imagesender(image);
                                 }
                             }
 
@@ -191,7 +194,7 @@ public class ClientServer extends Thread {
             }
         return restaurants;
     }
-    public void imagesender(String address) throws FileNotFoundException {
+    public void imagesender(String address) throws IOException {
         int i;
         FileInputStream fis = null;
         try {
