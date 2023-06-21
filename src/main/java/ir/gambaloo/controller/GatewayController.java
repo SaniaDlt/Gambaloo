@@ -1,5 +1,6 @@
 package ir.gambaloo.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -24,6 +25,10 @@ public class GatewayController {
 
     @FXML
     private Label price;
+    @FXML
+    void payBTN( ActionEvent event) {
+
+    }
 
 }
 
