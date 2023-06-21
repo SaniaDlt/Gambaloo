@@ -1,5 +1,6 @@
 package ir.gambaloo.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -29,6 +30,10 @@ public class GatewayController implements Initializable {
 
     @FXML
     private Label price;
+    @FXML
+    void payBTN( ActionEvent event) {
+
+    }
 
     public Label getPrice() {
         return price;
