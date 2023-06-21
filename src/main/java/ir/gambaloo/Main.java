@@ -9,9 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 import java.net.SocketException;
 import java.util.ArrayList;
@@ -68,4 +66,18 @@ public class Main extends Application {
         Main.socket.close();
         System.out.println("Closing connection");
     }
+    public void getImage(String address) throws IOException {
+        while (true) {
+            DataInputStream dis = new DataInputStream(socket.getInputStream());
+            FileOutputStream fout = new FileOutputStream (address);
+            int i;
+            while ( (i = dis.read()) > -1) {
+                fout.write(i);
+            }
+            fout.flush();
+            fout.close();
+            dis.close();
+        }
+    }
+
 }

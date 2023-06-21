@@ -191,7 +191,7 @@ public class ClientServer extends Thread {
             }
         return restaurants;
     }
-    public void imagesender(String address) throws FileNotFoundException {
+    public void imagesender(String address) throws IOException {
         int i;
         FileInputStream fis = null;
         try {
