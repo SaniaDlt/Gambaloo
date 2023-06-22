@@ -10,10 +10,7 @@ package ir.gambaloo.controller;
     import javafx.scene.input.MouseEvent;
     import javafx.stage.Stage;
 
-    import java.io.FileInputStream;
-    import java.io.IOException;
-    import java.io.ObjectInputStream;
-    import java.io.ObjectOutputStream;
+    import java.io.*;
     import java.util.ArrayList;
 
 public class MainPageController {
@@ -91,7 +88,7 @@ public class MainPageController {
             addRoot (restaurant);
         }
 
-        public void addRoot(ArrayList<Restaurant> restaurant) throws IOException {
+        public void addRoot(ArrayList<Restaurant> restaurant) throws IOException, ClassNotFoundException {
             FXMLLoader restaurantList=new FXMLLoader ( Main.class.getResource ("view/RestaurantList.fxml") );
             restaurantList.load ();
             RestaurantListController restaurantListController=restaurantList.getController ();
@@ -99,11 +96,13 @@ public class MainPageController {
                 FXMLLoader fxmlLoader=new FXMLLoader(Main.class.getResource("view/Restaurant.fxml"));
                 fxmlLoader.load();
                 Main.printWriter.println(11);
+                Main.printWriter.flush ();
                 Main.printWriter.println(restaurant.get(i).getImageAddress());
+                Main.printWriter.flush ();
                 RestaurantController restaurantController=fxmlLoader.getController();
                 restaurantController.setRestaurant(restaurant.get(i));
-                Main.getImage (restaurant.get (i).getImageAddress ());
-                restaurantController.getImage ().setImage (new Image (new FileInputStream (restaurant.get (i).getImageAddress ())));
+                ByteArrayInputStream byteArrayInputStream=Main.getImage (restaurant.get (i).getImageAddress ());
+                restaurantController.getImage ().setImage (new Image (byteArrayInputStream));
                 restaurantController.load();
                 restaurantListController.getvBox().getChildren().add(fxmlLoader.getRoot());
             }

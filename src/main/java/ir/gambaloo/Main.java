@@ -65,16 +65,13 @@ public class Main extends Application {
         Main.socket.close();
         System.out.println("Closing connection");
     }
-    public static void getImage( String address) throws IOException {
-        while (true) {
-            DataInputStream dis = new DataInputStream(socket.getInputStream());
-            FileOutputStream fout = new FileOutputStream ("avatar.png");
-            int i;
-            while ( (i = dis.read()) > -1) {
-                fout.write(i);
-            }
-            fout.flush();
-        }
+    public static ByteArrayInputStream getImage( String address) throws IOException, ClassNotFoundException {
+      byte[] imageData;
+      ObjectInputStream objectInputStream=new ObjectInputStream (socket.getInputStream ());
+      imageData= ( byte[] ) objectInputStream.readObject ();
+      ByteArrayInputStream byteArrayInputStream=new ByteArrayInputStream (imageData);
+      return byteArrayInputStream;
+
     }
 
 }

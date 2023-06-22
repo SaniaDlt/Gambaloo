@@ -8,6 +8,9 @@ import ir.gambaloo.module.User;
 
 import java.io.*;
 import java.net.Socket;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -195,21 +198,11 @@ public class ClientServer extends Thread {
         return restaurants;
     }
     public void imagesender(String address) throws IOException {
-        int i;
-        FileInputStream fis = null;
-        try {
-            fis = new FileInputStream(address);
-        } catch (FileNotFoundException e) {
-            fis=null;
-        }
-        if(fis==null){
-            fis=new FileInputStream("/pics/default.png");
-        }
-        DataOutputStream os = new DataOutputStream(socket.getOutputStream());
-        while ((i = fis.read()) > -1)
-            os.write(i);
-
-        fis.close();
+        Path imagePath= Paths.get(address);
+        byte[] imageData= Files.readAllBytes (imagePath);
+        ObjectOutputStream objectOutputStream=new ObjectOutputStream (socket.getOutputStream ());
+        objectOutputStream.writeObject (imageData);
+        objectOutputStream.flush ();
     }
 }
 

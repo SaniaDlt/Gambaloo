@@ -51,13 +51,13 @@ public class Restaurant implements Serializable {
         return address;
     }
 
-    public Restaurant( int startHour, int endHour, String address, Country country, String name) {
+    public Restaurant( int startHour, int endHour, String address, Country country, String name,String imageAddress) {
         this.startHour = startHour;
         this.endHour = endHour;
         this.address = address;
         this.country=country;
         this.name=name;
-
+        this.imageAddress=imageAddress;
     }
     public String workHour(){
         return "From "+startHour+"To "+endHour;

@@ -61,12 +61,12 @@ public class AddRestaurantController implements Initializable {
         String imageAdress=ImageAddressFLD.getText();
         if(type==RestaurantType.DELIVERY){
             int delivery=Integer.parseInt ( tableOrDeliveryFLD.getText () );
-            DeliveryRestaurant deliveryRestaurant=new DeliveryRestaurant ( startHour,endHour,address,delivery,country,name );
+            DeliveryRestaurant deliveryRestaurant=new DeliveryRestaurant ( startHour,endHour,address,delivery,country,name,imageAdress );
             Main.adminRestaurantsD.add(deliveryRestaurant);
             table.getItems ().add ( deliveryRestaurant );
         }else {
             int tables=Integer.parseInt ( tableOrDeliveryFLD.getText () );
-            NotDeliveryRestaurant notDeliveryRestaurant=new NotDeliveryRestaurant ( startHour,endHour,address,tables,country,name );
+            NotDeliveryRestaurant notDeliveryRestaurant=new NotDeliveryRestaurant ( startHour,endHour,address,tables,country,name,imageAdress);
             Main.adminRestaurantsND.add(notDeliveryRestaurant);
             table.getItems ().add ( notDeliveryRestaurant );
         }

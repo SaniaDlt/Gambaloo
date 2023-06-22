@@ -50,7 +50,7 @@ public class RestaurantController implements Initializable {
 
     private Restaurant restaurant;
     @FXML
-    void restaurantAdd( MouseEvent event) throws IOException {
+    void restaurantAdd( MouseEvent event) throws IOException, ClassNotFoundException {
         FXMLLoader restaurantPage =new FXMLLoader ( Main.class.getResource ("view/RestaurantPage.fxml") );
         restaurantPage.load ();
         Stage stage=new Stage ();

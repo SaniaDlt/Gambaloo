@@ -15,6 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
@@ -56,15 +57,16 @@ public class RestaurantPageController implements Initializable {
     private VBox drinks;
     private VBox desert;
 
-    public void load() throws IOException {
+    public void load() throws IOException, ClassNotFoundException {
         nameLBL.setText ( restaurant.getName () );
         adressLBL.setText ( restaurant.getAddress () );
         startHLBL.setText (restaurant.getStartHour ()+"" );
         endHLBL.setText ( restaurant.getEndHour ()+"" );
         Main.printWriter.println(11);
+        Main.printWriter.flush ();
         Main.printWriter.println(restaurant.getImageAddress());
-        Main.getImage (restaurant.getImageAddress ());
-        imageV.setImage (new Image (new FileInputStream (restaurant.getImageAddress ())));
+        ByteArrayInputStream byteArrayInputStream=Main.getImage (restaurant.getImageAddress ());
+        imageV.setImage (new Image (byteArrayInputStream));
         for(int i=0;i<restaurant.getMenu().getAppetizers().size();i++){
             FXMLLoader fxmlLoader=new FXMLLoader(Main.class.getResource("view/FoodScene.fxml"));
             try {
@@ -74,9 +76,11 @@ public class RestaurantPageController implements Initializable {
             }
             FoodController foodController=fxmlLoader.getController();
             Main.printWriter.println(11);
+            Main.printWriter.flush ();
             Main.printWriter.println(restaurant.getMenu().getAppetizers().get(i).getImageAdress());
-            Main.getImage (restaurant.getMenu ().getAppetizers ().get (i).getImageAdress ());
-            foodController.getImage ().setImage (new Image (new FileInputStream (restaurant.getMenu ().getAppetizers ().get (i).getImageAdress ())));
+            Main.printWriter.flush ();
+            byteArrayInputStream = Main.getImage ( restaurant.getMenu ( ).getAppetizers ( ).get ( i ).getImageAdress ( ) );
+            foodController.getImage ().setImage (new Image (byteArrayInputStream));
             foodController.setFood(restaurant.getMenu().getAppetizers().get(i));
             foodController.load();
             appetizer.getChildren().add(fxmlLoader.getRoot());
@@ -90,9 +94,10 @@ public class RestaurantPageController implements Initializable {
             }
             FoodController foodController=fxmlLoader.getController();
             Main.printWriter.println(11);
+            Main.printWriter.flush ();
             Main.printWriter.println(restaurant.getMenu().getMainFoods().get(i).getImageAdress());
-            Main.getImage (restaurant.getMenu ().getMainFoods ().get (i).getImageAdress ());
-            foodController.getImage ().setImage (new Image (new FileInputStream (restaurant.getMenu ().getMainFoods ().get (i).getImageAdress ())));
+            byteArrayInputStream = Main.getImage ( restaurant.getMenu ( ).getMainFoods ( ).get ( i ).getImageAdress ( ) );
+            foodController.getImage ().setImage (new Image (byteArrayInputStream));
             foodController.setFood(restaurant.getMenu().getMainFoods().get(i));
             foodController.load();
             mainFood.getChildren().add(fxmlLoader.getRoot());
@@ -106,9 +111,10 @@ public class RestaurantPageController implements Initializable {
             }
             FoodController foodController=fxmlLoader.getController();
             Main.printWriter.println(11);
+            Main.printWriter.flush ();
             Main.printWriter.println(restaurant.getMenu().getDeserts().get(i).getImageAdress());
-            Main.getImage (restaurant.getMenu ().getDeserts ().get (i).getImageAdress ());
-            foodController.getImage ().setImage (new Image (new FileInputStream (restaurant.getMenu ().getDeserts ().get (i).getImageAdress ())));
+            byteArrayInputStream = Main.getImage ( restaurant.getMenu ( ).getDeserts ( ).get ( i ).getImageAdress ( ) );
+            foodController.getImage ().setImage (new Image (byteArrayInputStream));
             foodController.setFood(restaurant.getMenu().getDeserts().get(i));
             foodController.load();
             desert.getChildren().add(fxmlLoader.getRoot());
@@ -122,9 +128,10 @@ public class RestaurantPageController implements Initializable {
             }
             FoodController foodController=fxmlLoader.getController();
             Main.printWriter.println(11);
+            Main.printWriter.flush ();
             Main.printWriter.println(restaurant.getMenu().getDrinks().get(i).getImageAdress());
-            Main.getImage (restaurant.getMenu ().getDrinks ().get (i).getImageAdress ());
-            foodController.getImage ().setImage (new Image (new FileInputStream (restaurant.getMenu ().getDrinks ().get (i).getImageAdress ())));
+            byteArrayInputStream = Main.getImage ( restaurant.getMenu ( ).getDrinks ( ).get ( i ).getImageAdress ( ) );
+            foodController.getImage ().setImage (new Image (byteArrayInputStream));
             foodController.setFood(restaurant.getMenu().getDrinks().get(i));
             foodController.load();
             drinks.getChildren().add(fxmlLoader.getRoot());
