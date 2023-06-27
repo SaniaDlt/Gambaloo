@@ -17,6 +17,7 @@ import java.util.Scanner;
 public class ClientServer extends Thread {
     private  Socket socket;
     private  Scanner reciver;
+    private final String imagePath = "src/main/java/ir/gambaloo/server/pics/";
     private  PrintWriter printWriter;
 
     public ClientServer ( Socket socket ) throws IOException {
@@ -198,7 +199,7 @@ public class ClientServer extends Thread {
         return restaurants;
     }
     public void imagesender(String address) throws IOException {
-        Path imagePath= Paths.get(address);
+        Path imagePath= Paths.get(this.imagePath+address);
         byte[] imageData= Files.readAllBytes (imagePath);
         ObjectOutputStream objectOutputStream=new ObjectOutputStream (socket.getOutputStream ());
         objectOutputStream.writeObject (imageData);

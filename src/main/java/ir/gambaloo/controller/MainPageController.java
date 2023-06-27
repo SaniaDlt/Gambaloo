@@ -101,8 +101,7 @@ public class MainPageController {
                 Main.printWriter.flush ();
                 RestaurantController restaurantController=fxmlLoader.getController();
                 restaurantController.setRestaurant(restaurant.get(i));
-                ByteArrayInputStream byteArrayInputStream=Main.getImage (restaurant.get (i).getImageAddress ());
-                restaurantController.getImage ().setImage (new Image (byteArrayInputStream));
+                Main.getImage(restaurantController.getImage());
                 restaurantController.load();
                 restaurantListController.getvBox().getChildren().add(fxmlLoader.getRoot());
             }

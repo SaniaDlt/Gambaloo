@@ -7,6 +7,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.*;
@@ -65,12 +66,14 @@ public class Main extends Application {
         Main.socket.close();
         System.out.println("Closing connection");
     }
-    public static ByteArrayInputStream getImage( String address) throws IOException, ClassNotFoundException {
+    public static void getImage(ImageView imageView) throws IOException, ClassNotFoundException {
       byte[] imageData;
       ObjectInputStream objectInputStream=new ObjectInputStream (socket.getInputStream ());
       imageData= ( byte[] ) objectInputStream.readObject ();
       ByteArrayInputStream byteArrayInputStream=new ByteArrayInputStream (imageData);
-      return byteArrayInputStream;
+      imageView.setImage(new Image(byteArrayInputStream));
+
+
 
     }
 
