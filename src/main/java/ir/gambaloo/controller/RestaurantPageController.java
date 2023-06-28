@@ -13,6 +13,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.ByteArrayInputStream;
@@ -32,7 +33,6 @@ public class RestaurantPageController implements Initializable {
     }
 
     private Restaurant restaurant;
-    private Image image;
 
     @FXML
     private Label adressLBL;
@@ -150,14 +150,14 @@ public class RestaurantPageController implements Initializable {
         vBox=new VBox();
         scrollPane.setContent(vBox);
         vBox.setAlignment(Pos.CENTER);
-        Label appLbl=new Label("Appetizer");
-        Label mainLbl=new Label("MainFood");
-        Label drinkLBL=new Label("Drinks");
-        Label desertLbl=new Label("Deserts");
-        appLbl.setUnderline(true);
-        mainLbl.setUnderline(true);
-        drinkLBL.setUnderline(true);
-        desertLbl.setUnderline(true);
+        Label appLbl=new Label("Appetizer :");
+        Label mainLbl=new Label("MainFood :");
+        Label drinkLBL=new Label("Drinks :");
+        Label desertLbl=new Label("Deserts :");
+        appLbl.setFont ( Font.font (25) );
+        mainLbl.setFont ( Font.font (25 ));
+        drinkLBL.setFont ( Font.font (25) );
+        desertLbl.setFont ( Font.font (25) );
         appetizer=new VBox(appLbl);
         mainFood=new VBox(mainLbl);
         drinks=new VBox(drinkLBL);

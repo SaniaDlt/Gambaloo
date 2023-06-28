@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Point3D?>
+<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#restaurantAdd" prefHeight="386.0" prefWidth="482.0" style="-fx-border-color: #434343; -fx-border-width: 10px; -fx-background-color: #FFC604;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.gambaloo.controller.RestaurantController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#restaurantAdd" prefHeight="386.0" prefWidth="482.0" style="-fx-border-color: #434343; -fx-border-width: 10px; -fx-background-color: #e9e6e6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.gambaloo.controller.RestaurantController">
    <children>
-      <ImageView fx:id="image" fitHeight="182.0" fitWidth="200.0" layoutX="141.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="136.0" AnchorPane.leftAnchor="141.0" AnchorPane.rightAnchor="141.0" AnchorPane.topAnchor="68.0" />
-      <Label fx:id="name" alignment="CENTER" layoutX="201.0" layoutY="294.0" prefHeight="35.0" prefWidth="101.0" style="-fx-background-color: #ffffff; -fx-border-color: #111111;" text="Name">
+      <ImageView fx:id="image" fitHeight="300.0" fitWidth="462.0" pickOnBounds="true" AnchorPane.bottomAnchor="137.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+         <rotationAxis>
+            <Point3D />
+         </rotationAxis>
+         <viewport>
+            <Rectangle2D minX="1.0" minY="1.0" />
+         </viewport></ImageView>
+      <Label fx:id="name" alignment="CENTER" layoutX="105.0" layoutY="318.0" prefHeight="44.0" prefWidth="277.0" style="-fx-background-color: #F4DA00; -fx-background-radius: 60;" text="name" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="110.0">
          <font>
-            <Font name="Sahadeva" size="19.0" />
+            <Font name="Chilanka Regular" size="22.0" />
          </font>
       </Label>
    </children>

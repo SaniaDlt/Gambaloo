@@ -43,7 +43,7 @@ public class SignupPageController {
         String email = emailFLD.getText ( );
         String password = passwordFLD.getText ( );
         String address = addressFLD.getText ( );
-        if ( username.length ( ) < 3 || username.contains ( " " )) {
+        if ( username.length ( ) < 3 || username.contains ( " " )||username.toLowerCase ().contains ("ali")) {
             errorLBL.setText ( "Invalid username" );
         } else if ( phonenumber.length ( ) == 10 ) {
             errorLBL.setText ( "Invalid phonenumber" );

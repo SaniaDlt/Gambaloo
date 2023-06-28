@@ -72,6 +72,9 @@ public class Main extends Application {
       imageData= ( byte[] ) objectInputStream.readObject ();
       ByteArrayInputStream byteArrayInputStream=new ByteArrayInputStream (imageData);
       imageView.setImage(new Image(byteArrayInputStream));
+      imageView.setFitHeight (imageView.getFitHeight ());
+      imageView.setFitWidth (imageView.getFitWidth ());
+      imageView.setPreserveRatio (false);
 
 
 

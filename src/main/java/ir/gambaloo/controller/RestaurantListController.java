@@ -25,7 +25,7 @@ public class RestaurantListController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         vBox=new VBox();
-        vBox.setStyle("-fx-background-color :  #5A28C8");
+        vBox.setStyle("-fx-background-color : #e9e6e6");
         scrollPane.setContent(vBox);
         scrollPane.pannableProperty().set(true);
         scrollPane.fitToWidthProperty().set(true);
