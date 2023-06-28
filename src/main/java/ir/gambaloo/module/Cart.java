@@ -1,4 +1,8 @@
 package ir.gambaloo.module;
+/**
+ * This class is for food ordering that add and remove food from cart and get and set cost
+ * */
+
 
 import java.io.Serializable;
 import java.util.ArrayList;
