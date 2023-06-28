@@ -1,5 +1,7 @@
 package ir.gambaloo;
-
+/**
+ * Start of a amazing project
+ * */
 import ir.gambaloo.module.DeliveryRestaurant;
 import ir.gambaloo.module.NotDeliveryRestaurant;
 import ir.gambaloo.module.User;
@@ -12,6 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -36,14 +39,18 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) throws IOException {
-        Main.socket = new Socket("localhost",8283);
-        Main.reciver=new Scanner ( Main.socket.getInputStream ( ) );
-        Main.printWriter= new PrintWriter ( Main.socket.getOutputStream ( ) , true );
-
+        try {
+            Main.socket = new Socket("localhost", 8283);
+            Main.reciver = new Scanner(Main.socket.getInputStream());
+            Main.printWriter = new PrintWriter(Main.socket.getOutputStream(), true);
+        }catch (SocketException e){
+            System.out.println("Server is offline");
+            System.exit(1);
+        }
 
         launch();
     }
-
+    //Saves everything after shut down Client
     @Override
     public void stop() throws Exception {
         super.stop();
@@ -66,6 +73,7 @@ public class Main extends Application {
         Main.socket.close();
         System.out.println("Closing connection");
     }
+    //Receive image as byte array
     public static void getImage(ImageView imageView) throws IOException, ClassNotFoundException {
       byte[] imageData;
       ObjectInputStream objectInputStream=new ObjectInputStream (socket.getInputStream ());
