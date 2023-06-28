@@ -1,5 +1,7 @@
 package ir.gambaloo.controller;
-
+/**
+ * Restaurant scene that are in a Restaurant list
+ * */
 import ir.gambaloo.Main;
 import ir.gambaloo.module.Restaurant;
 import javafx.fxml.FXML;
@@ -11,9 +13,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-import java.io.Serializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 

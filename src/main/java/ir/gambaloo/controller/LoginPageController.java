@@ -1,9 +1,11 @@
 package ir.gambaloo.controller;
+/**
+ * Users login to their account via this page
+ * */
 
 import ir.gambaloo.Main;
 import ir.gambaloo.module.DeliveryRestaurant;
 import ir.gambaloo.module.NotDeliveryRestaurant;
-import ir.gambaloo.module.Restaurant;
 import ir.gambaloo.module.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,10 +18,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class LoginPageController{
 

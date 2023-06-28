@@ -1,5 +1,7 @@
 package ir.gambaloo.controller;
-
+/**
+ * Gateway scene controller that makes captcha and verify your cardnumber and password
+ * */
 import ir.gambaloo.Main;
 import ir.gambaloo.module.TaxGateway;
 import javafx.event.ActionEvent;
@@ -9,7 +11,6 @@ import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;

@@ -1,4 +1,7 @@
 package ir.gambaloo.controller;
+/**
+ * This page is just created by request of saniaDlt
+ * */
 
 import ir.gambaloo.Main;
 import javafx.event.ActionEvent;

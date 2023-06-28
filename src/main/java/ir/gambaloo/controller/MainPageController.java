@@ -1,15 +1,15 @@
 package ir.gambaloo.controller;
-
+    /**
+     * Main page that contains all country
+     * by clicking on a country it will link you to RestaurantListController
+     * */
     import ir.gambaloo.Main;
     import ir.gambaloo.module.Restaurant;
     import javafx.fxml.FXML;
     import javafx.fxml.FXMLLoader;
-    import javafx.scene.Node;
     import javafx.scene.Scene;
-    import javafx.scene.image.Image;
     import javafx.scene.input.MouseEvent;
     import javafx.stage.Stage;
-
     import java.io.*;
     import java.util.ArrayList;
 

@@ -1,5 +1,7 @@
 package ir.gambaloo.controller;
-
+/**
+ * Users can make an account in this page with email phonenumber and ...
+ * */
 
 import ir.gambaloo.Main;
 import ir.gambaloo.module.User;
@@ -12,8 +14,6 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
-import java.util.Scanner;
 
 public class SignupPageController {
 
@@ -56,7 +56,7 @@ public class SignupPageController {
         } else {
             Main.printWriter.println ( - 2 );
             Main.printWriter.flush ( );
-            Main.printWriter.println ( username );
+            Main.printWriter.println ( username.toLowerCase() );
             Main.printWriter.flush ( );
             if ( Main.reciver.nextInt ( ) == - 1 ) {
                 errorLBL.setText ( "This username is already exist." );
@@ -66,7 +66,7 @@ public class SignupPageController {
                 if ( Main.reciver.nextInt ( ) == - 1 ) {
                     errorLBL.setText ( "This phonenumber is already exist." );
                 } else {
-                    Main.printWriter.println ( email );
+                    Main.printWriter.println ( email.toLowerCase() );
                     Main.printWriter.flush ( );
                     if ( Main.reciver.nextInt ( ) == - 1 ) {
                         errorLBL.setText ( "This email is already exist." );
