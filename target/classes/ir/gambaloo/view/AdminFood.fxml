@@ -30,9 +30,9 @@
             <Label fx:id="restaurantName" prefHeight="24.0" prefWidth="131.0" />
             <HBox prefHeight="412.0" prefWidth="454.0">
                <children>
-                  <TableView fx:id="mainfoodTBL" prefHeight="384.0" prefWidth="118.0">
+                  <TableView fx:id="mainFoodTBL" prefHeight="384.0" prefWidth="118.0">
                     <columns>
-                      <TableColumn fx:id="mainFoodTV" prefWidth="75.0" text="MainFood" />
+                      <TableColumn fx:id="mainFoodCL" prefWidth="75.0" text="MainFood" />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -40,7 +40,7 @@
                   </TableView>
                   <TableView fx:id="appetizerTBL" prefHeight="384.0" prefWidth="117.0">
                      <columns>
-                        <TableColumn fx:id="appetizerTV" prefWidth="75.0" text="Appetizer" />
+                        <TableColumn fx:id="appetizerCL" prefWidth="75.0" text="Appetizer" />
                      </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -48,7 +48,7 @@
                   </TableView>
                   <TableView fx:id="drinksTBL" prefHeight="384.0" prefWidth="117.0">
                      <columns>
-                        <TableColumn fx:id="drinksTV" prefWidth="75.0" text="Drinks" />
+                        <TableColumn fx:id="drinksCL" prefWidth="75.0" text="Drinks" />
                      </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -56,7 +56,7 @@
                   </TableView>
                   <TableView fx:id="desertsTBL" prefHeight="384.0" prefWidth="105.0">
                      <columns>
-                        <TableColumn fx:id="desertTV" prefWidth="75.0" text="Deserts" />
+                        <TableColumn fx:id="desertCL" prefWidth="75.0" text="Deserts" />
                      </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

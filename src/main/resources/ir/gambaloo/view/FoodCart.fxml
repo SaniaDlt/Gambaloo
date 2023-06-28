@@ -6,13 +6,20 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
 <HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.gambaloo.controller.FoodCartController">
    <children>
       <HBox alignment="CENTER" prefHeight="200.0" prefWidth="290.0" spacing="10.0">
          <children>
-            <Label prefHeight="39.0" prefWidth="88.0" text="Name :" />
-            <Label fx:id="nameLBL" prefHeight="39.0" prefWidth="182.0" />
+            <Label prefHeight="39.0" prefWidth="88.0" text="Name :">
+               <font>
+                  <Font name="FreeMono Bold" size="19.0" />
+               </font></Label>
+            <Label fx:id="nameLBL" prefHeight="39.0" prefWidth="182.0">
+               <font>
+                  <Font name="FreeMono" size="19.0" />
+               </font></Label>
          </children>
          <HBox.margin>
             <Insets left="10.0" />
@@ -20,17 +27,23 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="200.0" prefWidth="290.0" spacing="10.0">
          <children>
-            <Label prefHeight="39.0" prefWidth="162.0" text="Price :" />
+            <Label prefHeight="39.0" prefWidth="162.0" text="Price :">
+               <font>
+                  <Font name="FreeMono Bold" size="19.0" />
+               </font></Label>
             <Label fx:id="priceLBL" prefHeight="39.0" prefWidth="182.0" />
          </children>
       </HBox>
-      <ImageView fitHeight="53.0" fitWidth="78.0" onMouseClicked="#remove" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="46.0" fitWidth="46.0" onMouseClicked="#remove" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@pics/Cross.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <HBox.margin>
+            <Insets right="15.0" top="2.0" />
+         </HBox.margin>
       </ImageView>
    </children>
 </HBox>

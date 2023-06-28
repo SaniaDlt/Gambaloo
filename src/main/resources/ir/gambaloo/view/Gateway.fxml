@@ -9,51 +9,72 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="614.0" stylesheets="@pics/Gateway.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.gambaloo.controller.GatewayController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="614.0" stylesheets="@pics/Gateway.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.gambaloo.controller.GatewayController">
    <children>
       <HBox alignment="CENTER" prefHeight="115.0" prefWidth="614.0">
          <children>
             <Label fx:id="nameLbl" alignment="CENTER" prefHeight="90.0" prefWidth="454.0">
                <font>
-                  <Font name="C059-Bold" size="35.0" />
+                  <Font name="Sahadeva" size="35.0" />
                </font></Label>
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="74.0" prefWidth="614.0" spacing="10.0">
          <children>
-            <Label alignment="CENTER" prefHeight="28.0" prefWidth="123.0" text="Card number :" />
+            <Label alignment="CENTER" prefHeight="30.0" prefWidth="131.0" text="Card number :">
+               <font>
+                  <Font name="Sahadeva" size="19.0" />
+               </font></Label>
             <TextField fx:id="cardNumberFLD" alignment="CENTER" prefHeight="30.0" prefWidth="309.0" styleClass="field" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="68.0" prefWidth="614.0" spacing="10.0">
          <children>
-            <Label prefHeight="29.0" prefWidth="105.0" text="Password:" />
+            <Label prefHeight="29.0" prefWidth="105.0" text="Password :">
+               <font>
+                  <Font name="Sahadeva" size="19.0" />
+               </font></Label>
             <PasswordField fx:id="passwordFLD" prefHeight="30.0" prefWidth="80.0" styleClass="field" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="67.0" prefWidth="614.0" spacing="10.0">
          <children>
-            <Label fx:id="code" alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="Captcha:" />
+            <Label fx:id="code" alignment="CENTER" prefHeight="30.0" prefWidth="97.0" text="Captcha :">
+               <font>
+                  <Font name="Sahadeva" size="19.0" />
+               </font></Label>
             <TextField fx:id="captcha" prefHeight="30.0" prefWidth="78.0" styleClass="field" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="52.0" prefWidth="614.0">
          <children>
-            <Label prefHeight="17.0" prefWidth="37.0" text="Price:" />
-            <Label fx:id="price" alignment="CENTER" prefHeight="17.0" prefWidth="63.0" text="0" textFill="#059a00" />
+            <Label prefHeight="33.0" prefWidth="52.0" text="Price:">
+               <font>
+                  <Font name="Sahadeva" size="19.0" />
+               </font></Label>
+            <Label fx:id="price" alignment="CENTER" prefHeight="17.0" prefWidth="63.0" text="0" textFill="#059a00">
+               <font>
+                  <Font name="Sahadeva" size="19.0" />
+               </font></Label>
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="30.0" prefWidth="614.0">
          <children>
-            <Label fx:id="errorLbl" prefHeight="16.0" prefWidth="118.0" textFill="RED" />
+            <Label fx:id="errorLbl" prefHeight="33.0" prefWidth="157.0" textFill="RED">
+               <font>
+                  <Font name="Sahadeva" size="19.0" />
+               </font></Label>
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="75.0" prefWidth="614.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#payBTN" prefHeight="37.0" prefWidth="85.0" text="Pay">
+            <Button mnemonicParsing="false" onAction="#payBTN" prefHeight="49.0" prefWidth="96.0" text="Pay">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <font>
+                  <Font name="Sahadeva" size="20.0" />
+               </font>
             </Button>
          </children>
       </HBox>

@@ -8,16 +8,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#restaurantAdd" prefHeight="386.0" prefWidth="482.0" style="-fx-border-color: #434343; -fx-border-width: 10px; -fx-background-color: #e9e6e6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.gambaloo.controller.RestaurantController">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#restaurantLoad" prefHeight="386.0" prefWidth="482.0" style="-fx-border-color: #434343; -fx-border-width: 10px; -fx-background-color: #e9e6e6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.gambaloo.controller.RestaurantController">
    <children>
-      <ImageView fx:id="image" fitHeight="300.0" fitWidth="462.0" pickOnBounds="true" AnchorPane.bottomAnchor="137.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
+      <ImageView fx:id="imageV" fitHeight="300.0" fitWidth="462.0" pickOnBounds="true" AnchorPane.bottomAnchor="137.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="0.0">
          <rotationAxis>
             <Point3D />
          </rotationAxis>
          <viewport>
             <Rectangle2D minX="1.0" minY="1.0" />
          </viewport></ImageView>
-      <Label fx:id="name" alignment="CENTER" layoutX="105.0" layoutY="318.0" prefHeight="44.0" prefWidth="277.0" style="-fx-background-color: #F4DA00; -fx-background-radius: 60;" text="name" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="110.0">
+      <Label fx:id="nameLBL" alignment="CENTER" layoutX="105.0" layoutY="318.0" prefHeight="44.0" prefWidth="277.0" style="-fx-background-color: #F4DA00; -fx-background-radius: 60;" text="name" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="110.0">
          <font>
             <Font name="Chilanka Regular" size="22.0" />
          </font>
