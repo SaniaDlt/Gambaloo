@@ -1,5 +1,7 @@
 package ir.gambaloo.module;
-
+/**
+ * is a Restaurant that has chairs instead of delivery
+ * */
 public class NotDeliveryRestaurant extends Restaurant{
 
     private int chairs=0;

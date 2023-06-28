@@ -2,7 +2,9 @@ package ir.gambaloo.module;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-
+/**
+ *Menu contains 4 arraylist of appetizers main food deserts and drinks
+ * */
 public class Menu implements Serializable {
     private  ArrayList<Appetizer> appetizers = new ArrayList<>();
     private  ArrayList<MainFood> mainFoods = new ArrayList<>();

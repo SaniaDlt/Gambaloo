@@ -1,4 +1,7 @@
 package ir.gambaloo.module;
+/**
+ *Gateway is way to charge your balance :D
+ * */
 
 public abstract class Gateway {
     public double getPrice ( ) {

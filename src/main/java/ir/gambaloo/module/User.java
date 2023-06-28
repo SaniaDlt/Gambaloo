@@ -1,4 +1,8 @@
 package ir.gambaloo.module;
+/**
+ *User class that contains Email username password phonenumber address and balance of Users
+ * Keep it safe :)
+ * */
 
 import java.io.Serializable;
 

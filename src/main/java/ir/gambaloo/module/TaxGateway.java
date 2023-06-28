@@ -1,5 +1,7 @@
 package ir.gambaloo.module;
-
+/**
+ * TaxGateway is a Gateway that charges you with tax (5% taxrate)
+ * */
 public class TaxGateway extends Gateway{
     public static final double taxRate=0.05;
 

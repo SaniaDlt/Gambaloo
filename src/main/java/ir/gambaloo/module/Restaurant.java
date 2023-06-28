@@ -1,13 +1,9 @@
 package ir.gambaloo.module;
-
-
-import ir.gambaloo.Main;
-import ir.gambaloo.controller.RestaurantController;
-import ir.gambaloo.controller.RestaurantPageController;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.control.ChoiceBox;
-
-import java.io.IOException;
+/**
+ *Restaurant contains menu address country name imageAddress(address that is near server) and
+ * Restaurant type
+ * Also it save two parameter as int for start hour and end hour
+ * */
 import java.io.Serializable;
 
 public class Restaurant implements Serializable {
