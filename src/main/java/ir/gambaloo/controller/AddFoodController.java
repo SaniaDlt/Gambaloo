@@ -1,6 +1,10 @@
 package ir.gambaloo.controller;
+/**
+ * This Controller contains 4 tableview for food types appetizer mainfood desert drinks
+ * and add wanted food in those tables by admin
+ * */
 
-import ir.gambaloo.Main;
+
 import ir.gambaloo.module.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

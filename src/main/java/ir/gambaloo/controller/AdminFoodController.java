@@ -1,4 +1,8 @@
 package ir.gambaloo.controller;
+/**
+ * This controller shows all the foods that added by admin in the tableview
+ * Admin can add and remove other foods by clicking in those button
+ * */
 
 
 import ir.gambaloo.Main;
