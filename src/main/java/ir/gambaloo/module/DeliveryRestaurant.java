@@ -1,4 +1,8 @@
 package ir.gambaloo.module;
+/**
+ * This class extend Restaurant that define delivery restaurants and contains number of deliveries
+ * and restaurant type
+ * */
 
 public class DeliveryRestaurant extends Restaurant{
     private final int deliverys;

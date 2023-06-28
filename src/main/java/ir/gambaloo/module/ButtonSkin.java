@@ -1,4 +1,8 @@
 package ir.gambaloo.module;
+/**
+ * This class gives animation to button in the RestaurantPageController that change
+ * the order button when client click on it
+ * */
 
 import javafx.animation.FadeTransition;
 import javafx.animation.FillTransition;

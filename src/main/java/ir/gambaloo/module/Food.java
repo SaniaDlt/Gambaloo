@@ -1,4 +1,7 @@
 package ir.gambaloo.module;
+/**
+ * Food class contains name price description imageaddress and the food type which is enum
+ * */
 
 import ir.gambaloo.Main;
 import ir.gambaloo.controller.FoodController;
@@ -10,7 +13,7 @@ public abstract class  Food implements Serializable {
     protected String name;
     protected double price;
     protected FoodType foodType;
-    //image2B
+
     protected String imageAdress;
     protected String describ;
 
