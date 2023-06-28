@@ -1,4 +1,8 @@
 package ir.gambaloo.module;
+/**
+ *Drink class extends Food class and contains name price description imageaddress and
+ * the food type which is enum
+ * */
 
 public class Drink extends Food {
 
