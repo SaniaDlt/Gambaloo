@@ -22,7 +22,7 @@
                <font>
                   <Font name="Yrsa Bold Italic" size="50.0" />
                </font></Label>
-            <Label fx:id="descript" alignment="TOP_CENTER" prefHeight="137.0" prefWidth="733.0" text="Description">
+            <Label fx:id="description" alignment="TOP_CENTER" prefHeight="137.0" prefWidth="733.0" text="Description">
                <VBox.margin>
                   <Insets />
                </VBox.margin>

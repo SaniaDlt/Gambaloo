@@ -20,7 +20,7 @@
       <HBox alignment="CENTER" prefHeight="22.0" prefWidth="612.0" spacing="10.0">
          <children>
             <Label text="Price" />
-            <TextField fx:id="PriceFld" prefHeight="30.0" prefWidth="200.0" styleClass="textField" />
+            <TextField fx:id="PriceFLD" prefHeight="30.0" prefWidth="200.0" styleClass="textField" />
          </children>
          <padding>
             <Insets left="6.0" />
@@ -29,7 +29,7 @@
       <HBox alignment="CENTER" prefHeight="25.0" prefWidth="612.0" spacing="10.0">
          <children>
             <Label text="Image Address" />
-            <TextField fx:id="imgFLDs" prefHeight="30.0" prefWidth="200.0" styleClass="textField" />
+            <TextField fx:id="imageAddress" prefHeight="30.0" prefWidth="200.0" styleClass="textField" />
          </children>
          <padding>
             <Insets right="60.0" />
@@ -38,7 +38,7 @@
       <HBox alignment="CENTER" prefHeight="55.0" prefWidth="612.0" spacing="10.0">
          <children>
             <Label text="Describtion " />
-            <TextArea fx:id="DescribFLD" prefHeight="66.0" prefWidth="200.0" styleClass="textField" />
+            <TextArea fx:id="DescriptionFLD" prefHeight="66.0" prefWidth="200.0" styleClass="textField" />
          </children>
          <padding>
             <Insets right="20.0" />
@@ -47,7 +47,7 @@
       <HBox alignment="CENTER" prefHeight="24.0" prefWidth="612.0" spacing="10.0">
          <children>
             <Label text="Type" />
-            <ChoiceBox fx:id="typeFld" prefWidth="150.0" styleClass="textField" />
+            <ChoiceBox fx:id="typeCHCB" prefWidth="150.0" styleClass="textField" />
          </children></HBox>
       <HBox alignment="CENTER" prefHeight="23.0" prefWidth="612.0">
          <children>

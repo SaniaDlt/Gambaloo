@@ -29,7 +29,7 @@
                   <Font name="Sahadeva" size="20.0" />
                </font>
             </Label>
-            <TextField id="field" fx:id="ImageAddressFLD" prefHeight="30.0" prefWidth="200.0" styleClass="field" />
+            <TextField id="field" fx:id="imageAddressFLD" prefHeight="30.0" prefWidth="200.0" styleClass="field" />
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" spacing="10.0">
