@@ -45,6 +45,6 @@ public class FoodCartController  {
     }
     public void load(){
         nameLBL.setText(food.getName());
-        priceLBL.setText(food.getPrice()+"");
+        priceLBL.setText( String.valueOf ( food.getPrice ( ) ) );
     }
 }

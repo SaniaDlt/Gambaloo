@@ -11,7 +11,7 @@ public class SocketMaker extends Thread {
         this.serverSocket = serverSocket;
     }
 
-    private ServerSocket serverSocket;
+    private final ServerSocket serverSocket;
 
     @Override
     public void run ( ) {

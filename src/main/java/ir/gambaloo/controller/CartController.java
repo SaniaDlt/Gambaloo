@@ -53,7 +53,7 @@ public class CartController implements Initializable {
         FXMLLoader gateWay1=new FXMLLoader(Main.class.getResource ("view/Gateway.fxml"));
         gateWay1.load();
         GatewayController gatewayController=gateWay1.getController ();
-        gatewayController.getPrice ().setText (Gateway.getPrice ()+"");
+        gatewayController.getPrice ().setText ( String.valueOf ( Gateway.getPrice ( ) ) );
         gatewayController.setCartController(this);
         Stage stage=new Stage ();
         stage.setScene(new Scene (gateWay1.getRoot()));
@@ -68,7 +68,7 @@ public class CartController implements Initializable {
         FXMLLoader gateWay2=new FXMLLoader(Main.class.getResource ("view/Gateway.fxml"));
         gateWay2.load ();
         GatewayController gatewayController=gateWay2.getController ();
-        gatewayController.getPrice ().setText (limitGateway.getPrice ()+"");
+        gatewayController.getPrice ().setText ( String.valueOf ( limitGateway.getPrice ( ) ) );
         Stage stage=new Stage ();
         stage.setScene(new Scene (gateWay2.getRoot()));
         stage.setTitle("Limited gateway");
@@ -114,12 +114,12 @@ public class CartController implements Initializable {
             controller.setCart(this);
             root.getChildren().add(fxmlLoader.getRoot());
         }
-        balanceLBL.setText(Main.client.getBalance()+"");
-        priceLBL.setText(Main.client.getCart().getCost()+"");
+        balanceLBL.setText( String.valueOf ( Main.client.getBalance ( ) ) );
+        priceLBL.setText( String.valueOf ( Main.client.getCart ( ).getCost ( ) ) );
     }
     public void refresh(){
-        balanceLBL.setText(Main.client.getBalance()+"");
-        priceLBL.setText(Main.client.getCart().getCost()+"");
+        balanceLBL.setText( String.valueOf ( Main.client.getBalance ( ) ) );
+        priceLBL.setText( String.valueOf ( Main.client.getCart ( ).getCost ( ) ) );
     }
 }
 

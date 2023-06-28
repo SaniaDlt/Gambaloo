@@ -1,56 +1,52 @@
 package ir.gambaloo.module;
 /**
  * Food class contains name price description imageaddress and the food type which is enum
- * */
+ */
 
-import ir.gambaloo.Main;
-import ir.gambaloo.controller.FoodController;
-import javafx.fxml.FXMLLoader;
-
-import java.io.IOException;
 import java.io.Serializable;
-public abstract class  Food implements Serializable {
+
+public abstract class Food implements Serializable {
     protected String name;
     protected double price;
     protected FoodType foodType;
 
-    protected String imageAdress;
-    protected String describ;
+    protected String imageAddress;
+    protected String description;
 
 
-    public Food(String name, double price,String describ,String imageAdress) {
+    public Food ( String name , double price , String description , String imageAddress ) {
         this.name = name;
         this.price = price;
-        this.describ=describ;
-        this.imageAdress=imageAdress;
+        this.description = description;
+        this.imageAddress = imageAddress;
 
     }
 
-    public FoodType getFoodType() {
+    public FoodType getFoodType ( ) {
         return foodType;
     }
 
-    public String getImageAdress() {
-        return imageAdress;
+    public String getImageAddress ( ) {
+        return imageAddress;
     }
 
-    public String getDescrib() {
-        return describ;
+    public String getDescription ( ) {
+        return description;
     }
 
-    public String getName() {
+    public String getName ( ) {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName ( String name ) {
         this.name = name;
     }
 
-    public double getPrice() {
+    public double getPrice ( ) {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice ( double price ) {
         this.price = price;
     }
 }

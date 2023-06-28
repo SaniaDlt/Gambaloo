@@ -1,8 +1,9 @@
 package ir.gambaloo.module;
+
 /**
  * Enum contains country types
- * */
+ */
 
 public enum Country {
-    IRAN,TURKEY,LEBENON,ITALY,AMERICA,MEXICO,JAPAN
+    IRAN, TURKEY, LEBANON, ITALY, AMERICA, MEXICO, JAPAN
 }

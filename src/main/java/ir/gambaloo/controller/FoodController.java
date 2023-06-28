@@ -1,6 +1,5 @@
 package ir.gambaloo.controller;
 
-import ir.gambaloo.Main;
 import ir.gambaloo.module.ButtonSkin;
 import ir.gambaloo.module.Food;
 import javafx.event.ActionEvent;
@@ -10,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 
-import java.io.Serializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -86,7 +84,7 @@ public class FoodController implements Initializable {
     }
     public void load(){
         name.setText(food.getName());
-        price.setText(""+food.getPrice());
-        descript.setText(food.getDescrib());
+        price.setText( String.valueOf ( food.getPrice ( ) ) );
+        descript.setText(food.getDescription ());
     }
 }

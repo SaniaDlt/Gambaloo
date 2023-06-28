@@ -1,7 +1,8 @@
 package ir.gambaloo.module;
+
 /**
- *Restaurant types
- * */
+ * Restaurant types
+ */
 public enum RestaurantType {
     DELIVERY, NOTDELIVERY
 }

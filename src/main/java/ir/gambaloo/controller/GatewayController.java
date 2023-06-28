@@ -89,7 +89,7 @@ public class GatewayController implements Initializable {
     public void captchaMaker(){
         Random random=new Random();
         captchaCode=random.nextInt(9000)+1000;
-        code.setText(""+captchaCode);
+        code.setText( String.valueOf ( captchaCode ) );
     }
 
 

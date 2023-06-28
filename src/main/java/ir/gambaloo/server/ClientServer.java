@@ -15,10 +15,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ClientServer extends Thread {
-    private  Socket socket;
-    private  Scanner reciver;
+    private final Socket socket;
+    private final Scanner reciver;
     private final String imagePath = "src/main/java/ir/gambaloo/server/pics/";
-    private  PrintWriter printWriter;
+    private final PrintWriter printWriter;
 
     public ClientServer ( Socket socket ) throws IOException {
         this.socket = socket;
@@ -146,7 +146,7 @@ public class ClientServer extends Thread {
                                     } else if ( code == 5 ) {//Italy
                                         write.writeObject ( seprator ( "ITALY" ) );
                                     } else if ( code == 6 ) {//Lebnan
-                                        write.writeObject ( seprator ( "LEBENON" ) );
+                                        write.writeObject ( seprator ( "LEBANON" ) );
                                     } else if ( code == 7 ) {//Iran
                                         write.writeObject ( seprator ( "IRAN" ) );
                                     } else if ( code == 8 ) {//Mexico

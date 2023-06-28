@@ -1,34 +1,37 @@
 package ir.gambaloo.module;
 /**
  * This class is for food ordering that add and remove food from cart and get and set cost
- * */
+ */
 
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Cart implements Serializable {
-    private ArrayList<Food> items=new ArrayList<>();
-    private double cost=0;
+    private final ArrayList<Food> items = new ArrayList<> ( );
+    private double cost = 0;
 
-    public void setCost(double cost) {
-        this.cost = cost;
+    //Add food to cart
+    public void addToCart ( Food food ) {
+        items.add ( food );
+        cost += food.getPrice ( );
     }
 
-    public void addToCart(Food food){
-        items.add(food);
-        cost+= food.getPrice();
-    }
-    public void removeFromCart(Food food){
-        items.remove(food);
-        cost-=food.getPrice();
+    //Remove food from cart
+    public void removeFromCart ( Food food ) {
+        items.remove ( food );
+        cost -= food.getPrice ( );
     }
 
-    public ArrayList<Food> getItems() {
+    public ArrayList<Food> getItems ( ) {
         return items;
     }
 
-    public double getCost() {
+    public double getCost ( ) {
         return cost;
+    }
+
+    public void setCost ( double cost ) {
+        this.cost = cost;
     }
 }
