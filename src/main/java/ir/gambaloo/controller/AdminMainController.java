@@ -1,13 +1,12 @@
 package ir.gambaloo.controller;
 /**
- * This controller shows all the restaurant that added by admin in the tableview
+ * This controller shows all the restaurantTV that added by admin in the tableview
  * Admin can add remove edit other restaurants by clicking in their button
- * */
+ */
 
 
-
-import ir.gambaloo.module.Restaurant;
 import ir.gambaloo.Main;
+import ir.gambaloo.module.Restaurant;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,96 +24,102 @@ import java.util.ResourceBundle;
 
 public class AdminMainController implements Initializable {
 
+    protected static int chosen = - 1;
+    protected static String address = null;
     @FXML
-    private TableColumn<Restaurant, String> address;
-    protected static int chosen=-1;
-    protected static String addressS=null;
+    private TableColumn<Restaurant, String> addressCL;
+    @FXML
+    private TableColumn<Restaurant, String> restaurantCL;
 
     @FXML
-    private TableColumn<Restaurant, String> restaurant;
+    private TableView<Restaurant> tabelTV;
 
     @FXML
-    private TableView<Restaurant> tabel;
+    private TableColumn<Restaurant, String> type;
 
+
+    //Links admin to the AddRestaurantController
     @FXML
-    private TableColumn<Restaurant,String> type;
-
-
-    @FXML
-    void add(ActionEvent event) throws IOException {
-    FXMLLoader addRestaurant=new FXMLLoader(Main.class.getResource ( "view/AddRestaurant.fxml" ));
-    addRestaurant.load ();
-   AddRestaurantController addRestaurantController=addRestaurant.getController ();
-   addRestaurantController.setTable (tabel );
-    Stage stage=new Stage ();
-    stage.setTitle ( "Add restaurant" );
-    stage.setScene ( new Scene ( addRestaurant.getRoot () ) );
-    stage.show ();
+    void add ( ActionEvent event ) throws IOException {
+        FXMLLoader addRestaurant = new FXMLLoader ( Main.class.getResource ( "view/AddRestaurant.fxml" ) );
+        addRestaurant.load ( );
+        AddRestaurantController addRestaurantController = addRestaurant.getController ( );
+        addRestaurantController.setTable ( tabelTV );
+        Stage stage = new Stage ( );
+        stage.setTitle ( "Add restaurantTV" );
+        stage.setScene ( new Scene ( addRestaurant.getRoot ( ) ) );
+        stage.show ( );
 
     }
 
+    //Remove restaurant from tableview
     @FXML
-    void delete(ActionEvent event) {
+    void delete ( ActionEvent event ) {
 
-    chosen=  tabel.getSelectionModel().getSelectedIndex();
-    if(chosen>=0) {
-        String addressCellData=address.getCellData(chosen);
-        tabel.getItems().remove(chosen);
-        Restaurant restaurant=detect(addressCellData);
-        if(!Main.adminRestaurantsD.remove(restaurant)){
-            Main.adminRestaurantsND.remove(restaurant);
+        chosen = tabelTV.getSelectionModel ( ).getSelectedIndex ( );
+        if ( chosen >= 0 ) {
+            String addressCellData = addressCL.getCellData ( chosen );
+            tabelTV.getItems ( ).remove ( chosen );
+            Restaurant restaurant = detect ( addressCellData );
+            if ( ! Main.adminRestaurantsD.remove ( restaurant ) ) {
+                Main.adminRestaurantsND.remove ( restaurant );
+            }
+
+
         }
 
 
     }
 
-
-    }
-
+    //Edit restaurant and links admin to the AdminFoodController
     @FXML
-    void edit(ActionEvent event) throws IOException {
-        chosen=tabel.getSelectionModel().getSelectedIndex();
-        if(chosen>=0) {
-            addressS=address.getCellData(chosen);
-            Restaurant restaurant=detect(addressS);
-            FXMLLoader foodPage = new FXMLLoader(Main.class.getResource("view/AdminFood.fxml"));
-            foodPage.load();
-            AdminFoodController adminFoodController=foodPage.getController();
-            adminFoodController.setChosen(restaurant);
-            adminFoodController.add();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(foodPage.getRoot()));
-            stage.setTitle("AdminFood");
-            stage.show();
+    void edit ( ActionEvent event ) throws IOException {
+        chosen = tabelTV.getSelectionModel ( ).getSelectedIndex ( );
+        if ( chosen >= 0 ) {
+            address = addressCL.getCellData ( chosen );
+            Restaurant restaurant = detect ( address );
+            FXMLLoader foodPage = new FXMLLoader ( Main.class.getResource ( "view/AdminFood.fxml" ) );
+            foodPage.load ( );
+            AdminFoodController adminFoodController = foodPage.getController ( );
+            adminFoodController.setChosen ( restaurant );
+            adminFoodController.add ( );
+            Stage stage = new Stage ( );
+            stage.setScene ( new Scene ( foodPage.getRoot ( ) ) );
+            stage.setTitle ( "AdminFood" );
+            stage.show ( );
         }
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        type.setCellValueFactory(cellData->new SimpleStringProperty(cellData.getValue().getType()));
-        restaurant.setCellValueFactory(cellData->new SimpleStringProperty(cellData.getValue().getName()));
-        address.setCellValueFactory(cellData->new SimpleStringProperty(cellData.getValue().getAddress()));
-        add();
-        tabel.setPlaceholder(new Label("No restaurant"));
+    public void initialize ( URL url , ResourceBundle resourceBundle ) {
+        type.setCellValueFactory ( cellData -> new SimpleStringProperty ( cellData.getValue ( ).getType ( ) ) );
+        restaurantCL.setCellValueFactory ( cellData -> new SimpleStringProperty ( cellData.getValue ( ).getName ( ) ) );
+        addressCL.setCellValueFactory ( cellData -> new SimpleStringProperty ( cellData.getValue ( ).getAddress ( ) ) );
+        add ( );
+        tabelTV.setPlaceholder ( new Label ( "No restaurantTV" ) );
 
     }
-    public void add(){
-        for(int i=0;i<Main.adminRestaurantsD.size();i++)
-                tabel.getItems().add(Main.adminRestaurantsD.get(i));
-        for(int i=0;i<Main.adminRestaurantsND.size();i++)
-            tabel.getItems().add(Main.adminRestaurantsND.get(i));
+
+    //Add restaurant to the tableview
+    public void add ( ) {
+        for ( int i = 0 ; i < Main.adminRestaurantsD.size ( ) ; i++ )
+            tabelTV.getItems ( ).add ( Main.adminRestaurantsD.get ( i ) );
+        for ( int i = 0 ; i < Main.adminRestaurantsND.size ( ) ; i++ )
+            tabelTV.getItems ( ).add ( Main.adminRestaurantsND.get ( i ) );
 
     }
-    public Restaurant detect(String addressS){
-        for(int i=0;i<Main.adminRestaurantsD.size();i++){
-            if(addressS.equals(Main.adminRestaurantsD.get(i).getAddress())){
-                return Main.adminRestaurantsD.get(i);
+
+    //Check if restaurant exist
+    public Restaurant detect ( String addressS ) {
+        for ( int i = 0 ; i < Main.adminRestaurantsD.size ( ) ; i++ ) {
+            if ( addressS.equals ( Main.adminRestaurantsD.get ( i ).getAddress ( ) ) ) {
+                return Main.adminRestaurantsD.get ( i );
             }
         }
-        for(int i=0;i<Main.adminRestaurantsND.size();i++){
-            if(addressS.equals(Main.adminRestaurantsND.get(i).getAddress())){
+        for ( int i = 0 ; i < Main.adminRestaurantsND.size ( ) ; i++ ) {
+            if ( addressS.equals ( Main.adminRestaurantsND.get ( i ).getAddress ( ) ) ) {
 
-                return Main.adminRestaurantsND.get(i);
+                return Main.adminRestaurantsND.get ( i );
             }
         }
         return null;

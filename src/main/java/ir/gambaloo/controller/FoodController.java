@@ -2,7 +2,7 @@ package ir.gambaloo.controller;
 /**
  * This controller shows food features like image price name type and add this page to the
  * RestaurantPageController
- * */
+ */
 
 import ir.gambaloo.module.ButtonSkin;
 import ir.gambaloo.module.Food;
@@ -21,7 +21,7 @@ import static ir.gambaloo.Main.client;
 public class FoodController implements Initializable {
 
     @FXML
-    private Label descript;
+    private Label description;
 
     @FXML
     private ImageView image;
@@ -33,62 +33,64 @@ public class FoodController implements Initializable {
     private Label price;
 
     private Food food;
-
-    public Food getFood() {
-        return food;
-    }
-
-    public void setFood(Food food) {
-        this.food = food;
-    }
-
-    public Label getDescript() {
-        return descript;
-    }
-
-    public void setDescript(Label descript) {
-        this.descript = descript;
-    }
-
-    public ImageView getImage() {
-        return image;
-    }
-
-    public void setImage(ImageView image) {
-        this.image = image;
-    }
-
-    public Label getName() {
-        return name;
-    }
-
-    public void setName(Label name) {
-        this.name = name;
-    }
-
-    public Label getPrice() {
-        return price;
-    }
-
-    public void setPrice(Label price) {
-        this.price = price;
-    }
-
     @FXML
     private Button orderBTN;
 
+    public Food getFood ( ) {
+        return food;
+    }
+
+    public void setFood ( Food food ) {
+        this.food = food;
+    }
+
+    public Label getDescription ( ) {
+        return description;
+    }
+
+    public void setDescription ( Label description ) {
+        this.description = description;
+    }
+
+    public ImageView getImage ( ) {
+        return image;
+    }
+
+    public void setImage ( ImageView image ) {
+        this.image = image;
+    }
+
+    public Label getName ( ) {
+        return name;
+    }
+
+    public void setName ( Label name ) {
+        this.name = name;
+    }
+
+    public Label getPrice ( ) {
+        return price;
+    }
+
+    public void setPrice ( Label price ) {
+        this.price = price;
+    }
+
+    //Order and add food to cart
     @FXML
-    void orderBTN(ActionEvent event) {
-        client.getCart().addToCart (getFood ());
+    void orderBTN ( ActionEvent event ) {
+        client.getCart ( ).addToCart ( getFood ( ) );
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        orderBTN.setSkin(new ButtonSkin(orderBTN));
+    public void initialize ( URL location , ResourceBundle resources ) {
+        orderBTN.setSkin ( new ButtonSkin ( orderBTN ) );
     }
-    public void load(){
-        name.setText(food.getName());
-        price.setText( String.valueOf ( food.getPrice ( ) ) );
-        descript.setText(food.getDescription ());
+
+    //Load food scene
+    public void load ( ) {
+        name.setText ( food.getName ( ) );
+        price.setText ( String.valueOf ( food.getPrice ( ) ) );
+        description.setText ( food.getDescription ( ) );
     }
 }

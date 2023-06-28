@@ -1,7 +1,7 @@
 package ir.gambaloo.controller;
 /**
  * Users login to their account via this page
- * */
+ */
 
 import ir.gambaloo.Main;
 import ir.gambaloo.module.DeliveryRestaurant;
@@ -18,16 +18,12 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+
 import java.io.*;
 import java.util.ArrayList;
 
-public class LoginPageController{
+public class LoginPageController {
 
-    @FXML
-    void initialize() {
-
-
-    }
 
     @FXML
     private Label error;
@@ -42,15 +38,14 @@ public class LoginPageController{
     private TextField usernameFLD;
 
 
-
+    // checks if the username exist then it will log in
     @FXML
-    void login(ActionEvent event) throws IOException, ClassNotFoundException {
-        String username=usernameFLD.getText();
-        String password=passwordFLD.getText();
-        if( username.equals ("")&&password.equals ( "" )){
+    void login ( ActionEvent event ) throws IOException, ClassNotFoundException {
+        String username = usernameFLD.getText ( );
+        String password = passwordFLD.getText ( );
+        if ( username.equals ( "" ) && password.equals ( "" ) ) {
             error.setText ( "Fill in the blanks." );
-        }
-        else {
+        } else {
             Main.printWriter.println ( 2 );
             Main.printWriter.flush ( );
             Main.printWriter.println ( username );
@@ -60,36 +55,36 @@ public class LoginPageController{
             } else {
                 Main.printWriter.println ( password );
                 Main.printWriter.flush ( );
-                int code=Main.reciver.nextInt();
-                if (code==0 ) {
+                int code = Main.reciver.nextInt ( );
+                if ( code == 0 ) {
                     ObjectInputStream recive = new ObjectInputStream ( Main.socket.getInputStream ( ) );
                     Main.client = ( User ) recive.readObject ( );
                     error.setText ( "Login anghezi" );
-                    FXMLLoader mainPage=new FXMLLoader(Main.class.getResource ( "view/MainPage.fxml" ));
-                    mainPage.load ();
-                    Stage stage=new Stage ();
-                    stage.setTitle ("Main Page");
-                    stage.setScene ( new Scene ( mainPage.getRoot ()));
-                    stage.show();
-                    stage.setResizable (false);
-                    Node source= (Node) event.getSource();
-                    source.getScene().getWindow().hide();
+                    FXMLLoader mainPage = new FXMLLoader ( Main.class.getResource ( "view/MainPage.fxml" ) );
+                    mainPage.load ( );
+                    Stage stage = new Stage ( );
+                    stage.setTitle ( "Main Page" );
+                    stage.setScene ( new Scene ( mainPage.getRoot ( ) ) );
+                    stage.show ( );
+                    stage.setResizable ( false );
+                    Node source = ( Node ) event.getSource ( );
+                    source.getScene ( ).getWindow ( ).hide ( );
                     //Fxml loader Mainpage load mishe
 
-                } else if(code==-1) {
+                } else if ( code == - 1 ) {
                     error.setText ( "Password is wrong" );
-                }else{
-                    ObjectInputStream recive=new ObjectInputStream(Main.socket.getInputStream());
-                    Main.adminRestaurantsD=(ArrayList<DeliveryRestaurant> ) recive.readObject();
-                    Main.adminRestaurantsND=(ArrayList<NotDeliveryRestaurant>) recive.readObject();
-                    FXMLLoader adminPage=new FXMLLoader(Main.class.getResource("view/AdminMain.fxml"));
-                    adminPage.load();
-                    Main.isAdmin=true;
-                    Stage stage =new Stage();
-                    stage.setScene(new Scene(adminPage.getRoot()));
-                    Node source= (Node) event.getSource();
-                    source.getScene().getWindow().hide();
-                    stage.show();
+                } else {
+                    ObjectInputStream recive = new ObjectInputStream ( Main.socket.getInputStream ( ) );
+                    Main.adminRestaurantsD = ( ArrayList<DeliveryRestaurant> ) recive.readObject ( );
+                    Main.adminRestaurantsND = ( ArrayList<NotDeliveryRestaurant> ) recive.readObject ( );
+                    FXMLLoader adminPage = new FXMLLoader ( Main.class.getResource ( "view/AdminMain.fxml" ) );
+                    adminPage.load ( );
+                    Main.isAdmin = true;
+                    Stage stage = new Stage ( );
+                    stage.setScene ( new Scene ( adminPage.getRoot ( ) ) );
+                    Node source = ( Node ) event.getSource ( );
+                    source.getScene ( ).getWindow ( ).hide ( );
+                    stage.show ( );
                 }
             }
         }
@@ -97,15 +92,16 @@ public class LoginPageController{
 
     }
 
+    //Links you to signup page
     @FXML
-    void signup(MouseEvent event) throws IOException {
-        FXMLLoader signUpPage = new FXMLLoader(Main.class.getResource("view/SignupPage.fxml"));
-        signUpPage.load();
-        Stage stage=new Stage();
-        stage.setTitle("Signup page");
-        stage.setScene(new Scene(signUpPage.getRoot()));
-        stage.show();
-        stage.setResizable(false);
+    void signup ( MouseEvent event ) throws IOException {
+        FXMLLoader signUpPage = new FXMLLoader ( Main.class.getResource ( "view/SignupPage.fxml" ) );
+        signUpPage.load ( );
+        Stage stage = new Stage ( );
+        stage.setTitle ( "Signup page" );
+        stage.setScene ( new Scene ( signUpPage.getRoot ( ) ) );
+        stage.show ( );
+        stage.setResizable ( false );
     }
 
 }
