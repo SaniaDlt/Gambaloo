@@ -1,5 +1,8 @@
 package ir.gambaloo.controller;
-
+/**
+ * Restaurant list that contains all restaurant of a country
+ * By clicking on a Restaurant it will link you to a Restaurant page controller
+ * */
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
