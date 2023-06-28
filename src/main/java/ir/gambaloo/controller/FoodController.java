@@ -1,4 +1,8 @@
 package ir.gambaloo.controller;
+/**
+ * This controller shows food features like image price name type and add this page to the
+ * RestaurantPageController
+ * */
 
 import ir.gambaloo.module.ButtonSkin;
 import ir.gambaloo.module.Food;

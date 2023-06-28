@@ -1,10 +1,12 @@
 package ir.gambaloo.controller;
+/**
+ * This controller shows all the foods that client orders
+ * Client can remove food from cart
+ * */
 
 import ir.gambaloo.Main;
-import ir.gambaloo.module.Cart;
 import ir.gambaloo.module.Food;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;

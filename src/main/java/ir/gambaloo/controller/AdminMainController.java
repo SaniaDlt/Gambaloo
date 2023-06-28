@@ -1,4 +1,11 @@
 package ir.gambaloo.controller;
+/**
+ * This controller shows all the restaurant that added by admin in the tableview
+ * Admin can add remove edit other restaurants by clicking in their button
+ * */
+
+
+
 import ir.gambaloo.module.Restaurant;
 import ir.gambaloo.Main;
 import javafx.beans.property.SimpleStringProperty;

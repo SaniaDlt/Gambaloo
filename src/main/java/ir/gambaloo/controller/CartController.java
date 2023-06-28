@@ -1,10 +1,12 @@
 package ir.gambaloo.controller;
+/**
+ * This controller shows the foods that ordered by client with their price and balance
+ * It has order and gateway button
+ * */
 
 
-import ir.gambaloo.module.Food;
 
 import ir.gambaloo.Main;
-import ir.gambaloo.module.Gateway;
 import ir.gambaloo.module.LimitGateway;
 import ir.gambaloo.module.TaxGateway;
 import javafx.event.ActionEvent;
@@ -15,12 +17,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
