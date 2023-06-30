@@ -18,7 +18,7 @@
                </font></Label>
             <Label fx:id="nameLBL" prefHeight="39.0" prefWidth="182.0">
                <font>
-                  <Font name="FreeMono" size="19.0" />
+                  <Font name="FreeMono Bold" size="19.0" />
                </font></Label>
          </children>
          <HBox.margin>

@@ -82,7 +82,7 @@ public class CartController implements Initializable {
 
     //Finish the ordering
     @FXML
-    void orderBTN ( ActionEvent event ) {
+    void orderBTN ( ActionEvent event ) throws IOException {
         if ( Main.client.getBalance ( ) < Main.client.getCart ( ).getCost ( ) ) {
             errorLBL.setText ( "Not enough balance" );
         } else {
@@ -91,7 +91,15 @@ public class CartController implements Initializable {
             Main.client.getCart ( ).getItems ( ).clear ( );
             Node source = ( Node ) event.getSource ( );
             source.getScene ( ).getWindow ( ).hide ( );
+            FXMLLoader endPage = new FXMLLoader ( Main.class.getResource ( "view/EndPage.fxml" ) );
+            endPage.load ( );
+            Stage stage = new Stage ( );
+            stage.setScene ( new Scene ( endPage.getRoot ( ) ) );
+            stage.show ( );
+            stage.setResizable ( false );
+            stage.setTitle ("Order is commiiiiiiiiiiiiiiing");
         }
+
 
     }
 

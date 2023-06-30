@@ -8,9 +8,11 @@ import ir.gambaloo.Main;
 import ir.gambaloo.module.Restaurant;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import org.controlsfx.control.PopOver;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -113,5 +115,29 @@ public class MainPageController {
         stage.setScene ( new Scene ( restaurantList.getRoot ( ) ) );
         stage.show ( );
     }
+    @FXML
+    void tipsEntered(MouseEvent event) throws IOException {
+        FXMLLoader tips=new FXMLLoader (Main.class.getResource("view/tips.fxml"));
+        tips.load ();
+        Stage stage=new Stage ();
+        stage.setScene (new Scene (tips.getRoot ()));
+        //stage.show ();
+        stage.setResizable (false);
+        stage.setTitle ("Top Tips");
+        PopOver popOver=new PopOver (tips.getController ());
+        Node node=popOver.getOwnerNode ();
+        node.setOnMouseEntered (mouseEvent -> {popOver.show(node);});
+    }
+    @FXML
+    void tipsExited(MouseEvent event) throws IOException {
+        FXMLLoader tips=new FXMLLoader (Main.class.getResource("view/tips.fxml"));
+        tips.load ();
+        Stage stage=new Stage ();
+        stage.setScene (new Scene (tips.getRoot ()));
+        PopOver popOver=new PopOver (tips.getController ());
+        Node node=popOver.getOwnerNode ();
+        node.setOnMouseExited(mouseEvent -> {popOver.hide ();});
+    }
+
 }
 

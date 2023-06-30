@@ -149,10 +149,10 @@ public class RestaurantPageController implements Initializable {
         Label mainLbl = new Label ( "MainFood :" );
         Label drinkLBL = new Label ( "Drinks :" );
         Label desertLbl = new Label ( "Deserts :" );
-        appLbl.setFont ( Font.font ( 25 ) );
-        mainLbl.setFont ( Font.font ( 25 ) );
-        drinkLBL.setFont ( Font.font ( 25 ) );
-        desertLbl.setFont ( Font.font ( 25 ) );
+        appLbl.setFont ( Font.font ( 20 ) );
+        mainLbl.setFont ( Font.font ( 20 ) );
+        drinkLBL.setFont ( Font.font ( 20 ) );
+        desertLbl.setFont ( Font.font ( 20 ) );
         appetizer = new VBox ( appLbl );
         mainFood = new VBox ( mainLbl );
         drinks = new VBox ( drinkLBL );

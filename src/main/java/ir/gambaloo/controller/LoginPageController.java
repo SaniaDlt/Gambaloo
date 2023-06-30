@@ -48,7 +48,7 @@ public class LoginPageController {
         } else {
             Main.printWriter.println ( 2 );
             Main.printWriter.flush ( );
-            Main.printWriter.println ( username );
+            Main.printWriter.println ( username.toLowerCase (  ) );
             Main.printWriter.flush ( );
             if ( Main.reciver.nextInt ( ) == - 1 ) {
                 error.setText ( "Username not found" );
@@ -69,7 +69,7 @@ public class LoginPageController {
                     stage.setResizable ( false );
                     Node source = ( Node ) event.getSource ( );
                     source.getScene ( ).getWindow ( ).hide ( );
-                    //Fxml loader Mainpage load mishe
+
 
                 } else if ( code == - 1 ) {
                     error.setText ( "Password is wrong" );

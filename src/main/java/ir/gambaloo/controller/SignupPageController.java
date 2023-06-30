@@ -73,7 +73,7 @@ public class SignupPageController {
                         errorLBL.setText ( "This email is already exist." );
                     } else {
 
-                        User user = new User ( email , username , password , phonenumber , address );
+                        User user = new User ( email.toLowerCase ( ) , username.toLowerCase (  ) , password , phonenumber , address );
                         ObjectOutputStream objectOutputStream = new ObjectOutputStream ( Main.socket.getOutputStream ( ) );
                         objectOutputStream.writeObject ( user );
                         objectOutputStream.flush ( );
