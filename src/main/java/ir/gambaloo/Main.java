@@ -1,6 +1,6 @@
 package ir.gambaloo;
 /**
- * Start of a amazing project
+ * Start of an amazing project
  * */
 import ir.gambaloo.module.DeliveryRestaurant;
 import ir.gambaloo.module.NotDeliveryRestaurant;
