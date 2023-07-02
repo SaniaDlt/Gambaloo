@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -46,6 +47,8 @@ public class AdminFoodController implements Initializable {
     private TableView<MainFood> mainFoodTBL;
     @FXML
     private Label restaurantName;
+    @FXML
+    private Button disableBTN;
 
     public Restaurant getChosen ( ) {
         return chosen;
@@ -148,5 +151,23 @@ public class AdminFoodController implements Initializable {
         mainFoodTBL.setPlaceholder ( new Label ( "No food" ) );
         desertsTBL.setPlaceholder ( new Label ( "No food" ) );
         drinksTBL.setPlaceholder ( new Label ( "No food" ) );
+    }
+    @FXML
+    void mode(ActionEvent event) {
+        if(disableBTN.getText().equals(""));
+
+    }
+
+    @FXML
+    void update(ActionEvent event) {
+
+
+    }
+    public void load(){
+        if(chosen.isEnable()){
+            disableBTN.setText("Disable");
+        }else {
+            disableBTN.setText("Enable");
+        }
     }
 }
