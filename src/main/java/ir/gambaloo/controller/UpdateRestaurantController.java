@@ -32,7 +32,7 @@ public class UpdateRestaurantController {
 
     @FXML
     void updateBTN( ActionEvent event) {
-        
+
     }
 
 }

@@ -90,11 +90,8 @@ public class AdminMainController implements Initializable {
         }
     }
 
-    @FXML
-    void mode(ActionEvent event) {
 
 
-    }
 
     @FXML
     void update(ActionEvent event) {

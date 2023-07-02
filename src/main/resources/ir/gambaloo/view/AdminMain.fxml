@@ -35,16 +35,6 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button mnemonicParsing="false" onAction="#update" prefHeight="42.0" prefWidth="211.0" text="Update Restaurant">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button mnemonicParsing="false" onAction="#mode" prefHeight="42.0" prefWidth="211.0" text="Disable Restaurant">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
          </children>
       </VBox>
    </right>
