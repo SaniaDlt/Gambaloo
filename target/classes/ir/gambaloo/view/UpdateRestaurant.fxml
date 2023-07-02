@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
@@ -9,8 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UpdateRestaurantController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.gambaloo.controller.UpdateRestaurantController">
    <children>
       <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" spacing="10.0">
          <children>
@@ -64,32 +64,22 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" spacing="10.0">
          <children>
+            <Label text="Table or delivery">
+               <font>
+                  <Font name="Sahadeva" size="20.0" />
+               </font>
+            </Label>
+            <TextField id="field" fx:id="numTableOrDelivery" prefHeight="30.0" prefWidth="200.0" styleClass="field" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" spacing="10.0">
+         <children>
             <Label text="Country :">
                <font>
                   <Font name="Sahadeva" size="20.0" />
                </font>
             </Label>
             <ChoiceBox fx:id="countryCHCB" prefWidth="150.0" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" spacing="10.0">
-         <children>
-            <Label text="Type :">
-               <font>
-                  <Font name="Sahadeva" size="20.0" />
-               </font>
-            </Label>
-            <ChoiceBox fx:id="typeCHCB" prefWidth="150.0" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" spacing="10.0">
-         <children>
-            <Label text="Number of tables or deliveries :">
-               <font>
-                  <Font name="Sahadeva" size="20.0" />
-               </font>
-            </Label>
-            <TextField id="field" fx:id="tableOrDeliveryFLD" prefHeight="30.0" prefWidth="200.0" styleClass="field" />
          </children>
       </HBox>
       <Button id="button" mnemonicParsing="false" onAction="#updateBTN" prefHeight="37.0" prefWidth="137.0" stylesheets="@AddRestaurant.css" text="UPDATE">
@@ -99,6 +89,9 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
       </Button>
    </children>
 </VBox>

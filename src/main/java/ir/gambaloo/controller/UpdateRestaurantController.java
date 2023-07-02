@@ -5,11 +5,17 @@ import ir.gambaloo.module.*;
 import ir.gambaloo.module.Restaurant;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class UpdateRestaurantController {
+
+public class UpdateRestaurantController implements Initializable {
     @FXML
     private TextField addressFLD;
 
@@ -29,7 +35,13 @@ public class UpdateRestaurantController {
     private TextField startHourFLD;
 
     @FXML
-    private ChoiceBox<RestaurantType> typeCHCB;
+    private TextField numTableOrDelivery;
+
+    private TableView<Restaurant> tableViewAdminMain;
+
+    public void setTableViewAdminMain(TableView<Restaurant> tableViewAdminMain) {
+        this.tableViewAdminMain = tableViewAdminMain;
+    }
 
     public Restaurant getChosen ( ) {
         return chosen;
@@ -49,7 +61,7 @@ public class UpdateRestaurantController {
         String endHour = endHourFLD.getText ( ) ;
         String address = addressFLD.getText ( );
         Country country = countryCHCB.getValue ( );
-        RestaurantType type = typeCHCB.getValue ( );
+        String tableOrDelivery =numTableOrDelivery.getText();
         String imageAddress = imageAddressFLD.getText ( );
         if(!name.equals ("") ) {
             chosen.setName ( name );
@@ -63,17 +75,24 @@ public class UpdateRestaurantController {
             chosen.setStartHour (end);
         }
         if(!address.equals ("") ) {
-            chosen.setName ( name );
+            chosen.setAddress ( address );
         }
         if(!imageAddress.equals ("") ) {
-            chosen.setName ( name );
+            chosen.setImageAddress(imageAddress);
         }
-        if(!country.equals ("")){
+        if(country!=null){
             chosen.setCountry (country);
         }
-        if(!type.equals ("")) {
-            chosen.setType ( type );
+        if(!tableOrDelivery.equals("")) {
+            if(chosen.getType().equals("DELIVERY")){
+                ((DeliveryRestaurant) chosen).setDeliveries(Integer.parseInt(tableOrDelivery));
+            }else{
+                ((NotDeliveryRestaurant) chosen).setChairs(Integer.parseInt(tableOrDelivery));
+            }
         }
+        tableViewAdminMain.refresh();
+        Node source = ( Node ) event.getSource ( );
+        source.getScene ( ).getWindow ( ).hide ( );
 
     }
 
@@ -83,5 +102,15 @@ public class UpdateRestaurantController {
         imageAddressFLD.setPromptText(chosen.getImageAddress());
         nameFLD.setPromptText(chosen.getName());
         startHourFLD.setPromptText(chosen.getStartHour()+"");
+       if(chosen.getType().equals("DELIVERY")){
+           numTableOrDelivery.setPromptText(String.valueOf(((DeliveryRestaurant) chosen).getDeliveries()));
+       }else{
+           numTableOrDelivery.setPromptText(String.valueOf(((NotDeliveryRestaurant) chosen).getChairs()));
+       }
    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        countryCHCB.getItems ( ).setAll ( Country.values ( ) );
+    }
 }

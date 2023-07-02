@@ -50,6 +50,12 @@ public class AdminFoodController implements Initializable {
     @FXML
     private Button disableBTN;
 
+    private TableView<Restaurant> tableViewAdminMain;
+
+    public void setTableViewAdminMain(TableView<Restaurant> tableViewAdminMain) {
+        this.tableViewAdminMain = tableViewAdminMain;
+    }
+
     public Restaurant getChosen ( ) {
         return chosen;
     }
@@ -170,6 +176,8 @@ public class AdminFoodController implements Initializable {
         update.load ();
         UpdateRestaurantController updateRestaurantController=update.getController ();
         updateRestaurantController.setChosen (chosen);
+        updateRestaurantController.setTableViewAdminMain(tableViewAdminMain);
+        updateRestaurantController.load();
         Stage stage=new Stage ();
         stage.setScene (new Scene (update.getRoot ()));
         stage.show ();

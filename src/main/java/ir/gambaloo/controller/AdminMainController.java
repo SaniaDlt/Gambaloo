@@ -82,7 +82,9 @@ public class AdminMainController implements Initializable {
             foodPage.load ( );
             AdminFoodController adminFoodController = foodPage.getController ( );
             adminFoodController.setChosen ( restaurant );
+            adminFoodController.setTableViewAdminMain(tabelTV);
             adminFoodController.add ( );
+            adminFoodController.load();
             Stage stage = new Stage ( );
             stage.setScene ( new Scene ( foodPage.getRoot ( ) ) );
             stage.setTitle ( "AdminFood" );
@@ -93,11 +95,7 @@ public class AdminMainController implements Initializable {
 
 
 
-    @FXML
-    void update(ActionEvent event) {
 
-
-    }
 
 
     @Override

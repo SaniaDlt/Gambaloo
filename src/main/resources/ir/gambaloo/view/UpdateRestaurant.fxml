@@ -64,22 +64,22 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" spacing="10.0">
          <children>
+            <Label text="Table or delivery">
+               <font>
+                  <Font name="Sahadeva" size="20.0" />
+               </font>
+            </Label>
+            <TextField id="field" fx:id="numTableOrDelivery" prefHeight="30.0" prefWidth="200.0" styleClass="field" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" spacing="10.0">
+         <children>
             <Label text="Country :">
                <font>
                   <Font name="Sahadeva" size="20.0" />
                </font>
             </Label>
             <ChoiceBox fx:id="countryCHCB" prefWidth="150.0" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="49.0" prefWidth="600.0" spacing="10.0">
-         <children>
-            <Label text="Type :">
-               <font>
-                  <Font name="Sahadeva" size="20.0" />
-               </font>
-            </Label>
-            <ChoiceBox fx:id="typeCHCB" prefWidth="150.0" />
          </children>
       </HBox>
       <Button id="button" mnemonicParsing="false" onAction="#updateBTN" prefHeight="37.0" prefWidth="137.0" stylesheets="@AddRestaurant.css" text="UPDATE">

@@ -6,16 +6,20 @@ package ir.gambaloo.module;
  */
 
 public class DeliveryRestaurant extends Restaurant {
-    private final int deliveries;
+    private int deliveries;
 
-    public DeliveryRestaurant ( int startHour , int endHour , String address , int delivery , Country country , String name , String imageAddress ) {
-        super ( startHour , endHour , address , country , name , imageAddress );
+    public void setDeliveries(int deliveries) {
+        this.deliveries = deliveries;
+    }
+
+    public DeliveryRestaurant(int startHour, int endHour, String address, int delivery, Country country, String name, String imageAddress) {
+        super(startHour, endHour, address, country, name, imageAddress);
         deliveries = delivery;
         type = RestaurantType.DELIVERY;
     }
 
 
-    public int getDeliveries ( ) {
+    public int getDeliveries() {
         return deliveries;
     }
 }

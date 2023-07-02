@@ -201,9 +201,10 @@ public class ClientServer extends Thread {
                 restaurants.add ( Server.deliveryRestaurants.get ( i ) );
             }
         for ( int i = 0 ; i < Server.notDeliveryRestaurants.size ( ) ; i++ )
-            if ( Server.notDeliveryRestaurants.get ( i ).getCountry ( ).equalsIgnoreCase ( Country ) && Server.deliveryRestaurants.get(i).isEnable() ) {
+            if ( Server.notDeliveryRestaurants.get ( i ).getCountry ( ).equalsIgnoreCase ( Country ) && Server.notDeliveryRestaurants.get(i).isEnable() ) {
                 restaurants.add ( Server.notDeliveryRestaurants.get ( i ) );
             }
+
         return restaurants;
     }
 

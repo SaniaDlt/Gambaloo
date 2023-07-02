@@ -46,7 +46,7 @@ public class SignupPageController {
         String address = addressFLD.getText ( );
         if ( username.length ( ) < 3 || username.contains ( " " ) || username.toLowerCase ( ).contains ( "ali" ) ) {
             errorLBL.setText ( "Invalid username" );
-        } else if ( phonenumber.length ( ) == 10 ) {
+        } else if ( !(phonenumber.length ( ) == 10) ) {
             errorLBL.setText ( "Invalid phonenumber" );
         } else if ( ! email.contains ( "@" ) ) {
             errorLBL.setText ( "Your email must contains @. " );
