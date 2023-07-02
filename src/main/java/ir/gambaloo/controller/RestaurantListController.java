@@ -37,6 +37,6 @@ public class RestaurantListController implements Initializable {
         scrollPane.fitToHeightProperty ( ).set ( true );
         vBox.setAlignment ( Pos.CENTER );
         vBox.setSpacing ( 10 );
-
     }
+
 }

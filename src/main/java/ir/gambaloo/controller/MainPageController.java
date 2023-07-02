@@ -115,28 +115,16 @@ public class MainPageController {
         stage.setScene ( new Scene ( restaurantList.getRoot ( ) ) );
         stage.show ( );
     }
+
     @FXML
-    void tipsEntered(MouseEvent event) throws IOException {
-        FXMLLoader tips=new FXMLLoader (Main.class.getResource("view/tips.fxml"));
-        tips.load ();
-        Stage stage=new Stage ();
-        stage.setScene (new Scene (tips.getRoot ()));
-        //stage.show ();
-        stage.setResizable (false);
-        stage.setTitle ("Top Tips");
-        PopOver popOver=new PopOver (tips.getController ());
-        Node node=popOver.getOwnerNode ();
-        node.setOnMouseEntered (mouseEvent -> {popOver.show(node);});
-    }
-    @FXML
-    void tipsExited(MouseEvent event) throws IOException {
-        FXMLLoader tips=new FXMLLoader (Main.class.getResource("view/tips.fxml"));
-        tips.load ();
-        Stage stage=new Stage ();
-        stage.setScene (new Scene (tips.getRoot ()));
-        PopOver popOver=new PopOver (tips.getController ());
-        Node node=popOver.getOwnerNode ();
-        node.setOnMouseExited(mouseEvent -> {popOver.hide ();});
+    void tipsEntered ( MouseEvent event ) throws IOException {
+        FXMLLoader tip = new FXMLLoader ( Main.class.getResource ( "view/tips.fxml" ) );
+        tip.load ( );
+        Stage stage = new Stage ( );
+        stage.setScene ( new Scene ( tip.getRoot ( ) ) );
+        stage.show ( );
+        stage.setResizable ( false );
+        stage.setTitle ( "Top Tips" );
     }
 
 }

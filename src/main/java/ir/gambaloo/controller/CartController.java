@@ -66,6 +66,7 @@ public class CartController implements Initializable {
         FXMLLoader gateWay2 = new FXMLLoader ( Main.class.getResource ( "view/Gateway.fxml" ) );
         gateWay2.load ( );
         GatewayController gatewayController = gateWay2.getController ( );
+        gatewayController.setCartController ( this );
         gatewayController.getPrice ( ).setText ( String.valueOf ( limitGateway.getPrice ( ) ) );
         Stage stage = new Stage ( );
         stage.setScene ( new Scene ( gateWay2.getRoot ( ) ) );
