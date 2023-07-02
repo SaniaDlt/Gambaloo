@@ -1,7 +1,11 @@
 package ir.gambaloo.controller;
 
+<<<<<<< HEAD
 
 import ir.gambaloo.module.*;
+=======
+import ir.gambaloo.module.Restaurant;
+>>>>>>> b59f45353b414ae11ba9509f3a735e9f10443b2c
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
@@ -40,6 +44,7 @@ public class UpdateRestaurantController {
 
     Restaurant chosen;
 
+
     @FXML
     void updateBTN( ActionEvent event) {
         String name = nameFLD.getText ( );
@@ -75,4 +80,11 @@ public class UpdateRestaurantController {
 
     }
 
+   public void load(){
+        addressFLD.setPromptText(chosen.getAddress());
+        endHourFLD.setPromptText(chosen.getEndHour() + "");
+        imageAddressFLD.setPromptText(chosen.getImageAddress());
+        nameFLD.setPromptText(chosen.getName());
+        startHourFLD.setPromptText(chosen.getStartHour()+"");
+   }
 }

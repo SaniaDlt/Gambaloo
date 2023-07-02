@@ -154,7 +154,13 @@ public class AdminFoodController implements Initializable {
     }
     @FXML
     void mode(ActionEvent event) {
-        if(disableBTN.getText().equals(""));
+        if(disableBTN.getText().equals("Disable")){
+            chosen.setEnable(false);
+            load();
+        }else{
+            chosen.setEnable(true);
+            load();
+        }
 
     }
 
