@@ -40,7 +40,7 @@ public class SignupPageController {
     @FXML
     void signUPBTN ( ActionEvent event ) throws IOException {
         String username = usernameFLD.getText ( );
-        String phonenumber = phonenumberFLD.getText ( );
+        String phonenumber = phonenumberFLD.getText ( ).replaceAll ( "[^0-9]" , "" );;
         String email = emailFLD.getText ( );
         String password = passwordFLD.getText ( );
         String address = addressFLD.getText ( );

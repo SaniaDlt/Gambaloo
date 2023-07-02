@@ -1,11 +1,8 @@
 package ir.gambaloo.controller;
 
-<<<<<<< HEAD
 
 import ir.gambaloo.module.*;
-=======
 import ir.gambaloo.module.Restaurant;
->>>>>>> b59f45353b414ae11ba9509f3a735e9f10443b2c
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;

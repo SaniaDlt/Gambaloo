@@ -50,18 +50,19 @@ public class AddRestaurantController implements Initializable {
         Country country = countryCHCB.getValue ( );
         RestaurantType type = typeCHCB.getValue ( );
         String imageAddress = imageAddressFLD.getText ( );
-        if ( type == RestaurantType.DELIVERY ) {
-            int delivery = Integer.parseInt ( tableOrDeliveryFLD.getText ( ) );
-            DeliveryRestaurant deliveryRestaurant = new DeliveryRestaurant ( startHour , endHour , address , delivery , country , name , imageAddress );
-            Main.adminRestaurantsD.add ( deliveryRestaurant );
-            table.getItems ( ).add ( deliveryRestaurant );
-        } else {
-            int tables = Integer.parseInt ( tableOrDeliveryFLD.getText ( ) );
-            NotDeliveryRestaurant notDeliveryRestaurant = new NotDeliveryRestaurant ( startHour , endHour , address , tables , country , name , imageAddress );
-            Main.adminRestaurantsND.add ( notDeliveryRestaurant );
-            table.getItems ( ).add ( notDeliveryRestaurant );
+        if(type!=null) {
+            if (type == RestaurantType.DELIVERY) {
+                int delivery = Integer.parseInt(tableOrDeliveryFLD.getText());
+                DeliveryRestaurant deliveryRestaurant = new DeliveryRestaurant(startHour, endHour, address, delivery, country, name, imageAddress);
+                Main.adminRestaurantsD.add(deliveryRestaurant);
+                table.getItems().add(deliveryRestaurant);
+            } else {
+                int tables = Integer.parseInt(tableOrDeliveryFLD.getText());
+                NotDeliveryRestaurant notDeliveryRestaurant = new NotDeliveryRestaurant(startHour, endHour, address, tables, country, name, imageAddress);
+                Main.adminRestaurantsND.add(notDeliveryRestaurant);
+                table.getItems().add(notDeliveryRestaurant);
+            }
         }
-
     }
 
 
