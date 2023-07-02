@@ -7,6 +7,7 @@ package ir.gambaloo.controller;
 
 import ir.gambaloo.Main;
 import ir.gambaloo.module.LimitGateway;
+import ir.gambaloo.module.NormalGateway;
 import ir.gambaloo.module.TaxGateway;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -73,13 +74,29 @@ public class CartController implements Initializable {
         stage.setTitle ( "Limited gateway" );
         gatewayController.getNameLbl ( ).setText ( "Limit Gateway" );
         if ( Main.client.getCart ( ).getCost ( ) < 15 ) {
-            errorLBL.setText ( "Must be out at leat 15 dollor" );
+            errorLBL.setText ( "Must be out at least 15 dollar" );
         } else {
             stage.show ( );
         }
 
 
     }
+    @FXML
+    void gateway3BTN(ActionEvent event) throws IOException {
+        NormalGateway normalGateway = new NormalGateway ( Main.client.getCart ( ).getCost ( ) );
+        FXMLLoader gateWay3 = new FXMLLoader ( Main.class.getResource ( "view/Gateway.fxml" ) );
+        gateWay3.load ( );
+        GatewayController gatewayController = gateWay3.getController ( );
+        gatewayController.setCartController ( this );
+        gatewayController.getPrice ( ).setText ( String.valueOf ( normalGateway.getPrice ( ) ) );
+        Stage stage = new Stage ( );
+        stage.setScene ( new Scene ( gateWay3.getRoot ( ) ) );
+        stage.setTitle ( "Normal Gateway" );
+        gatewayController.getNameLbl ( ).setText ( "Normal Gateway" );
+        stage.show ( );
+
+    }
+
 
     //Finish the ordering
     @FXML

@@ -64,14 +64,19 @@
             </VBox>
             <VBox alignment="TOP_CENTER" prefHeight="80.0" prefWidth="194.0" spacing="5.0">
                <children>
-                  <Button id="button" mnemonicParsing="false" onAction="#gateway1BTN" prefHeight="35.0" prefWidth="144.0" stylesheets="@cart.css" text="Gateway 1">
+                  <Button id="button" mnemonicParsing="false" onAction="#gateway1BTN" prefHeight="19.0" prefWidth="144.0" stylesheets="@cart.css" text="Tax Gateway">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <Button id="button" mnemonicParsing="false" onAction="#gateway2BTN" prefHeight="35.0" prefWidth="144.0" stylesheets="@cart.css" text="Gateway 2">
+                  <Button id="button" mnemonicParsing="false" onAction="#gateway2BTN" prefHeight="23.0" prefWidth="144.0" stylesheets="@cart.css" text="Limit Gateway">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
+                  <Button id="button" mnemonicParsing="false" onAction="#gateway3BTN" prefHeight="23.0" prefWidth="144.0" stylesheets="@cart.css" text="Normal Gateway">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                </children>
             </VBox>
          </children>
