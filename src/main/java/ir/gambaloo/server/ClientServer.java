@@ -197,11 +197,11 @@ public class ClientServer extends Thread {
     public ArrayList<Restaurant> seprator ( String Country ) {
         ArrayList<Restaurant> restaurants = new ArrayList<> ( );
         for ( int i = 0 ; i < Server.deliveryRestaurants.size ( ) ; i++ )
-            if ( Server.deliveryRestaurants.get ( i ).getCountry ( ).equalsIgnoreCase ( Country ) ) {
+            if ( Server.deliveryRestaurants.get ( i ).getCountry ( ).equalsIgnoreCase ( Country ) && Server.deliveryRestaurants.get(i).isEnable() ) {
                 restaurants.add ( Server.deliveryRestaurants.get ( i ) );
             }
         for ( int i = 0 ; i < Server.notDeliveryRestaurants.size ( ) ; i++ )
-            if ( Server.notDeliveryRestaurants.get ( i ).getCountry ( ).equalsIgnoreCase ( Country ) ) {
+            if ( Server.notDeliveryRestaurants.get ( i ).getCountry ( ).equalsIgnoreCase ( Country ) && Server.deliveryRestaurants.get(i).isEnable() ) {
                 restaurants.add ( Server.notDeliveryRestaurants.get ( i ) );
             }
         return restaurants;

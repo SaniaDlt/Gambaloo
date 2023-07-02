@@ -15,8 +15,17 @@ public class Restaurant implements Serializable {
     protected String name;
     protected RestaurantType type;
     protected String imageAddress;
+    protected boolean enable=true;
 
-    public Restaurant ( int startHour , int endHour , String address , Country country , String name , String imageAddress ) {
+    public boolean isEnable() {
+        return enable;
+    }
+
+    public void setEnable(boolean enable) {
+        this.enable = enable;
+    }
+
+    public Restaurant (int startHour , int endHour , String address , Country country , String name , String imageAddress ) {
         this.startHour = startHour;
         this.endHour = endHour;
         this.address = address;
@@ -57,8 +66,6 @@ public class Restaurant implements Serializable {
         return address;
     }
 
-    public String workHour ( ) {
-        return "From " + startHour + "To " + endHour;
-    }
+
 
 }
