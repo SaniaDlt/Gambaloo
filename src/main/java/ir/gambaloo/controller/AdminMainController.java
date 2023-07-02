@@ -90,6 +90,19 @@ public class AdminMainController implements Initializable {
         }
     }
 
+    @FXML
+    void mode(ActionEvent event) {
+
+
+    }
+
+    @FXML
+    void update(ActionEvent event) {
+        
+
+    }
+
+
     @Override
     public void initialize ( URL url , ResourceBundle resourceBundle ) {
         type.setCellValueFactory ( cellData -> new SimpleStringProperty ( cellData.getValue ( ).getType ( ) ) );
