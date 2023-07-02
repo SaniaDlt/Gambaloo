@@ -159,9 +159,14 @@ public class AdminFoodController implements Initializable {
     }
 
     @FXML
-    void update(ActionEvent event) {
-
-
+    void update(ActionEvent event) throws IOException {
+        FXMLLoader update=new FXMLLoader (Main.class.getResource ("view/UpdateRestaurant.fxml"));
+        update.load ();
+        UpdateRestaurantController updateRestaurantController=update.getController ();
+        updateRestaurantController.setChosen (chosen);
+        Stage stage=new Stage ();
+        stage.setScene (new Scene (update.getRoot ()));
+        stage.show ();
     }
     public void load(){
         if(chosen.isEnable()){

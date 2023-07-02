@@ -8,6 +8,34 @@ package ir.gambaloo.module;
 import java.io.Serializable;
 
 public class Restaurant implements Serializable {
+    public void setStartHour ( int startHour ) {
+        this.startHour = startHour;
+    }
+
+    public void setEndHour ( int endHour ) {
+        this.endHour = endHour;
+    }
+
+    public void setAddress ( String address ) {
+        this.address = address;
+    }
+
+    public void setCountry ( Country country ) {
+        this.country = country;
+    }
+
+    public void setName ( String name ) {
+        this.name = name;
+    }
+
+    public void setType ( RestaurantType type ) {
+        this.type = type;
+    }
+
+    public void setImageAddress ( String imageAddress ) {
+        this.imageAddress = imageAddress;
+    }
+
     protected int startHour, endHour;
     protected Menu menu = new Menu ( );
     protected String address;
